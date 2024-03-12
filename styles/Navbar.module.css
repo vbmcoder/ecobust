@@ -1,0 +1,38 @@
+.main_nav {
+    position: relative;
+    width: 100%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #fff;
+    padding: 0 15px;
+    border-radius: 8px;
+    font-family: math;
+    box-shadow: 0 10px 50px #d8e1e9;
+    transition: 0.3s ease-in;
+    z-index: 9;
+    padding: 0 5rem;
+}
+
+.main_nav.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    border-radius: 0;
+    transition: 0.3s ease-in-out;
+}
+
+@media screen and (max-width: 500px) {
+    .main_nav {
+        position: relative;
+        top: 0;
+        left: 0;
+        transform: none;
+        padding: 0 8px;
+    }
+
+    .main_nav.sticky {
+        padding: 0 1rem;
+    }
+}
