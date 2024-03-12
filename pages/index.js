@@ -6,11 +6,11 @@ import { FaRegClock } from "react-icons/fa";
 import { FiPhone } from "react-icons/fi";
 import { GrMail } from "react-icons/gr";
 import Link from "next/link";
-import ScrollToTopButton from "@/components/ScrollToTopButton";
 import Whatsapp from "@/components/Whatsapp";
 
 
 export default function Home() {
+
 
   const [openside, setOpenside] = useState(false);
   const [openNav, setOpenNav] = useState(false);
@@ -82,6 +82,7 @@ export default function Home() {
             <h4><FiPhone /> +91-9929031735, +91-9929711198</h4>
             <h4><GrMail /> infoecobust@gmail.com</h4>
           </div>
+          {/* <div className='flex gap-2'>More Info: <GrMail /> <FiPhone /></div> */}
         </div>
         <div className="center_headernav">
           <a href="/">Privacy Policy</a>
@@ -286,7 +287,6 @@ export default function Home() {
       <div className="demoimg">
         <img src="/img/PhotoRoom-20240311_122223.png" alt="" />
       </div>
-     
       <div className="comcontainer">
         <p className="container-title">Here are the features<br />we're proud of</p>
 
@@ -325,6 +325,7 @@ export default function Home() {
           </div>
         </div>
       </div>
+
       <div className="footer_contact">
         <div className="f_c">
           <img src="https://demo.rstheme.com/html/techzen/assets/images/footer/info-3.png" alt="" />
@@ -348,10 +349,13 @@ export default function Home() {
           </div>
         </div>
       </div>
+      <div className="googlemap">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3666281.4917903985!2d72.32935968167409!3d26.185177772147473!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396a3efaf7e30e37%3A0xb52b9b4506c088e5!2sRajasthan!5e0!3m2!1sen!2sin!4v1710248742010!5m2!1sen!2sin" width="100%" height="450" allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
+        <img src="https://cdn-icons-png.flaticon.com/128/684/684908.png" alt="" />
+      </div>
 
-      
 
-      <ScrollToTopButton />
+
       <Whatsapp />
     </>
   );

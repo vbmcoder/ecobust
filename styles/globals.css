@@ -128,12 +128,11 @@ li {
 
 
 
-header {
+nav {
   position: relative;
   width: 100%;
   height: auto;
-  background: url('https://img.freepik.com/free-photo/aesthetic-plant-shadow-product-backdrop_53876-129922.jpg') no-repeat center center/cover;
-  /* background: url('https://imgs.mongabay.com/wp-content/uploads/sites/30/2022/03/02031224/Banner-1200x800.jpg') no-repeat center center/cover; */
+  background: url('/img/headerbg.jpg') no-repeat center center/cover;
   z-index: 9;
 }
 
@@ -197,7 +196,7 @@ header {
   display: flex;
   align-items: flex-end;
   justify-content: flex-end;
-  padding: 1rem 5rem;
+  padding: 3rem 5rem;
   gap: 1.8rem;
 }
 
@@ -1056,10 +1055,10 @@ header {
   border-radius: 50%;
   cursor: pointer;
   z-index: 9;
-  animation: blink 1s infinite;
+  animation: blinkW 1s infinite;
 }
 
-@keyframes blink {
+@keyframes blinkW {
   0% {
     opacity: 0.1;
   }
@@ -1072,6 +1071,7 @@ header {
 .whatsappnoti svg {
   font-size: 30px;
   color: #fff;
+  filter: drop-shadow(0 0 10px #000);
 }
 
 .whatsappnoti:hover {
@@ -1094,8 +1094,11 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin: 3rem 0;
+  margin-bottom: 0;
   padding: 3rem 8rem;
-  background: url('/img/contact-info-bg-3.jpg');
+  background-color: #d5d5d5;
+  background: url('/img/contact-info-bg-3.jpg') no-repeat center center/cover;
 }
 
 .f_c {
@@ -1107,6 +1110,18 @@ header {
 .f_c img {
   width: 60px;
   margin-right: 20px;
+}
+
+.googlemap {
+  position: relative;
+}
+
+.googlemap img {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50px;
 }
 
 /* ======================================================= footer */
@@ -1122,12 +1137,20 @@ header {
   width: 100%;
   display: flex;
   align-items: flex-start;
+  justify-content: space-between;
   position: relative;
-  padding: 6rem 8rem;
+  gap: 10rem;
+}
+
+.footer_info {
+  position: relative;
+  width: 50%;
+  padding: 3rem 0;
 }
 
 .f_logo_info {
-  width: 250px;
+  position: absolute;
+  right: 0;
 }
 
 .f_logo_info img {
@@ -1135,10 +1158,28 @@ header {
   margin-bottom: 2rem;
 }
 
-.f_logo_info p {
-  font-size: 18px;
+.f_logo_info ul {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.5rem;
+}
+
+.f_logo_info ul li {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
   font-family: math;
-  margin-bottom: 2rem;
+}
+
+.f_logo_info h4 {
+  position: relative;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-family: math;
+  font-size: 18px;
+  border-bottom: 1px solid #888;
+  padding-bottom: 10px;
 }
 
 .f_icons {
@@ -1147,7 +1188,8 @@ header {
   justify-content: space-between;
   cursor: pointer;
 }
-.f_icon{
+
+.f_icon {
   width: 45px;
   height: 45px;
   display: flex;
@@ -1157,13 +1199,84 @@ header {
   border-radius: 50%;
   transition: 0.3s ease-in-out;
 }
-.f_icon a svg{
+
+.f_icon a svg {
   font-size: 18px;
 }
-.f_icon:hover{
+
+.f_icon:hover {
   background-color: #76d879;
   color: #fff;
 }
+
+/*  ==============================================================  Footer Form ====*/
+/*  ==============================================================  Footer Form ====*/
+/*  ==============================================================  Footer Form ====*/
+
+
+.contact_form {
+  width: 50%;
+  position: relative;
+  box-shadow: -10px 5px 10px #959595;
+  padding: 3rem 2rem;
+  background-color: #5d9eff37;
+}
+
+.contact_form h2 {
+  font-size: 35px;
+  font-family: math;
+  margin-bottom: 2rem;
+}
+.contact_form h2 span{
+  color: green;
+}
+.contact_f {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.contact_f div {
+  display: flex;
+  align-items: center;
+  width: 350px;
+  height: 50px;
+  padding: 15px;
+  margin-bottom: 2rem;
+  border: 1px solid #999;
+  background-color: #fff;
+  overflow: hidden;
+  border-radius: 15px;
+}
+
+.contact_f div input {
+  width: 100%;
+  border: none;
+  padding: 15px;
+  outline: none;
+  font-size: 18px;
+}
+
+.contact_f textarea {
+  width: 100%;
+  padding: 10px;
+  outline: none;
+  font-size: 18px;
+  border-radius: 15px;
+}
+.contact_f button{
+  padding: 10px;
+  background-color: #1b4e9b;
+  color: #fff;
+  margin-top: 2rem;
+  border-radius: 10px;
+  border: none;
+  box-shadow: 0 3px 8px #333;
+  cursor: pointer;
+}
+
+
 /*  ==============================================================  responsive Navbar ====*/
 /*  ==============================================================  responsive Navbar ====*/
 /*  ==============================================================  responsive Navbar ====*/
@@ -1185,10 +1298,19 @@ header {
 @media screen and (max-width: 500px) {
   .top_headernav {
     height: auto;
-    padding: 0.5rem 2rem;
+    padding: 0.5rem 1.8rem;
     display: flex;
     flex-direction: column;
     gap: 1rem;
+  }
+
+  .lefttopbar {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .righttopbar {
+    display: none;
   }
 
   .main_nav {
@@ -1237,9 +1359,14 @@ header {
     width: 100%;
   }
 
+  .com_left p {
+    height: 250px;
+    overflow: hidden;
+    text-align: justify;
+  }
+
   .com_right {
     width: 100%;
-
   }
 
   .com_right .flex-center {
@@ -1275,11 +1402,48 @@ header {
   }
 
   .whatsappnoti {
-    left: 5%;
+    right: 5%;
+    bottom: 13%;
   }
 
   .fullscreen-image {
     min-width: 90%;
+  }
+
+  .footer_contact {
+    flex-direction: column;
+    gap: 3rem;
+    padding: 3rem 0;
+  }
+
+  .f_c {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    font-family: math;
+  }
+
+  .f_c div {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .footer_sec{
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .f_logo_info{
+    position: relative;
+   
+  }
+  .footer_info{
+    width: 100%;
+    padding: 3rem 2rem;
+  }
+  .contact_form{
+    width: 100%;
+    padding: 3rem 2rem;
   }
 }
 
