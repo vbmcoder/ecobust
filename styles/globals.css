@@ -1908,7 +1908,7 @@ nav {
 
   .whatsappnoti {
     right: 5%;
-    bottom: 13%;
+    bottom: 18%;
   }
 
   .fullscreen-image {
@@ -1922,9 +1922,13 @@ nav {
   }
   .welcometitle p {
     text-align: justify;
+    padding: 0;
   }
-  .comcontainer{
-    z-index: 9;
+  .demoimg {
+    margin-top: -100px;
+  }
+  .form_e p{
+    font-size: 18px;
   }
   .f_c {
     flex-direction: column;
@@ -1959,7 +1963,7 @@ nav {
     padding: 3rem 2rem;
   }
   .scrollToTop{
-    bottom: 7%;
+    bottom: 9%;
   }
   .contact_form {
     width: 100%;
@@ -1985,6 +1989,17 @@ nav {
   .enquiryform{
     padding: 10px;
   }
+  .input-container {
+    width: 100%;
+  }
+  .input-container .input[type="text"],.input-container .input[type="email"]{
+    width: 100%;
+  }
+  .contact_f {
+    padding-bottom: 3rem;
+  }
+
+  
 }
 
 @media screen and (max-width: 440px) {
