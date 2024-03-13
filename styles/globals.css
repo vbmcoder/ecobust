@@ -2015,3 +2015,113 @@ nav {
     padding: 0;
   }
 }
+
+
+
+/* about page responsive */
+
+@media screen and (max-width: 500px){
+  .about_top_cont{
+    flex-direction: column-reverse;
+  }
+  .about_top{
+    background-position: top right !important;
+    background-size: 70% auto !important;
+  }
+  .about_top_cont{
+    padding-bottom: 3rem;
+  }
+  .about_right{
+    width: 90%;
+    height: 300px;
+    margin: auto;
+    padding: 0;
+    overflow: hidden;
+  }
+  .about_right img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .about_left{
+    width: 100%;
+    margin-top: 2rem;
+  }
+  .about_left h1{
+    font-size: 28px;
+  }
+  .about_cont{
+    flex-direction: column;
+  }
+  .abc_img{
+    width: 100%;
+  }
+  .abc_right{
+    width: 100%;
+    margin: 0;
+    margin-top: 3.5rem;
+  }
+  .abc_right h3{
+    padding-bottom: 1rem;
+  }
+  .abc_right h1{
+    font-size: 30px;
+    text-align: justify;
+    margin-top: 1rem;
+  }
+  .whychoose_sec{
+    padding: 3rem 20px;
+    margin: 5rem 0;
+  }
+  .why_cont{
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .left_why{
+    width: 100%;
+    padding: 0;
+  }
+  .left_why h3{
+    font-size: 18px
+  }
+  .left_why h1{
+    font-size: 48px;
+  }
+  .left_why h2{
+    font-size: 22px;
+  }
+  .left_why img{
+    display: none;
+  }
+
+  .right_why{
+    width: 100%;
+    justify-content: center;
+  }
+  .right_card{
+    width: 100%;
+    padding: 2rem;
+  }
+  .company_table{
+    padding: 1rem;
+  }
+  .company_tc{
+    flex-direction: column;
+  }
+  .formTable{
+    width: 100%;
+  }
+  .com_de{
+    width: 100%;
+    margin: 0;
+    margin-top: 3rem;
+  }
+  .com_de h3{
+    font-size: 22px;
+    text-align: justify;
+  }
+  .formTable tbody tr td{
+    font-size: 18px;
+  }
+}
