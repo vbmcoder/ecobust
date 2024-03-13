@@ -70,7 +70,7 @@ export default function Header() {
   }, [router.pathname]);
 
   return <>
-    <nav className={`${styles.main_nav} ${isSticky ? `${styles.sticky}` : ''}`}>
+    <header className={`${styles.main_nav} ${isSticky ? `${styles.sticky}` : ''}`}>
       <div className="logo flex">
         <img src="/img/greenlogo.png" alt="" />
         <ul className="nav_items">
@@ -88,7 +88,7 @@ export default function Header() {
           <FaBarsStaggered onClick={OpenNavbar} />
         </div>
       </div>
-    </nav>
+    </header>
     <aside className={`navright ${openNav ? 'open' : ''}`}>
       <div className="asidetop">
         <div className="flex flex-sb">

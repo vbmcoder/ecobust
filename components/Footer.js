@@ -9,7 +9,6 @@ import { MdTextsms } from "react-icons/md";
 import { FaRegUser } from "react-icons/fa";
 import { LuMailPlus } from "react-icons/lu";
 import { SlCallOut } from "react-icons/sl";
-import { useState, useEffect } from 'react';
 
 export default function Footer() {
 
@@ -48,19 +47,26 @@ export default function Footer() {
                 <div className="contact_form">
                     <h2><span>Quick</span> Enquiry</h2>
                     <form className="contact_f">
-                        <div>
-                            <FaRegUser />
-                            <input type="name" id="name" placeholder='Name' />
+                        <div className="input-container">
+                            <label htmlFor="name" className="name">1. Name:</label>
+                            <input placeholder="Enter your name" type="text" className="input" />
+                            <div className="underline"></div>
                         </div>
-                        <div>
-                            <SlCallOut />
-                            <input type="phone" id="phone" placeholder='Phone' />
+                        <div className="input-container">
+                            <label htmlFor="email" className="name">2. Email:</label>
+                            <input placeholder="Enter Email" type="email" className="input" />
+                            <div className="underline"></div>
                         </div>
-                        <div>
-                            <LuMailPlus />
-                            <input type="email" placeholder='Email' />
+                        <div className="input-container">
+                            <label htmlFor="name" className="name">3. Phone:</label>
+                            <input placeholder="Enter Phone No" defaultValue="+91" type="text" className="input" />
+                            <div className="underline"></div>
                         </div>
-                        <textarea placeholder='Message' name="message" cols="10" rows="5"></textarea>
+                        <div className="cn_in">
+                            <label htmlFor="">4. Your Message:</label>
+                            <textarea placeholder='Your Message' name="message" cols="100" rows="5" required ></textarea>
+                        </div>
+
                         <button>Send mail</button>
                     </form>
                 </div>

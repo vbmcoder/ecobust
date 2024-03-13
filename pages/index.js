@@ -172,7 +172,7 @@ export default function Home() {
           <div className="leftheaderdata">
             <h1>Ecobust Non Explosive</h1>
             <h1>Demolition Powder</h1>
-            <h2>Use customer data to build great and solid product experiences that convert.</h2>
+            <h2>We are one of the leading Manufacturer and Suppliers of Non-explosive demolition agent in India</h2>
             <button className="hbtn">
               <span>Contact Us</span>
               <svg width="15px" height="10px" viewBox="0 0 13 10">
@@ -353,8 +353,6 @@ export default function Home() {
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3666281.4917903985!2d72.32935968167409!3d26.185177772147473!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396a3efaf7e30e37%3A0xb52b9b4506c088e5!2sRajasthan!5e0!3m2!1sen!2sin!4v1710248742010!5m2!1sen!2sin" width="100%" height="450" allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
         <img src="https://cdn-icons-png.flaticon.com/128/684/684908.png" alt="" />
       </div>
-
-
 
       <Whatsapp />
     </>
