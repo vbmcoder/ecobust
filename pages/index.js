@@ -101,7 +101,11 @@ export default function Home() {
             </ul>
           </div>
           <div className="hamburger flex gap-2">
-            <h4>Call Us: <span>+91-9929031735</span></h4>
+            Call Us:
+            <h4 className="flex flex-col">
+              <span>+91-9929031735</span>
+              <span>+91-9929711198</span>
+            </h4>
             <div >
               <FaBarsStaggered onClick={toggleSidebar} />
               <FaBarsStaggered onClick={OpenNavbar} />
@@ -208,7 +212,7 @@ export default function Home() {
         </div>
         <div className="company_data">
           <div className="com_left">
-            <h1>Welcome To <strong>Eco Bust</strong> </h1>
+            <h1>Welcome To <strong>Manveer Group Of Industries</strong> </h1>
             <p>We are one of the leading Manufacturer and Suppliers of Non-explosive demolition agent in India, we are engaged in providing reliable solutions related to concrete structures demolition, rock excavation and boulders demolition, etc. we have successfully promoted our products to worldwide Customers with our specialization in the domain of Chemical Demolition Technology. ECO BUST is used in an almost unlimited range of applications. It's Particularly used for breaking-cutting of stones in quarries or demolishing stones, concrete and reinforced concrete. Endless Benefits of ECOBUST can be listed against explosives and other methods of breaking, cutting or demolishing. Silent Non-ExplosiveDemolition Agent is a non-toxic and cementation powder, which consists of calcined oxides of calcium, silicon and aluminum, Non-explosive demolition agent becomes a highly powered amazing expansive pressure of 11200 T / m2 when mixed with water. Granite,sandstone, marble, limestone, plain concrete, reinforced concrete,boulders, and ledges are fractured within 2 to 12 hours without noise,vibration, or fly rock. Especially, used as environment constraints</p>
             <Link href='/about'>Read More</Link>
           </div>

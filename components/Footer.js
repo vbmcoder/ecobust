@@ -42,6 +42,7 @@ export default function Footer() {
                             </div>
                         </div>
                     </div>
+                    
                 </div>
 
                 <div className="contact_form">

@@ -82,7 +82,11 @@ export default function Header() {
         </ul>
       </div>
       <div className="hamburger flex gap-2">
-        <h4>Call Us: <span>+91-9929031735</span></h4>
+        Call Us:
+        <h4 className="flex flex-col">
+          <span>+91-9929031735</span>
+          <span>+91-9929711198</span>
+        </h4>
         <div>
           <FaBarsStaggered onClick={toggleSidebar} />
           <FaBarsStaggered onClick={OpenNavbar} />

@@ -243,19 +243,22 @@ nav {
   padding: 10px;
   /* filter: drop-shadow(8px 5px 5px #999); */
 }
+.hamburger{
+  font-size: 23px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
 
 .hamburger svg:nth-child(2) {
   display: none;
 }
 
-.hamburger h4 {
-  font-size: 15px;
+.hamburger h4 span{
+  font-size: 14px;
   font-family: math;
-  color: #888;
 }
 
 .hamburger h4 span {
-  color: #333;
+  color: #555;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
@@ -785,7 +788,7 @@ nav {
   font-size: 20px;
   margin-bottom: 3rem;
   line-height: 2rem;
-  
+
   padding: 0 3rem;
 }
 
@@ -1150,17 +1153,19 @@ nav {
 .footer_info {
   position: relative;
   width: 50%;
-  padding: 3rem 0;
+  padding: 3rem 3rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-around;
 }
 
 .f_logo_info {
-  position: absolute;
-  right: 0;
+  position: relative;
 }
 
 .f_logo_info img {
-  width: 120px;
-  margin-bottom: 2rem;
+  width: 150px;
+  margin-bottom: 2.5rem;
 }
 
 .f_logo_info ul {
@@ -1173,24 +1178,27 @@ nav {
 .f_logo_info ul li {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 1.2rem;
+  font-size: 23px;
   font-family: math;
 }
-
+.f_logo_info ul li svg{
+  color: #333;
+}
 .f_logo_info h4 {
   position: relative;
   margin-top: 2rem;
   margin-bottom: 1rem;
   font-family: math;
-  font-size: 18px;
+  font-size: 28px;
   border-bottom: 1px solid #888;
-  padding-bottom: 10px;
+  padding-bottom: 20px;
 }
 
 .f_icons {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-evenly;
   cursor: pointer;
 }
 
@@ -1215,14 +1223,13 @@ nav {
 }
 
 
-
 /*  ==============================================================  Footer Form ====*/
 /*  ==============================================================  Footer Form ====*/
 /*  ==============================================================  Footer Form ====*/
 
 
 .contact_form {
-  width: 50%;
+  width: 60%;
   position: relative;
   box-shadow: -10px 5px 10px #959595;
   padding: 3rem 2rem;
@@ -1267,6 +1274,7 @@ nav {
   background-color: #1b4e9b;
   color: #fff;
   margin-top: 2rem;
+  margin-bottom: 2rem;
   border-radius: 10px;
   font-size: 18px;
   border: none;
@@ -1364,304 +1372,9 @@ nav {
 }
 
 
-/*  ==============================================================  About use Page ====*/
-/*  ==============================================================  About use Page ====*/
-/*  ==============================================================  About use Page ====*/
 
-.about_sec {
-  position: relative;
-  width: 100%;
-  height: auto;
-}
 
-.about_top {
-  position: relative;
-  width: 100%;
-  /* height: 100vh; */
-  display: flex;
-  align-items: center;
-  /* margin-top: 5rem; */
-  background: url('/img/abouttop.jpg') no-repeat right center/cover;
-  background-position: top right !important;
-  background-size: 38% auto !important;
-}
 
-.about_top_cont {
-  max-width: 90%;
-  margin: auto;
-  display: flex;
-  padding: 10rem 0;
-  align-items: center;
-  justify-content: space-evenly;
-}
-
-.about_left {
-  width: 30%;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
-.about_left h1 {
-  position: relative;
-  font-family: math;
-  font-weight: 600;
-  line-height: 1.2em;
-  font-size: 40px;
-}
-
-.about_left h1 span {
-  position: relative;
-  display: inline-block;
-  background: linear-gradient(90deg, #4a8ee2b9 25%, green 55%);
-  background-clip: text;
-  color: transparent;
-}
-
-.about_left h3 {
-  font-size: 20px;
-  font-family: math;
-  margin-top: 2rem;
-  font-weight: 500;
-  color: #444;
-}
-
-.about_cont {
-  width: 90%;
-  margin: auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.abc_right {
-  margin-left: 3rem;
-}
-
-.abc_img {
-  width: 50%;
-  position: relative;
-}
-
-.abc_img img {
-  width: 85%;
-  border-radius: 30px;
-}
-
-.abc_img::before {
-  width: 40% !important;
-  content: ' ' !important;
-  position: absolute !important;
-  background: #68db877a !important;
-  height: 60% !important;
-  bottom: -100px !important;
-  right: 5px !important;
-  z-index: -1 !important;
-  transition: all .3s ease !important;
-  display: block !important;
-  border-radius: 20px !important;
-}
-
-.about_right img {
-  border-radius: 20px;
-}
-
-.line {
-  width: 100px;
-  height: 4px;
-  background-color: #FBC21D;
-}
-
-.about_center {
-  position: relative;
-  margin: 5rem 0;
-}
-
-.abc_right {
-  width: 50%;
-}
-
-.abc_right h1 {
-  font-size: 35px;
-  font-family: math;
-  padding-bottom: 2rem;
-}
-
-.abc_right h3 {
-  font-size: 25px;
-  font-family: math;
-  padding-bottom: 2rem;
-  color: #555;
-}
-
-.abc_right p {
-  font-size: 16px;
-  font-family: math;
-  padding-top: 2rem;
-  color: #555;
-  text-align: justify;
-}
-
-.whychoose_sec {
-  margin: 15rem 0;
-  margin-bottom: 0;
-  background-color: #d9fcd986;
-  padding: 8rem 10px;
-}
-
-.why_cont {
-  width: 70%;
-  margin: auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.left_why {
-  width: 40%;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-between;
-  padding-right: 3rem;
-}
-
-.left_why h1 {
-  margin-bottom: 2rem;
-  font-size: 80px;
-  font-family: math;
-}
-
-.left_why h1 span {
-  background: linear-gradient(250deg, #4a8ee2b9 35%, green 55%);
-  background-clip: text;
-  color: transparent;
-}
-
-.left_why h2 {
-  font-size: 30px;
-  font-family: math;
-  color: #666;
-  margin-bottom: 4rem;
-}
-
-.left_why h3 {
-  margin-bottom: 1rem;
-  font-size: 22px;
-  font-family: math;
-  color: #555;
-}
-
-.right_why {
-  width: 50%;
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 1rem;
-
-}
-
-.right_card {
-  background-color: #fff;
-  width: 320px;
-  padding: 3rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  border-radius: 20px;
-}
-
-.right_card img {
-  width: 40px;
-  margin-bottom: 1rem;
-}
-
-.right_card h2 {
-  font-size: 25px;
-  font-family: math;
-}
-
-.right_card h4 {
-  font-size: 20px;
-  font-family: math;
-  line-height: 2rem;
-  font-weight: 500;
-}
-
-.company_tc {
-  display: flex;
-  align-items: flex-start;
-}
-
-.company_table {
-  position: relative;
-  width: 100%;
-  padding: 3rem 5rem;
-}
-
-.company_table h1 {
-  font-size: 35px;
-  font-family: math;
-  margin-bottom: 3rem;
-}
-
-.formTable {
-  width: 50%;
-  backdrop-filter: blur(10px);
-  /* background-color: #ffffffb5; */
-}
-
-.formTable tbody tr td {
-  padding: 15px;
-  font-family: math;
-  font-size: 25px;
-}
-
-.formTable tbody tr td:nth-child(1) {
-  /* background-color: #99999983; */
-  border-right: 1px solid #000;
-  background-color: #99999922;
-  font-weight: 600;
-}
-
-.formTable tbody tr td:nth-child(2) {
-  color: #000;
-  font-weight: 500;
-}
-
-.com_de {
-  position: relative;
-  width: 50%;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 1rem;
-}
-
-.com_de h4 {
-  font-size: 22px;
-  font-family: math;
-  color: #666;
-  margin-top: 1rem;
-}
-
-.com_de h3 {
-  font-size: 28px;
-  font-family: math;
-  color: #333;
-}
-
-.com_de ul {
-  padding-left: 3rem;
-}
-
-.com_de ul li {
-  list-style: outside;
-  padding: 0.3rem 0;
-  font-family: math;
-}
 
 .emailsubmitsec {
   width: 100%;
@@ -1807,7 +1520,12 @@ nav {
   .main_nav.sticky {
     padding: 0 1rem;
   }
-
+  .hamburger{
+    font-size: 18px;
+  }
+  .hamburger h4 span{
+    font-size: 12px;
+  }
   .center_headernav {
     display: none;
   }
@@ -1920,16 +1638,20 @@ nav {
     gap: 3rem;
     padding: 3rem 0;
   }
+
   .welcometitle p {
     text-align: justify;
     padding: 0;
   }
+
   .demoimg {
     margin-top: -100px;
   }
-  .form_e p{
+
+  .form_e p {
     font-size: 18px;
   }
+
   .f_c {
     flex-direction: column;
     align-items: center;
@@ -1962,44 +1684,55 @@ nav {
     width: 100%;
     padding: 3rem 2rem;
   }
-  .scrollToTop{
+
+  .scrollToTop {
     bottom: 9%;
   }
+
   .contact_form {
     width: 100%;
     padding: 3rem 2rem;
   }
-  .emailclickbtn{
+
+  .emailclickbtn {
     width: 100%;
     justify-content: center;
     bottom: 0;
     border-radius: 0;
   }
-  .form_e{
+
+  .form_e {
     width: 375px;
   }
-  .form_e input{
+
+  .form_e input {
     width: 100%;
     padding: 10px;
   }
-  .form_e textarea{
+
+  .form_e textarea {
     width: 100%;
     padding: 10px;
   }
-  .enquiryform{
+
+  .enquiryform {
     padding: 10px;
   }
+
   .input-container {
     width: 100%;
   }
-  .input-container .input[type="text"],.input-container .input[type="email"]{
+
+  .input-container .input[type="text"],
+  .input-container .input[type="email"] {
     width: 100%;
   }
+
   .contact_f {
     padding-bottom: 3rem;
   }
 
-  
+
 }
 
 @media screen and (max-width: 440px) {
@@ -2018,110 +1751,3 @@ nav {
 
 
 
-/* about page responsive */
-
-@media screen and (max-width: 500px){
-  .about_top_cont{
-    flex-direction: column-reverse;
-  }
-  .about_top{
-    background-position: top right !important;
-    background-size: 70% auto !important;
-  }
-  .about_top_cont{
-    padding-bottom: 3rem;
-  }
-  .about_right{
-    width: 90%;
-    height: 300px;
-    margin: auto;
-    padding: 0;
-    overflow: hidden;
-  }
-  .about_right img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  .about_left{
-    width: 100%;
-    margin-top: 2rem;
-  }
-  .about_left h1{
-    font-size: 28px;
-  }
-  .about_cont{
-    flex-direction: column;
-  }
-  .abc_img{
-    width: 100%;
-  }
-  .abc_right{
-    width: 100%;
-    margin: 0;
-    margin-top: 3.5rem;
-  }
-  .abc_right h3{
-    padding-bottom: 1rem;
-  }
-  .abc_right h1{
-    font-size: 30px;
-    text-align: justify;
-    margin-top: 1rem;
-  }
-  .whychoose_sec{
-    padding: 3rem 20px;
-    margin: 5rem 0;
-  }
-  .why_cont{
-    flex-direction: column;
-    width: 100%;
-  }
-
-  .left_why{
-    width: 100%;
-    padding: 0;
-  }
-  .left_why h3{
-    font-size: 18px
-  }
-  .left_why h1{
-    font-size: 48px;
-  }
-  .left_why h2{
-    font-size: 22px;
-  }
-  .left_why img{
-    display: none;
-  }
-
-  .right_why{
-    width: 100%;
-    justify-content: center;
-  }
-  .right_card{
-    width: 100%;
-    padding: 2rem;
-  }
-  .company_table{
-    padding: 1rem;
-  }
-  .company_tc{
-    flex-direction: column;
-  }
-  .formTable{
-    width: 100%;
-  }
-  .com_de{
-    width: 100%;
-    margin: 0;
-    margin-top: 3rem;
-  }
-  .com_de h3{
-    font-size: 22px;
-    text-align: justify;
-  }
-  .formTable tbody tr td{
-    font-size: 18px;
-  }
-}

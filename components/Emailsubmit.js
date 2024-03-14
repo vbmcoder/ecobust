@@ -34,7 +34,7 @@ export default function Emailsubmit() {
         event.preventDefault();
         setSubmitting(true);
         try {
-            const response = await axios.post('/api/sendEmail', formData);
+            const response = await axios.post('/api/emailsend', formData);
             setMessage(response.data.message);
             setFormData({
                 name: '',
