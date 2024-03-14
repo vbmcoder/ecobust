@@ -113,7 +113,7 @@
 }
 
 body {
-  overflow-x: hidden;
+  overflow-x: hidden !important;
   background-color: #f3f5fe94;
 }
 
@@ -1179,7 +1179,7 @@ nav {
   display: flex;
   align-items: center;
   gap: 1.2rem;
-  font-size: 23px;
+  font-size: 20px;
   font-family: math;
 }
 .f_logo_info ul li svg{
@@ -1268,6 +1268,7 @@ nav {
 .cn_in label {
   font-family: math;
 }
+
 
 .contact_f button {
   padding: 15px 25px;

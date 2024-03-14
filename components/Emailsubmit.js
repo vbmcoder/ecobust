@@ -7,10 +7,11 @@ export default function Emailsubmit() {
     const [formData, setFormData] = useState({
         name: '',
         email: '',
-        phone: '+91', // Assuming this is the default value
-        country: 'India', // Assuming this is the default value
+        phone: '', // Assuming this is the default value
+        country: '', // Assuming this is the default value
         message: ''
     });
+    
     const [submitting, setSubmitting] = useState(false);
     const [message, setMessage] = useState('');
 

@@ -1,3 +1,4 @@
+import ContactForm from "@/components/ContactForm";
 import Emailsubmit from "@/components/Emailsubmit";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
@@ -15,6 +16,7 @@ export default function App({ Component, pageProps }) {
       <Component {...pageProps} />;
     </main>
     <Emailsubmit/>
+    {/* <ContactForm/> */}
     <Footer/>
     <ScrollToTopButton />
   </>

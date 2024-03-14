@@ -4,32 +4,33 @@ import nodemailer from 'nodemailer';
 
 export default async function handler(req, res) {
   if (req.method === 'POST') {
+    const { name, email, subject, message } = req.body;
+
+    // Create a Nodemailer transporter
+    const transporter = nodemailer.createTransport({
+      // Configure your email service provider here
+      service: 'Gmail',
+      auth: {
+        user: `${process.env.mail}`,
+        pass: `${process.env.pass}`,
+      },
+    });
+
     try {
-      const { name, email, phone, country, message } = req.body;
-
-      // Create a nodemailer transporter
-      const transporter = nodemailer.createTransport({
-        // Configure your email service provider here
-        // Example for Gmail:
-        service: 'Gmail',
-        auth: {
-          user: 'cp566997@gmail.com',
-          pass: 'redminote8pro'
-        }
+      // Send the email
+      const info = await transporter.sendMail({
+        from: 'cp566997@gmail.com',
+        to: email,
+        subject: subject,
+        text: `Name: ${name}\nEmail: ${email}\n\n${message}`,
       });
 
-      // Send mail with defined transport object
-      await transporter.sendMail({
-        from: 'Your Name <your-email@gmail.com>',
-        to: 'vaibhav111abc@gmail.com', // Change this to the recipient's email
-        subject: 'New Enquiry',
-        text: `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nCountry: ${country}\nMessage: ${message}`
-      });
+      console.log('Message sent: %s', info.messageId);
 
-      res.status(200).json({ success: true, message: 'Email sent successfully!' });
+      res.status(200).json({ success: true });
     } catch (error) {
-      console.error('Error sending email:', error);
-      res.status(500).json({ success: false, message: 'Failed to send email.' });
+      console.error('Error occurred while sending email:', error.message);
+      res.status(500).json({ success: false, error: error.message });
     }
   } else {
     res.setHeader('Allow', ['POST']);
