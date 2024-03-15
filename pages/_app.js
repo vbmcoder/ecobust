@@ -1,4 +1,4 @@
-import ContactForm from "@/components/ContactForm";
+import Animation from "@/components/Animation";
 import Emailsubmit from "@/components/Emailsubmit";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
@@ -11,13 +11,16 @@ export default function App({ Component, pageProps }) {
   // Check if the current page is index page
   const hideHeader = router.pathname === '/';
   return <>
+
     {!hideHeader && <Header />}
     <main>
-      <Component {...pageProps} />;
+      <Animation>
+        <Component {...pageProps} />
+      </Animation>
     </main>
-    <Emailsubmit/>
     {/* <ContactForm/> */}
-    <Footer/>
+    <Emailsubmit />
+    <Footer />
     <ScrollToTopButton />
   </>
 

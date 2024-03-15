@@ -80,9 +80,9 @@ export default function Product() {
     return <>
         <div className={styles.container}>
             <div className={styles.titleofproduct}>
-                <h1>Ecobust Non Explosive Demolition Powder</h1>
+                <h1 data-aos="fade-right">Ecobust Non Explosive Demolition Powder</h1>
             </div>
-            <p className={styles.breadcrumb}>
+            <p className={styles.breadcrumb} data-aos="fade-left">
                 <Link href="https://www.ecobust.in/" title="Home">Home</Link>
                 <b>›</b>
                 <Link href="/product" title="Products">Products</Link>
@@ -90,8 +90,8 @@ export default function Product() {
             </p>
             <div className={styles.productsection}>
                 <div className={styles.leftproimg}>
-                    <img className={styles.mainimage} src={mainImage} alt="" />
-                    <div className={styles.proimglist}>
+                    <img data-aos="fade-right" className={styles.mainimage} src={mainImage} alt="" />
+                    <div className={styles.proimglist} data-aos="fade-up">
                         <Swiper
                             slidesPerView={3}
                             spaceBetween={30}
@@ -120,10 +120,10 @@ export default function Product() {
                         </Swiper>
                     </div>
                 </div>
-                <div className={styles.rightproinfo}>
+                <div className={styles.rightproinfo} data-aos="fade-left">
                     <div className={styles.r_protitles}>
                         <h1>Ecobust Non Explosive Demolition Powder</h1>
-                        <p>Price: <strong>$14.00 - $20.00 / Kilogram</strong> <button onClick={toggleFormVisibility}>Get Best Price</button></p>
+                        <p>Price: <strong>₹1160.00 - ₹1660.00 / Kilogram</strong> <button onClick={toggleFormVisibility}>Get Best Price</button></p>
                         <p>MOQ: <strong>8 Ton</strong></p>
                     </div>
                     <table>
@@ -167,9 +167,9 @@ export default function Product() {
         </div>
         <div className={styles.container} >
             <div className={styles.prodetailssec} >
-                <h2>Product Details</h2>
+                <h2 data-aos="fade-right">Product Details</h2>
                 <table>
-                    <tbody>
+                    <tbody data-aos="fade-left">
                         <tr>
                             <td>Pack Size</td>
                             <td>20kg</td>
@@ -188,16 +188,16 @@ export default function Product() {
                         </tr>
                     </tbody>
                 </table>
-                <p>We are one of the leading manufacturer and suppliers of non-explosive demolition agent in india, we are engaged in providing reliable solutions related to concrete structures demolition, rock excavation and boulders demolition, etc. we have successfully promoted our products to world wide customers with our specialization in the domain of chemical demolition technology.</p>
-                <h5>EcoBust</h5>
+                <p data-aos="fade-up">We are one of the leading manufacturer and suppliers of non-explosive demolition agent in india, we are engaged in providing reliable solutions related to concrete structures demolition, rock excavation and boulders demolition, etc. we have successfully promoted our products to world wide customers with our specialization in the domain of chemical demolition technology.</p>
+                <h5 data-aos="fade-right">EcoBust</h5>
                 <ul>
-                    <li>Easy to use, reduces costs & saves time</li>
-                    <li>Environmentally safe</li>
-                    <li>Requires no special licenses or permits</li>
-                    <li>No dust, no noise, no vibrations</li>
-                    <li>No flying rocks, no toxic vapors</li>
+                    <li data-aos="fade-up">Easy to use, reduces costs & saves time</li>
+                    <li data-aos="fade-up">Environmentally safe</li>
+                    <li data-aos="fade-up">Requires no special licenses or permits</li>
+                    <li data-aos="fade-up">No dust, no noise, no vibrations</li>
+                    <li data-aos="fade-up">No flying rocks, no toxic vapors</li>
                 </ul>
-                <div><button onClick={toggleFormVisibility} >Yes! I am interested</button></div>
+                <div data-aos="fade-up"><button onClick={toggleFormVisibility} >Yes! I am interested</button></div>
                 {isFormVisible && <div className="enquiryform">
                     <form className="form_e" onSubmit={handleSubmit}>
                         <div className="flex flex-sb">
@@ -219,8 +219,8 @@ export default function Product() {
         </div>
         <div className={styles.container} >
             <div className={styles.productimges}>
-                <h2>Product Images</h2>
-                <div className={styles.product_imges}>
+                <h2 data-aos="fade-right">Product Images</h2>
+                <div className={styles.product_imges} data-aos="fade-left">
                     <Swiper
                         slidesPerView={3}
                         spaceBetween={30}

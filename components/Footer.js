@@ -6,28 +6,33 @@ import { IoLocationSharp } from "react-icons/io5";
 import { FaPhoneVolume } from "react-icons/fa6";
 import { IoMailOpen } from "react-icons/io5";
 import { MdTextsms } from "react-icons/md";
-import { FaRegUser } from "react-icons/fa";
-import { LuMailPlus } from "react-icons/lu";
-import { SlCallOut } from "react-icons/sl";
+import { useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 export default function Footer() {
-
-
+    useEffect(() => {
+        AOS.init({
+          duration: 800,
+          easing: 'ease',
+          once: true
+        });
+      }, []);
 
     return <>
         <footer className="footer">
             <div className="footer_sec">
                 <div className='footer_info'>
                     <div className="f_logo_info">
-                        <img src="/img/blacklogo.png" alt="img" />
-                        <ul>
+                        <img data-aos="fade-right" src="/img/blacklogo.png" alt="img" />
+                        <ul data-aos="fade-up">
                             <li><IoLocationSharp />Jodhpur, Rajasthan</li>
                             <li><FaPhoneVolume />(+91)-9929031735, (+91)-9929711198</li>
                             <li><IoMailOpen />info@ecobust.in</li>
                             <li><MdTextsms />GST NO. : 08DLJPK8771H1ZI</li>
                         </ul>
                         <h4>Follow Us:</h4>
-                        <div className="f_icons">
+                        <div className="f_icons" data-aos="fade-left" >
                             <div className="f_icon">
                                 <Link href='/'><FaFacebookF /></Link>
                             </div>
@@ -42,10 +47,10 @@ export default function Footer() {
                             </div>
                         </div>
                     </div>
-                    
+
                 </div>
 
-                <div className="contact_form">
+                <div className="contact_form" data-aos="fade-left">
                     <h2><span>Quick</span> Enquiry</h2>
                     <form className="contact_f">
                         <div className="input-container">
@@ -71,6 +76,18 @@ export default function Footer() {
                         <button>Send mail</button>
                     </form>
                 </div>
+            </div>
+            <div className="copyright_sec flex flex-sb">
+                <div className="left_copy flex flex-col">
+                    <p>All Rights Reserved. Manveer Group of Industries (Terms of Use)</p>
+                    <p>Developed & Managed By <Link href={'/'}>Ecobust.In</Link> Pvt. Ltd.</p>
+                </div>
+                <div className="right_copy flex gap-1">
+                    <img src="/img/siteseal.gif" alt="img" />
+                    <img src="/img/v-trust.png" alt="img" />
+                    <img src="/img/exportersindia.png" alt="img" />
+                </div>
+
             </div>
         </footer>
 

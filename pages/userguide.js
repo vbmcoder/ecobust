@@ -1,5 +1,78 @@
-export default function Userguide(){
+import styles from "../styles/Userguide.module.css"
+
+export default function Userguide() {
     return <>
-        <h1>This is UserGuide Page</h1>
+        <div className={styles.userguidesec}>
+            <div className={styles.steptitle}>
+                <h1 data-aos="fade-left">STEPS TO USE ECOBUST</h1>
+                <div class={styles.top_bg}>
+                    <svg viewBox="0 0 100 6" xmlns="http://www.w3.org/2000/svg">
+                        <path class="g_fill_1" d="M100,7C66.7,7,33.4,7,0,7c0-2.5,0-4.5,0-7h100C100,2.5,100,4.5,100,7z" fill="#eeeeee"></path>
+                        <linearGradient id="fill_1">
+                            <stop class="g_fill_2" offset="0" stop-color="currentcolor"></stop>
+                            <stop class="g_fill_3" offset="1" stop-color="currentcolor"></stop>
+                        </linearGradient>
+                        <path d="M0-1c0,1,0,3,0,4c20,3.3,38.3,3.3,55,0s31.7-3.7,45-1c0-0.7,0-2.3,0-3C66.7-1,33.3-1,0-1z" fill="#0080003b"></path>
+                        <clipPath id="clip_1">
+                            <path d="M0,0c0,1,0,2,0,3c20,3.3,38.3,3.3,55,0s31.7-3.7,45-1c0-0.7,0-1.3,0-2C66.7,0,33.3,0,0,0z"></path>
+                        </clipPath>
+                        <path clip-path="#fff" d="M0,6c20-8,40-8,60,0C40,6,20,6,0,6z" fill="#eeeeee" opacity=".5"></path>
+                    </svg>
+                </div>
+            </div>
+            <div className={styles.sefety_sec} data-aos="fade-right">
+                <img src="/img/warning.png" alt="IMG" />
+                <h2 data-aos="fade-left">!! SEFETY GOGGLES AND RUBBER HAND GLOVES MUST BE WORN DURING OPPERATION !!</h2>
+            </div>
+            <div className={styles.drill_sec}>
+                <h3 data-aos="fade-right" data-aos-easing="linear"  data-aos-duration="1500">1. First, drill a hole in the stone whare you want to split the stone.</h3>
+                <img data-aos="fade-up-left" src="/img/drill.png" alt="img" />
+            </div>
+            <div className={styles.mix_sec}>
+                <img data-aos="fade-down-right" src="/img/mix.png" alt="img" />
+                <h3 data-aos="fade-left">2. Second, pour some of the <strong>ECOBUST</strong> into the bucket with water, the proportion of water and supplies is 1:3, and then stir it into a paste.</h3>
+            </div>
+            <div className={styles.pour_sec}>
+                <h3 data-aos="fade-right">3. Third, slowly pour it in to the drill hole and fill it with the lid uncovered.</h3>
+                <img data-aos="fade-down-left" src="/img/pour.png" alt="img" />
+            </div>
+            <div className={styles.crack_sec}>
+                <img data-aos="fade-down-right" src="/img/crack.png" alt="img" />
+                <h3 data-aos="fade-left">4. Fourth, about two to eight hours later, the stone gets crack/split. You can choose the  <strong>ECO BUST</strong> based on temperature of rock and time lapse for chemical reaction that you required.</h3>
+            </div>
+            <div className={styles.main_descrip}>
+                <img data-aos="fade-right" src="/img/important.png" alt="" />
+                <h2 data-aos="fade-up" data-aos-anchor-placement="bottom-bottom"><strong>Important Notice:</strong> The process in short- drilling mixing/stirring-pouring-blasting the maximum expansion fouce can be reached within 10 minutes. The reacting time can be also modified between 2 hours to 8 hours.</h2>
+            </div>
+        </div>
+
+        <div className={styles.typeofeco} >
+            <table data-aos="fade-right"  data-aos-easing="linear"  data-aos-duration="1500">
+                <thead>
+                    <tr>
+                        <td>Type</td>
+                        <td>Usable temperature</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Eco bust 1st</td>
+                        <td>5°C - 15°C</td>
+                    </tr>
+                    <tr>
+                        <td>Eco bust 2nd</td>
+                        <td>15°C - 25°C</td>
+                    </tr>
+                    <tr>
+                        <td>Eco bust 3rd</td>
+                        <td>25°C - 40°C and above</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div className="flex" data-aos="fade-left" data-aos-easing="linear"  data-aos-duration="1500">
+                <img src="/img/arrowuserleft.png" alt="" />
+                <h3>Type Of ECOBUST</h3>
+            </div>
+        </div>
     </>
 }

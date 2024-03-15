@@ -117,6 +117,11 @@ body {
   background-color: #f3f5fe94;
 }
 
+html,
+main {
+  overflow-x: hidden !important;
+}
+
 a {
   text-decoration: none;
   color: inherit;
@@ -243,7 +248,8 @@ nav {
   padding: 10px;
   /* filter: drop-shadow(8px 5px 5px #999); */
 }
-.hamburger{
+
+.hamburger {
   font-size: 23px;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
@@ -252,7 +258,7 @@ nav {
   display: none;
 }
 
-.hamburger h4 span{
+.hamburger h4 span {
   font-size: 14px;
   font-family: math;
 }
@@ -530,7 +536,6 @@ nav {
   font-family: "Nunito Sans", sans-serif;
   text-transform: capitalize;
   color: #444762;
-  animation: fadeup 2s ease-out;
 }
 
 .leftheaderdata h1:nth-child(2) {
@@ -538,7 +543,6 @@ nav {
   background-clip: text;
   color: transparent;
   display: inline-block;
-  animation: fadeup 3.2s ease-out;
 }
 
 .leftheaderdata h2 {
@@ -561,18 +565,9 @@ nav {
   border: none;
   background: none;
   cursor: pointer;
-  animation: fadeup 4s ease-out;
 }
 
-@keyframes fadeup {
-  0% {
-    transform: translateY(70px);
-  }
 
-  100% {
-    transform: translateY(0);
-  }
-}
 
 .hbtn:before {
   content: "";
@@ -1102,7 +1097,6 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 3rem 0;
   margin-bottom: 0;
   padding: 3rem 8rem;
   background-color: #d5d5d5;
@@ -1182,9 +1176,11 @@ nav {
   font-size: 20px;
   font-family: math;
 }
-.f_logo_info ul li svg{
+
+.f_logo_info ul li svg {
   color: #333;
 }
+
 .f_logo_info h4 {
   position: relative;
   margin-top: 2rem;
@@ -1222,6 +1218,17 @@ nav {
   color: #fff;
 }
 
+.copyright_sec {
+  padding: 1rem 5rem;
+  font-family: math;
+  background-color: #99999971;
+  flex-wrap: wrap;
+}
+
+.left_copy p a {
+  color: #1b4e9b;
+  font-weight: 600;
+}
 
 /*  ==============================================================  Footer Form ====*/
 /*  ==============================================================  Footer Form ====*/
@@ -1521,12 +1528,15 @@ nav {
   .main_nav.sticky {
     padding: 0 1rem;
   }
-  .hamburger{
+
+  .hamburger {
     font-size: 18px;
   }
-  .hamburger h4 span{
+
+  .hamburger h4 span {
     font-size: 12px;
   }
+
   .center_headernav {
     display: none;
   }
@@ -1677,6 +1687,19 @@ nav {
 
   }
 
+  .f_logo_info img {
+    width: 90px;
+  }
+
+  .f_logo_info ul li {
+    font-size: 14px;
+    flex-wrap: wrap;
+  }
+
+  .f_logo_info h4 {
+    font-size: 20px;
+  }
+
   .f_icons {
     justify-content: space-evenly;
   }
@@ -1713,6 +1736,7 @@ nav {
 
   .form_e textarea {
     width: 100%;
+    height: 175px;
     padding: 10px;
   }
 
@@ -1733,7 +1757,20 @@ nav {
     padding-bottom: 3rem;
   }
 
+  .copyright_sec {
+    height: auto;
+    gap: 2rem;
+    padding: 1.5rem 2rem;
+  }
 
+  .left_copy {
+    align-items: center;
+    text-align: center;
+  }
+
+  .right_copy {
+    margin-bottom: 2rem;
+  }
 }
 
 @media screen and (max-width: 440px) {
@@ -1748,7 +1785,100 @@ nav {
   .main_nav {
     padding: 0;
   }
+
+  .copyright_sec {
+    justify-content: center;
+    height: 310px;
+  }
+
+  .right_copy {
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
 }
 
 
 
+
+
+
+
+
+
+/* flipbook slider */
+.flipbooksec {
+  width: 100%;
+  height: 100vh;
+  padding: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  background-color: #b4caaa;
+}
+
+.flipbook {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  height: 100%;
+}
+
+.flipbook .swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: 500px;
+  height: 700px;
+}
+
+.flipbook .swiper-slide img {
+  /* display: block; */
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 0 10px #000;
+}
+
+@media screen and (max-width: 1336px) {
+  .flipbook{
+    width: 65%;
+  }
+}
+@media screen and (max-width: 1053px) {
+  .flipbook{
+    width: 75%;
+  }
+}
+@media screen and (max-width: 975px) {
+  .flipbook{
+    width: 85%;
+  }
+}
+@media screen and (max-width: 810px) {
+  .flipbook{
+    width: 90%;
+  }
+}
+@media screen and (max-width: 730px) {
+  .flipbook{
+    width: 100%;
+    height: auto;
+  }
+}
+@media screen and (max-width: 675px) {
+  .flipbook .swiper-slide {
+    width: 425px;
+    height: 600px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .flipbooksec{
+    padding: 2rem 2rem;
+    height: 80vh;
+  }
+  .flipbook .swiper-slide {
+    width: 325px;
+    height: 500px;
+  }
+}

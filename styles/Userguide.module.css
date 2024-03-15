@@ -1,0 +1,318 @@
+.userguidesec {
+    position: relative;
+    background-color: #eeeeee;
+}
+
+.steptitle {
+    width: 100%;
+    position: relative;
+    background-color: #0080003b;
+    height: 38vh;
+}
+
+.top_bg {
+    width: 100%;
+    position: absolute;
+    bottom: -20px;
+}
+
+.steptitle h1 {
+    position: relative;
+    font-size: 70px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    padding: 5rem 5rem;
+    background-image: linear-gradient(43deg, #0629da 0%, #5088c8 46%, #3e9825 100%);
+    background-clip: text;
+    color: transparent;
+    text-align: right;
+}
+
+
+.sefety_sec {
+    position: relative;
+    width: 40%;
+    display: flex;
+    align-items: center;
+    margin: 3rem 5rem;
+    border: 2px solid #000;
+    padding: 2rem;
+    overflow: hidden;
+    gap: 1rem;
+    background-color: #eeeeee;
+    box-shadow: -0.5rem 0.5rem 0 0 #333;
+}
+
+.sefety_sec img {
+    width: 220px;
+}
+
+.sefety_sec h2 {
+    font-weight: 600;
+    font-size: 35px;
+    font-family: monospace;
+}
+
+.drill_sec {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 1rem;
+    border-bottom: 5px solid #999999a4;
+    padding: 2rem 5rem;
+}
+
+.drill_sec h3 {
+    color: #333;
+    width: 20%;
+    font-size: 28px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.drill_sec img {
+    width: 40%;
+    border-radius: 20px;
+    object-fit: cover;
+    box-shadow: 0.5rem 0.5rem 0 0 #000000;
+}
+
+.mix_sec {
+    display: flex;
+    align-items: center;
+    padding: 2rem 5rem;
+    font-size: 28px;
+    gap: 1rem;
+    margin-top: 4rem;
+    border-bottom: 5px solid #999999a4;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.mix_sec img {
+    width: 40%;
+    border-radius: 20px;
+    object-fit: cover;
+    box-shadow: -0.5rem 0.5rem 0 0 #000000;
+}
+
+.mix_sec h3 {
+    color: #333;
+    width: 50%;
+}
+
+.mix_sec strong {
+    color: green;
+}
+
+.pour_sec {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 2rem 5rem;
+    font-size: 28px;
+    gap: 1rem;
+    border-bottom: 5px solid #999999a4;
+    margin-top: 4rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.pour_sec img {
+    width: 40%;
+    border-radius: 20px;
+    object-fit: cover;
+    box-shadow: 0.5rem 0.5rem 0 0 #000;
+}
+
+.pour_sec h3 {
+    color: #333;
+    width: 30%;
+}
+
+.crack_sec {
+    display: flex;
+    align-items: center;
+    padding: 2rem 5rem;
+    font-size: 28px;
+    gap: 1.5rem;
+    border-bottom: 5px solid #999999a4;
+    margin-top: 4rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.crack_sec h3 {
+    color: #333;
+    width: 50%;
+}
+
+.crack_sec img {
+    width: 40%;
+    border-radius: 20px;
+    object-fit: cover;
+    box-shadow: -0.5rem 0.5rem 0 0 #000;
+}
+
+.crack_sec strong {
+    color: green;
+}
+
+.main_descrip {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    justify-content: flex-end;
+    margin: 5rem;
+    padding-bottom: 3rem;
+}
+
+.main_descrip h2 {
+    width: 50%;
+    font-size: 30px;
+    font-family: math;
+    line-height: 3rem;
+    color: #444;
+}
+
+.main_descrip h2 strong {
+    font-size: 35px;
+    color: brown;
+    font-weight: 600;
+}
+
+.typeofeco {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 8rem;
+    margin: 3rem 5rem;
+}
+
+.typeofeco table {
+    font-family: math;
+    border: 1px solid #999;
+}
+
+.typeofeco table td {
+    padding: 10px;
+    border: 1px solid #999;
+    font-size: 35px;
+}
+
+.typeofeco table thead td {
+    font-size: 40px;
+    font-weight: 600;
+}
+
+.typeofeco h3 {
+    position: relative;
+    font-size: 50px;
+    font-family: monospace;
+    background-color: #99999950;
+    padding: 30px;
+    border-radius: 20px;
+}
+
+
+
+@media screen and (max-width: 500px) {
+    .steptitle {
+        height: auto;
+    }
+
+    .steptitle h1 {
+        font-size: 30px;
+    }
+
+    .sefety_sec {
+        margin: 2rem auto;
+        width: 90%;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .sefety_sec img {
+        width: 150px;
+    }
+
+    .sefety_sec h2 {
+        font-size: 25px;
+    }
+
+    .drill_sec {
+        padding: 2rem;
+        width: 100%;
+        flex-direction: column-reverse;
+    }
+
+    .drill_sec img,
+    .crack_sec img,
+    .pour_sec img,
+    .mix_sec img {
+        width: 100%;
+    }
+
+    .drill_sec h3,
+    .crack_sec h3,
+    .pour_sec h3,
+    .mix_sec h3 {
+        width: 100%;
+        margin-top: 1rem;
+        font-size: 25px;
+    }
+
+    .mix_sec {
+        padding: 2rem;
+        width: 100%;
+        flex-direction: column;
+    }
+    .main_descrip h2 {
+        font-size: 20px;
+        line-height: 2rem;
+    }
+    .pour_sec {
+        padding: 2rem;
+        width: 100%;
+        flex-direction: column-reverse;
+    }
+
+    .crack_sec {
+        padding: 2rem;
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .main_descrip {
+        padding: 2rem;
+        width: 100%;
+        flex-direction: column;
+        margin: 0;
+    }
+
+    .main_descrip h2 {
+        width: 100%;
+        text-align: justify;
+    }
+
+    .typeofeco {
+        flex-direction: column-reverse;
+        margin: 3rem 2rem;
+        gap: 2rem;
+    }
+
+    .typeofeco h3 {
+        font-size: 25px;
+        padding: 10px;
+    }
+    .typeofeco img {
+        width: 70px;
+        transform: rotate(270deg);
+    }
+    .typeofeco table{
+        width: 100%;
+    }
+    .typeofeco table thead td{
+        font-size: 18px;
+    }
+    .typeofeco table tbody td{
+        font-size: 15px;
+    }
+}

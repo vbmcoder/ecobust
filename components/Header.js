@@ -26,6 +26,7 @@ export default function Header() {
   const handleLinkClick = (link) => {
     setActiveLink(link);
     setClicked(false);
+    setOpenNav(false);
   };
 
   const toggleSidebar = () => {
