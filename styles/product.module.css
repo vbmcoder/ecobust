@@ -57,6 +57,7 @@
 
 .proimglist img {
     width: 120px;
+    height: 130px;
     background-color: #9999991d;
     border: 1px solid #999;
     cursor: pointer;
@@ -299,9 +300,14 @@
     padding-bottom: 0.5rem;
     display: inline-block;
 }
-
+.mySwiper {
+    display: flex;
+    align-items: center;
+}
 .mySwiper img {
     width: 100%;
+    height: 100%;
+    object-fit: cover;
     user-select: none;
 }
 

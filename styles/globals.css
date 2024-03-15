@@ -6,11 +6,11 @@
   box-sizing: border-box;
 }
 
-::-webkit-scrollbar {
+body::-webkit-scrollbar {
   width: 8px;
 }
 
-::-webkit-scrollbar-thumb {
+body::-webkit-scrollbar-thumb {
   background-color: #56ae59;
   border-radius: 10px;
 }
@@ -117,8 +117,7 @@ body {
   background-color: #f3f5fe94;
 }
 
-html,
-main {
+html {
   overflow-x: hidden !important;
 }
 
@@ -1881,4 +1880,12 @@ nav {
     width: 325px;
     height: 500px;
   }
+}
+
+
+/* mySwiper */
+
+.mySwiper .swiper-wrapper{
+  display: flex;
+  align-items: center;
 }

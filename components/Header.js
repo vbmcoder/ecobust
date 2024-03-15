@@ -73,7 +73,7 @@ export default function Header() {
   return <>
     <header className={`${styles.main_nav} ${isSticky ? `${styles.sticky}` : ''}`}>
       <div className="logo flex">
-        <img src="/img/greenlogo.png" alt="" />
+        <Link href='/'><img src="/img/greenlogo.png" alt="" /></Link>
         <ul className="nav_items">
           <li><Link href="/">HOME</Link></li>
           <li><Link href="/about" className={activeLink === '/about' ? 'active' : ''} onClick={() => handleLinkClick('/about')}>ABOUT US</Link></li>
@@ -97,7 +97,7 @@ export default function Header() {
     <aside className={`navright ${openNav ? 'open' : ''}`}>
       <div className="asidetop">
         <div className="flex flex-sb">
-          <img src="/img/greenlogo.png" alt="" />
+          <Link href='/'><img src="/img/greenlogo.png" alt="" /></Link>
           <button onClick={closeNavbar} className="fa_xmark"><HiMiniXMark /></button>
         </div>
       </div>

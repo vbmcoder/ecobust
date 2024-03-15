@@ -74,17 +74,17 @@ export default function Home() {
 
       <nav>
         <div className="top_headernav">
-          <div className="lefttopbar"  data-aos="fade-right">
+          <div className="lefttopbar">
             <h4>Jodhpur, Rajasthan</h4>
             <h4>GST NO. : 08DLJPK8771H1ZI</h4>
           </div>
-          <div className="righttopbar" data-aos="fade-left">
+          <div className="righttopbar">
             <h4><FiPhone /> +91-9929031735, +91-9929711198</h4>
             <h4><GrMail /> infoecobust@gmail.com</h4>
           </div>
           {/* <div className='flex gap-2'>More Info: <GrMail /> <FiPhone /></div> */}
         </div>
-        <div className="center_headernav" data-aos="fade-left">
+        <div className="center_headernav">
           <a href="/">Privacy Policy</a>
           <a href="/">Contact</a>
           <a href="/">Us English</a>
@@ -93,11 +93,11 @@ export default function Home() {
           <div className="logo flex">
             <img src="/img/greenlogo.png" alt="" />
             <ul className="nav_items">
-              <li data-aos="fade-up" ><Link href="/">HOME</Link></li>
-              <li data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1100"><Link href="/about">ABOUT US</Link></li>
-              <li data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1200"><Link href="/product">PRODUCTS</Link></li>
-              <li data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1300"><Link href="/flipbook">FLIPBOOK</Link></li>
-              <li data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1400"><Link href="/">USER GUIDE</Link></li>
+              <li><Link href="/">HOME</Link></li>
+              <li><Link href="/about">ABOUT US</Link></li>
+              <li><Link href="/product">PRODUCTS</Link></li>
+              <li><Link href="/flipbook">FLIPBOOK</Link></li>
+              <li><Link href="/">USER GUIDE</Link></li>
             </ul>
           </div>
           <div className="hamburger flex gap-2">
@@ -106,7 +106,7 @@ export default function Home() {
               <span>+91-9929031735</span>
               <span>+91-9929711198</span>
             </h4>
-            <div data-aos="fade-left">
+            <div>
               <FaBarsStaggered onClick={toggleSidebar} />
               <FaBarsStaggered onClick={OpenNavbar} />
             </div>
@@ -124,7 +124,7 @@ export default function Home() {
             <li><Link href="/about">ABOUT US</Link></li>
             <li><Link href="/product">PRODUCTS</Link></li>
             <li><Link href="/flipbook">FLIPBOOK</Link></li>
-            <li><Link href="/">USER GUIDE</Link></li>
+            <li><Link href="/userguide">USER GUIDE</Link></li>
           </ul>
         </aside>
 
@@ -174,8 +174,8 @@ export default function Home() {
 
         <div className="topheaderdata">
           <div className="leftheaderdata">
-            <h1 data-aos="fade-right">Ecobust Non Explosive</h1>
-            <h1 data-aos="fade-right">Demolition Powder</h1>
+            <h1>Ecobust Non Explosive</h1>
+            <h1 data-aos="fade-up">Demolition Powder</h1>
             <h2>We are one of the leading Manufacturer and Suppliers of Non-explosive demolition agent in India</h2>
             <button className="hbtn" data-aos="fade-up">
               <span>Contact Us</span>
@@ -191,7 +191,7 @@ export default function Home() {
           </div>
         </div>
       </nav>
-      <div className="marq" data-aos="fade-up">
+      <div className="marq">
         <span>We are one of the leading Manufacturer and Suppliers of Non-explosive
           demolition agent in India, we are engaged in providing reliable solutions related to concrete structures
           demolition, rock excavation and boulders demolition, etc. we have successfully promoted our products to
@@ -206,17 +206,17 @@ export default function Home() {
           noise,vibration, or fly rock. Especially, used as environment constraints</span>
       </div>
       <div className="company_details">
-        <div className="oftitle" data-aos="fade-right">
+        <div className="oftitle">
           <hr />
           <h2>Company Details</h2>
         </div>
         <div className="company_data">
           <div className="com_left">
-            <h1 data-aos="fade-right">Welcome To <strong>Manveer Group Of Industries</strong> </h1>
-            <p data-aos="fade-right">We are one of the leading Manufacturer and Suppliers of Non-explosive demolition agent in India, we are engaged in providing reliable solutions related to concrete structures demolition, rock excavation and boulders demolition, etc. we have successfully promoted our products to worldwide Customers with our specialization in the domain of Chemical Demolition Technology. ECO BUST is used in an almost unlimited range of applications. It's Particularly used for breaking-cutting of stones in quarries or demolishing stones, concrete and reinforced concrete. Endless Benefits of ECOBUST can be listed against explosives and other methods of breaking, cutting or demolishing. Silent Non-ExplosiveDemolition Agent is a non-toxic and cementation powder, which consists of calcined oxides of calcium, silicon and aluminum, Non-explosive demolition agent becomes a highly powered amazing expansive pressure of 11200 T / m2 when mixed with water. Granite,sandstone, marble, limestone, plain concrete, reinforced concrete,boulders, and ledges are fractured within 2 to 12 hours without noise,vibration, or fly rock. Especially, used as environment constraints</p>
-            <Link data-aos="fade-up" href='/about'>Read More</Link>
+            <h1 >Welcome To <strong>Manveer Group Of Industries</strong> </h1>
+            <p data-aos="fade-up">We are one of the leading Manufacturer and Suppliers of Non-explosive demolition agent in India, we are engaged in providing reliable solutions related to concrete structures demolition, rock excavation and boulders demolition, etc. we have successfully promoted our products to worldwide Customers with our specialization in the domain of Chemical Demolition Technology. ECO BUST is used in an almost unlimited range of applications. It's Particularly used for breaking-cutting of stones in quarries or demolishing stones, concrete and reinforced concrete. Endless Benefits of ECOBUST can be listed against explosives and other methods of breaking, cutting or demolishing. Silent Non-ExplosiveDemolition Agent is a non-toxic and cementation powder, which consists of calcined oxides of calcium, silicon and aluminum, Non-explosive demolition agent becomes a highly powered amazing expansive pressure of 11200 T / m2 when mixed with water. Granite,sandstone, marble, limestone, plain concrete, reinforced concrete,boulders, and ledges are fractured within 2 to 12 hours without noise,vibration, or fly rock. Especially, used as environment constraints</p>
+            <Link href='/about'>Read More</Link>
           </div>
-          <div className="com_right" data-aos="fade-left" data-aos-duration="1300">
+          <div className="com_right" data-aos="fade-left" data-aos-duration="1500">
             <h1>Our Certifications</h1>
             <div className='flex gap-3 flex-center'>
               <div className="crimgbox" >
@@ -330,23 +330,23 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="footer_contact" data-aos="fade-up">
+      <div className="footer_contact" >
         <div className="f_c">
-          <img src="https://demo.rstheme.com/html/techzen/assets/images/footer/info-3.png" alt="" />
+          <img src="/img/callus.png" alt="" />
           <div className="f_cinfo">
             <h3>Contact Us</h3>
             <h2>( +91 )-992 - 903 -1735</h2>
           </div>
         </div>
         <div className="f_c">
-          <img src="https://demo.rstheme.com/html/techzen/assets/images/footer/info-1.png" alt="" />
+          <img src="/img/emailus.png" alt="" />
           <div className="f_cinfo">
             <h3>Email Us</h3>
             <h2>info@ecobust.in</h2>
           </div>
         </div>
         <div className="f_c">
-          <img src="https://demo.rstheme.com/html/techzen/assets/images/footer/info-2.png" alt="" />
+          <img src="/img/locationus.png" alt="" />
           <div className="f_cinfo">
             <h3>Address</h3>
             <h2>Jodhpur, Rajasthan</h2>

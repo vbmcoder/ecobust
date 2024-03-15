@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -10,12 +10,19 @@ import 'swiper/css/navigation';
 
 // import required modules
 import { EffectCoverflow, Pagination, Navigation } from 'swiper/modules';
+import Head from 'next/head';
 
 export default function Flipbook() {
+
+
+
     return <>
+        <Head>
+            <title>Flipbook | Eco Bust</title>
+        </Head>
         <div className='flipbooksec'>
             <Swiper
-            data-aos="zoom-out"
+                data-aos="zoom-out"
                 effect={'coverflow'}
                 grabCursor={true}
                 centeredSlides={true}
@@ -51,7 +58,11 @@ export default function Flipbook() {
                     <img src="/img/flipbook6.jpg" />
                 </SwiperSlide>
             </Swiper>
+
+
+
         </div>
+
 
     </>
 }

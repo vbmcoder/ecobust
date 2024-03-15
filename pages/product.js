@@ -70,12 +70,23 @@ export default function Product() {
         setMainImage(imageSrc);
     };
     const alldata = [
-        { _id: 1, images: "/img/product.png" },
-        { _id: 2, images: "/img/product.png" },
-        { _id: 3, images: "/img/product.png" },
-        { _id: 4, images: "/img/product.png" },
-        { _id: 5, images: "/img/product.png" },
-        { _id: 6, images: "/img/product.png" },
+        { _id: 1, images: "/img/ecobust/ecobust_img1.jpg" },
+        { _id: 2, images: "/img/ecobust/ecobust_img2.jpg" },
+        { _id: 3, images: "/img/ecobust/ecobust_img3.jpg" },
+        { _id: 4, images: "/img/ecobust/ecobust_img4.jpg" },
+        { _id: 5, images: "/img/ecobust/ecobust_img5.jpg" },
+        { _id: 6, images: "/img/ecobust/ecobust_img6.jpg" },
+        { _id: 7, images: "/img/ecobust/ecobust_img7.jpg" },
+        { _id: 8, images: "/img/ecobust/ecobust_img8.jpg" },
+        { _id: 9, images: "/img/ecobust/ecobust_img9.jpg" },
+        { _id: 10, images: "/img/ecobust/ecobust_img10.jpg" },
+        { _id: 11, images: "/img/ecobust/ecobust_img11.jpg" },
+        { _id: 12, images: "/img/ecobust/ecobust_img12.jpg" },
+        { _id: 13, images: "/img/ecobust/ecobust_img13.jpg" },
+        { _id: 14, images: "/img/ecobust/ecobust_img14.jpg" },
+        { _id: 15, images: "/img/ecobust/ecobust_img15.jpg" },
+        { _id: 16, images: "/img/ecobust/ecobust_img16.jpg" },
+        { _id: 17, images: "/img/ecobust/ecobust_img17.jpg" },
     ]
     return <>
         <div className={styles.container}>
@@ -96,6 +107,7 @@ export default function Product() {
                             slidesPerView={3}
                             spaceBetween={30}
                             freeMode={true}
+                            grabCursor={true}
                             modules={[FreeMode]}
                             className={styles.mySwiper}
                         >
@@ -103,7 +115,7 @@ export default function Product() {
                                 <img onClick={() => handleImageClick("/img/product.png")} src="/img/product.png" alt="img" />
                             </SwiperSlide>
                             <SwiperSlide>
-                                <img onClick={() => handleImageClick("/img/974421.jpg")} src="/img/974421.jpg" alt="img" />
+                                <img onClick={() => handleImageClick("/img/ecobust/ecobust_img5.jpg")} src="/img/ecobust/ecobust_img5.jpg" alt="img" />
                             </SwiperSlide>
                             <SwiperSlide>
                                 <img onClick={() => handleImageClick("/img/dimond.jpg")} src="/img/dimond.jpg" alt="img" />
@@ -225,6 +237,7 @@ export default function Product() {
                         slidesPerView={3}
                         spaceBetween={30}
                         freeMode={true}
+                        grabCursor={true}
                         pagination={{
                             clickable: true,
                         }}
@@ -233,7 +246,7 @@ export default function Product() {
                     >
                         {alldata.map((pro) => (
                             <SwiperSlide key={pro._id}>
-                                <img src={pro.images} alt="Product Image" />
+                                <img src={pro.images} alt="Product Image" loading="lazy" />
                             </SwiperSlide>
                         ))}
                     </Swiper>
