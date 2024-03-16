@@ -298,9 +298,83 @@
     font-family: math;
 }
 
+.wheretouse {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 4rem 0;
+}
 
+.wheretouse h4 {
+    position: relative;
+    font-size: 25px;
+    font-family: math;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.wheretouse h4::before{
+    content: '';
+    height: 2px;
+    background: linear-gradient(to left, #1b4e9b 10%, transparent 50%);
+    display: block;
+    margin-right: 10px;
+    width: 150px;
+  }
+  .wheretouse h4::after{
+    content: '';
+    height: 2px;
+    display: block;
+    background: linear-gradient(to right, #1b4e9b 10%, transparent 50%);
+    margin-left: 10px;
+    width: 150px;
+  }
+.wheretouse h2 {
+    font-size: 35px;
+    margin-bottom: 3rem;
+    font-family: math;
+}
 
-@media screen and (max-width: 1500px) {
+.useecobustcards {
+    max-width: 1400px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.ecousecard{
+    position: relative;
+    width: 30%;
+    overflow: hidden;
+}
+
+.ecousecard img{
+    border-radius: 30px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.ecousecard h3{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: #fff;
+    width: 100%;
+    height: 60px;
+    border-top-left-radius: 100px;
+    text-align: center;
+    font-family: math;
+    font-size: 20px;
+    padding: 10px;
+    padding-top: 1rem;
+}
+
+@media screen and (max-width: 1720px) {
     .why_cont {
         width: 100%;
         padding: 0 5rem;
@@ -308,7 +382,19 @@
     }
 
     .right_why {
-        width: 55%;
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 1620px) {
+    .why_cont {
+        width: 100%;
+        padding: 0 5rem;
+        gap: 2rem;
+    }
+
+    .right_why {
+        width: 48%;
     }
 }
 

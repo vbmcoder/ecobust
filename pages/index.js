@@ -7,7 +7,13 @@ import { FiPhone } from "react-icons/fi";
 import { GrMail } from "react-icons/gr";
 import Link from "next/link";
 import Whatsapp from "@/components/Whatsapp";
+import { Swiper, SwiperSlide } from 'swiper/react';
 
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+import { Pagination, Navigation } from 'swiper/modules';
 
 export default function Home() {
 
@@ -61,7 +67,17 @@ export default function Home() {
   const handleClose = () => {
     setFullScreenImage(null);
   };
-
+  const alldata = [
+    { _id: 1, images: "/img/Godrej-Boyce.jpg" },
+    { _id: 2, images: "/img/IAF-1.jpg" },
+    { _id: 4, images: "/img/Indian-ARMY.jpg" },
+    { _id: 5, images: "/img/JDA-Jodhpur-Development.jpg" },
+    { _id: 6, images: "/img/LT.jpg" },
+    { _id: 7, images: "/img/NHAI-2.jpg" },
+    { _id: 7, images: "/img/NKC.jpg" },
+    { _id: 7, images: "/img/Northern-Railway.jpg" },
+    { _id: 7, images: "/img/TATA.jpg" },
+  ]
 
   return (
     <>
@@ -97,7 +113,8 @@ export default function Home() {
               <li><Link href="/about">ABOUT US</Link></li>
               <li><Link href="/product">PRODUCTS</Link></li>
               <li><Link href="/flipbook">FLIPBOOK</Link></li>
-              <li><Link href="/">USER GUIDE</Link></li>
+              <li><Link href="/userguide">USER GUIDE</Link></li>
+              <li><Link href="/gallery">GALLARY</Link></li>
             </ul>
           </div>
           <div className="hamburger flex gap-2">
@@ -125,6 +142,7 @@ export default function Home() {
             <li><Link href="/product">PRODUCTS</Link></li>
             <li><Link href="/flipbook">FLIPBOOK</Link></li>
             <li><Link href="/userguide">USER GUIDE</Link></li>
+            <li><Link href="/gallery">GALLARY</Link></li>
           </ul>
         </aside>
 
@@ -221,17 +239,17 @@ export default function Home() {
             <div className='flex gap-3 flex-center'>
               <div className="crimgbox" >
                 <img
-                  src="/img/cert.jpg"
+                  src="/img/1.png"
                   alt="img"
-                  onClick={() => handleClick("/img/cert.jpg")}
+                  onClick={() => handleClick("/img/1.png")}
                   style={{ cursor: 'pointer' }} // Add cursor pointer for indication
                 />
               </div>
               <div className="crimgbox">
                 <img
-                  src="/img/974421.jpg"
+                  src="/img/1 (1).png"
                   alt="img"
-                  onClick={() => handleClick("/img/974421.jpg")}
+                  onClick={() => handleClick("/img/1 (1).png")}
                   style={{ cursor: 'pointer' }} // Add cursor pointer for indication
                 />
               </div>
@@ -288,7 +306,7 @@ export default function Home() {
         </div>
 
       </div>
-      <div data-aos="zoom-out" className="demoimg">
+      <div className="demoimg">
         <img src="/img/PhotoRoom-20240311_122223.png" alt="" />
       </div>
       <div className="comcontainer">
@@ -328,6 +346,48 @@ export default function Home() {
             </div>
           </div>
         </div>
+      </div>
+      <div className="our_clients">
+        <h2>Our Clients</h2>
+        <Swiper
+          slidesPerView={5}
+          spaceBetween={30}
+          loop={true}
+          pagination={{
+            clickable: true,
+          }}
+          navigation={true}
+          modules={[Pagination, Navigation]}
+          breakpoints={{
+            // when window width is >= 320px
+            320: {
+              slidesPerView: 1,
+              spaceBetween: 10
+            },
+            // when window width is >= 480px
+            480: {
+              slidesPerView: 2,
+              spaceBetween: 20
+            },
+            // when window width is >= 640px
+            640: {
+              slidesPerView: 3,
+              spaceBetween: 30
+            },
+            // when window width is >= 768px
+            768: {
+              slidesPerView: 4,
+              spaceBetween: 30
+            }
+          }}
+          className="ourclient_swiper"
+        >
+          {alldata.map((pro) => (
+            <SwiperSlide key={pro._id}>
+              <img src={pro.images} alt="Product Image" loading="lazy" />
+            </SwiperSlide>
+          ))}
+        </Swiper>
       </div>
 
       <div className="footer_contact" >

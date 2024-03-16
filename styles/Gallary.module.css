@@ -1,0 +1,144 @@
+.gallarynavbar {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 5rem;
+}
+
+.gallarynavbar img {
+    width: 80px;
+}
+
+.gallarynavbar h1 {
+    font-family: math;
+    font-size: 30px;
+}
+
+.gallarynavbar svg {
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.gallary_items {
+    margin-top: 2rem;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 2rem;
+    font-family: math;
+    font-size: 20px;
+}
+
+.gallary_items li a.active {
+    position: relative;
+    color: #20b525;
+    font-weight: 600;
+    margin-left: 15px;
+}
+
+.gallary_items li a.active::before {
+    content: '';
+    position: absolute;
+    left: -10px;
+    top: 40%;
+    transform: translateX(-50%);
+    width: 15px;
+    height: 3px;
+    background-color: #20b525;
+    border-radius: 50%;
+}
+
+.topphonesec {
+    position: relative;
+    max-width: 1400px;
+    margin: auto;
+    display: flex;
+}
+
+.lefttitlesec {
+    padding: 10rem 5rem;
+}
+
+.lefttitlesec h4 {
+    font-size: 22px;
+    font-family: math;
+    font-weight: 500;
+    color: #888;
+    margin-bottom: 2rem;
+}
+
+.lefttitlesec h1 {
+    font-size: 90px;
+    font-family: math;
+    font-weight: 500;
+    margin-bottom: 3rem;
+}
+
+.lefttitlesec button {
+    font-size: 25px;
+    font-family: math;
+    font-weight: 500;
+    background-color: transparent;
+    border: 1px solid #777;
+    border-right: none;
+    padding: 1.3rem 3rem;
+    cursor: pointer;
+}
+
+.lefttitlesec button:hover {
+    background-color: #888;
+    color: #fff;
+}
+
+.rightimgsec {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-left: -150px;
+    z-index: -1;
+}
+
+.rightimgsec img {
+    width: 350px;
+    height: 450px;
+}
+
+.r_img_top img {
+    width: 420px;
+    height: 50%;
+}
+
+.r_img_top img:nth-child(2) {
+    width: 250px;
+    height: 50%;
+    margin-left: 50px;
+}
+
+.imagegallaryslider {
+    position: relative;
+    width: 100%;
+    height: 80vh;
+    padding-bottom: 5rem;
+}
+
+.ecobus_gallery {
+    max-width: 1400px;
+    margin: 0 auto;
+    margin-top: 5rem;
+    margin-bottom: 4rem;
+    padding: 0 5rem;
+    font-size: 70px;
+    font-family: math;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    color: #555;
+    gap: 2rem;
+}
+.ecobus_gallery svg{
+    color: #777;
+}

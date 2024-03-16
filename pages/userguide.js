@@ -24,22 +24,52 @@ export default function Userguide() {
                 <img src="/img/warning.png" alt="IMG" />
                 <h2 data-aos="fade-left">!! SEFETY GOGGLES AND RUBBER HAND GLOVES MUST BE WORN DURING OPPERATION !!</h2>
             </div>
-            <div className={styles.drill_sec}>
-                <h3 data-aos="fade-right" data-aos-easing="linear"  data-aos-duration="1500">1. First, drill a hole in the stone whare you want to split the stone.</h3>
-                <img data-aos="fade-up-left" src="/img/drill.png" alt="img" />
+            <div className={styles.userguide_cards}>
+                <div className={styles.guide_max}></div>
+                <div className={styles.guide_cards_sec}>
+                    <div className={styles.guide_cards}>
+                        <div className={styles.guide_img}>
+                            <img src="/img/drill.png" alt="" />
+                        </div>
+                        <div className={styles.info_guide}>
+                            <h4>Step 01.</h4>
+                            <h1>Drill</h1>
+                            <h2>First, drill a hole in the stone whare you want to split the stone.</h2>
+                        </div>
+                    </div>
+                    <div className={styles.guide_cards}>
+                        <div className={styles.guide_img}>
+                            <img src="/img/mix.png" alt="" />
+                        </div>
+                        <div className={styles.info_guide}>
+                            <h4>Step 02.</h4>
+                            <h1>Mix</h1>
+                            <h2>Second, pour some of the ECOBUST into the bucket with water, the proportion of water and supplies is 1:3, and then stir it into a paste.</h2>
+                        </div>
+                    </div>
+                    <div className={styles.guide_cards}>
+                        <div className={styles.guide_img}>
+                            <img src="/img/pour.png" alt="" />
+                        </div>
+                        <div className={styles.info_guide}>
+                            <h4>Step 03.</h4>
+                            <h1>Pour</h1>
+                            <h2>Third, slowly pour it in to the drill hole and fill it with the lid uncovered.</h2>
+                        </div>
+                    </div>
+                    <div className={styles.guide_cards}>
+                        <div className={styles.guide_img}>
+                            <img src="/img/crack.png" alt="" />
+                        </div>
+                        <div className={styles.info_guide}>
+                            <h4>Step 04.</h4>
+                            <h1>Crack</h1>
+                            <h2>Fourth, about two to eight hours later, the stone gets crack/split. You can choose the ECO BUST based on temperature of rock and time lapse for chemical reaction that you required.</h2>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div className={styles.mix_sec}>
-                <img data-aos="fade-down-right" src="/img/mix.png" alt="img" />
-                <h3 data-aos="fade-left">2. Second, pour some of the <strong>ECOBUST</strong> into the bucket with water, the proportion of water and supplies is 1:3, and then stir it into a paste.</h3>
-            </div>
-            <div className={styles.pour_sec}>
-                <h3 data-aos="fade-right">3. Third, slowly pour it in to the drill hole and fill it with the lid uncovered.</h3>
-                <img data-aos="fade-down-left" src="/img/pour.png" alt="img" />
-            </div>
-            <div className={styles.crack_sec}>
-                <img data-aos="fade-down-right" src="/img/crack.png" alt="img" />
-                <h3 data-aos="fade-left">4. Fourth, about two to eight hours later, the stone gets crack/split. You can choose the  <strong>ECO BUST</strong> based on temperature of rock and time lapse for chemical reaction that you required.</h3>
-            </div>
+
             <div className={styles.main_descrip}>
                 <img data-aos="fade-right" src="/img/important.png" alt="" />
                 <h2 data-aos="fade-up" data-aos-anchor-placement="bottom-bottom"><strong>Important Notice:</strong> The process in short- drilling mixing/stirring-pouring-blasting the maximum expansion fouce can be reached within 10 minutes. The reacting time can be also modified between 2 hours to 8 hours.</h2>
@@ -47,7 +77,7 @@ export default function Userguide() {
         </div>
 
         <div className={styles.typeofeco} >
-            <table data-aos="fade-right"  data-aos-easing="linear"  data-aos-duration="1500">
+            <table>
                 <thead>
                     <tr>
                         <td>Type</td>
@@ -69,10 +99,46 @@ export default function Userguide() {
                     </tr>
                 </tbody>
             </table>
-            <div className="flex" data-aos="fade-left" data-aos-easing="linear"  data-aos-duration="1500">
+            <div className="flex" >
                 <img src="/img/arrowuserleft.png" alt="" />
                 <h3>Type Of ECOBUST</h3>
             </div>
+        </div>
+        <div className={styles.holediameter}>
+            <h3>② Quantity of HIGH RANGE SOUNDLESS CRACKING AGENT used per 1m depth of hole diameters:</h3>
+            <table>
+                <tbody>
+                    <tr>
+                        <td><strong>Hole meseaurment (mm)</strong></td>
+                        <td><strong>Quantity used in (Kg)</strong></td>
+                    </tr>
+                    <tr>
+                        <td>32</td>
+                        <td>1.3</td>
+
+                    </tr>
+                    <tr>
+                        <td>34</td>
+                        <td>1.5</td>
+
+                    </tr>
+                    <tr>
+                        <td>36</td>
+                        <td>1.7</td>
+
+                    </tr>
+                    <tr>
+                        <td>38</td>
+                        <td>1.9</td>
+
+                    </tr>
+                    <tr>
+                        <td>40</td>
+                        <td>2.1</td>
+
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </>
 }

@@ -70,22 +70,12 @@ export default function Product() {
         setMainImage(imageSrc);
     };
     const alldata = [
-        { _id: 1, images: "/img/ecobust/ecobust_img1.jpg" },
-        { _id: 2, images: "/img/ecobust/ecobust_img2.jpg" },
-        { _id: 3, images: "/img/ecobust/ecobust_img3.jpg" },
-        { _id: 4, images: "/img/ecobust/ecobust_img4.jpg" },
         { _id: 5, images: "/img/ecobust/ecobust_img5.jpg" },
         { _id: 6, images: "/img/ecobust/ecobust_img6.jpg" },
         { _id: 7, images: "/img/ecobust/ecobust_img7.jpg" },
-        { _id: 8, images: "/img/ecobust/ecobust_img8.jpg" },
-        { _id: 9, images: "/img/ecobust/ecobust_img9.jpg" },
         { _id: 10, images: "/img/ecobust/ecobust_img10.jpg" },
-        { _id: 11, images: "/img/ecobust/ecobust_img11.jpg" },
-        { _id: 12, images: "/img/ecobust/ecobust_img12.jpg" },
         { _id: 13, images: "/img/ecobust/ecobust_img13.jpg" },
-        { _id: 14, images: "/img/ecobust/ecobust_img14.jpg" },
         { _id: 15, images: "/img/ecobust/ecobust_img15.jpg" },
-        { _id: 16, images: "/img/ecobust/ecobust_img16.jpg" },
         { _id: 17, images: "/img/ecobust/ecobust_img17.jpg" },
     ]
     return <>
@@ -101,7 +91,7 @@ export default function Product() {
             </p>
             <div className={styles.productsection}>
                 <div className={styles.leftproimg}>
-                    <img data-aos="fade-right" className={styles.mainimage} src={mainImage} alt="" />
+                    <img className={styles.mainimage} src={mainImage} alt="" />
                     <div className={styles.proimglist} data-aos="fade-up">
                         <Swiper
                             slidesPerView={3}
@@ -118,16 +108,16 @@ export default function Product() {
                                 <img onClick={() => handleImageClick("/img/ecobust/ecobust_img5.jpg")} src="/img/ecobust/ecobust_img5.jpg" alt="img" />
                             </SwiperSlide>
                             <SwiperSlide>
-                                <img onClick={() => handleImageClick("/img/dimond.jpg")} src="/img/dimond.jpg" alt="img" />
+                            <img onClick={() => handleImageClick("/img/ecobust/ecobust_img6.jpg")} src="/img/ecobust/ecobust_img6.jpg" alt="img" />
                             </SwiperSlide>
                             <SwiperSlide>
-                                <img onClick={() => handleImageClick("/img/employees.png")} src="/img/employees.png" alt="img" />
+                            <img onClick={() => handleImageClick("/img/ecobust/ecobust_img7.jpg")} src="/img/ecobust/ecobust_img7.jpg" alt="img" />
                             </SwiperSlide>
                             <SwiperSlide>
-                                <img onClick={() => handleImageClick("/img/product4.png")} src="/img/product4.png" alt="img" />
+                            <img onClick={() => handleImageClick("/img/ecobust/ecobust_img10.jpg")} src="/img/ecobust/ecobust_img10.jpg" alt="img" />
                             </SwiperSlide>
                             <SwiperSlide>
-                                <img onClick={() => handleImageClick("/img/product5.png")} src="/img/product5.png" alt="img" />
+                            <img onClick={() => handleImageClick("/img/ecobust/ecobust_img13.jpg")} src="/img/ecobust/ecobust_img13.jpg" alt="img" />
                             </SwiperSlide>
                         </Swiper>
                     </div>
@@ -242,7 +232,7 @@ export default function Product() {
                             clickable: true,
                         }}
                         modules={[FreeMode, Pagination]}
-                        className={styles.mySwiper}
+                        className={styles.btSwiper}
                     >
                         {alldata.map((pro) => (
                             <SwiperSlide key={pro._id}>

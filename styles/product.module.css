@@ -54,6 +54,9 @@
     scroll-behavior: smooth;
     overflow: scroll;
 }
+.proimglist::-webkit-scrollbar{
+    display: none;
+}
 
 .proimglist img {
     width: 120px;
@@ -61,6 +64,7 @@
     background-color: #9999991d;
     border: 1px solid #999;
     cursor: pointer;
+    object-fit: cover;
     user-select: none;
 }
 
@@ -305,9 +309,13 @@
     align-items: center;
 }
 .mySwiper img {
+    object-fit: contain;
+    user-select: none;
+}
+.btSwiper img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
     user-select: none;
 }
 

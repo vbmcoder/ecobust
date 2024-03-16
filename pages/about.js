@@ -1,7 +1,26 @@
 import Head from "next/head";
 import styles from "../styles/about.module.css"
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+import { Pagination, Navigation } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/react';
 
 export default function About() {
+
+    const alldata = [
+        { _id: 1, images: "/img/Godrej-Boyce.jpg" },
+        { _id: 2, images: "/img/IAF-1.jpg" },
+        { _id: 4, images: "/img/Indian-ARMY.jpg" },
+        { _id: 5, images: "/img/JDA-Jodhpur-Development.jpg" },
+        { _id: 6, images: "/img/LT.jpg" },
+        { _id: 7, images: "/img/NHAI-2.jpg" },
+        { _id: 7, images: "/img/NKC.jpg" },
+        { _id: 7, images: "/img/Northern-Railway.jpg" },
+        { _id: 7, images: "/img/TATA.jpg" },
+    ]
+
     return <>
         <Head>
             <title>Manveer Group Of Industries - Manufacturer, Exporter & Supplier from Jodhpur India</title>
@@ -66,6 +85,78 @@ export default function About() {
                     </div>
                 </div>
             </div>
+            <div className="our_clients">
+                <h2>Our Clients</h2>
+                <Swiper
+                    slidesPerView={5}
+                    spaceBetween={30}
+                    loop={true}
+                    pagination={{
+                        clickable: true,
+                    }}
+                    navigation={true}
+                    modules={[Pagination, Navigation]}
+                    breakpoints={{
+                        // when window width is >= 320px
+                        320: {
+                            slidesPerView: 1,
+                            spaceBetween: 10
+                        },
+                        // when window width is >= 480px
+                        480: {
+                            slidesPerView: 2,
+                            spaceBetween: 20
+                        },
+                        // when window width is >= 640px
+                        640: {
+                            slidesPerView: 3,
+                            spaceBetween: 30
+                        },
+                        // when window width is >= 768px
+                        768: {
+                            slidesPerView: 4,
+                            spaceBetween: 30
+                        }
+                    }}
+                    className="ourclient_swiper"
+                >
+                    {alldata.map((pro) => (
+                        <SwiperSlide key={pro._id}>
+                            <img src={pro.images} alt="Product Image" loading="lazy" />
+                        </SwiperSlide>
+                    ))}
+                </Swiper>
+            </div>
+            <div className={styles.wheretouse}>
+                <h4>Services</h4>
+                <h2>Where <strong>ECOBUST</strong> Chemical can be used?</h2>
+                <div className={styles.useecobustcards}>
+                    <div className={styles.ecousecard}>
+                        <img src="/img/black-granite-blocks.jpg" alt="" />
+                        <h3>Black Galaxy/Granite Stone Cracking</h3>
+                    </div>
+                    <div className={styles.ecousecard}>
+                        <img src="/img/marble.jpg" alt="" />
+                        <h3>Black Galaxy/Granite Stone Cracking</h3>
+                    </div>
+                    <div className={styles.ecousecard}>
+                        <img src="/img/masonrystonecracking.jpg" alt="" />
+                        <h3>Black Galaxy/Granite Stone Cracking</h3>
+                    </div>
+                    <div className={styles.ecousecard}>
+                        <img src="/img/riverstone.jpg" alt="" />
+                        <h3>Black Galaxy/Granite Stone Cracking</h3>
+                    </div>
+                    <div className={styles.ecousecard}>
+                        <img src="/img/concrete.jpg" alt="" />
+                        <h3>Black Galaxy/Granite Stone Cracking</h3>
+                    </div>
+                    <div className={styles.ecousecard}>
+                        <img src="/img/masonrystonecracking2.jpg" alt="" />
+                        <h3>Black Galaxy/Granite Stone Cracking</h3>
+                    </div>
+                </div>
+            </div>
             <div className={styles.company_table}>
                 <h1 data-aos="fade-right">Company Details: </h1>
                 <div className={styles.company_tc}>
@@ -101,6 +192,7 @@ export default function About() {
                             </tr>
                         </tbody>
                     </table>
+
                     <div className={styles.com_de} data-aos="fade-left">
                         <h3 data-aos="fade-down-right">--- Owing to our expertise, we have been able to offer our customers with a quality-assured range of products in varied specifications. Owing to following reasons, we have been able to outshine others in this highly competitive market :</h3>
                         <h4>--- Why Us?</h4>
@@ -117,6 +209,7 @@ export default function About() {
                 </div>
 
             </div>
+           
         </div>
     </>
 }

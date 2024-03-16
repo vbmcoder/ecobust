@@ -1770,6 +1770,15 @@ nav {
   .right_copy {
     margin-bottom: 2rem;
   }
+  .our_clients h2{
+    font-size: 28px !important;
+  }
+  .our_clients h2::before{
+    width: 50px !important;
+  }
+  .our_clients h2::after{
+    width: 50px !important;
+  }
 }
 
 @media screen and (max-width: 440px) {
@@ -1840,42 +1849,49 @@ nav {
 }
 
 @media screen and (max-width: 1336px) {
-  .flipbook{
+  .flipbook {
     width: 65%;
   }
 }
+
 @media screen and (max-width: 1053px) {
-  .flipbook{
+  .flipbook {
     width: 75%;
   }
 }
+
 @media screen and (max-width: 975px) {
-  .flipbook{
+  .flipbook {
     width: 85%;
   }
 }
+
 @media screen and (max-width: 810px) {
-  .flipbook{
+  .flipbook {
     width: 90%;
   }
 }
+
 @media screen and (max-width: 730px) {
-  .flipbook{
+  .flipbook {
     width: 100%;
     height: auto;
   }
 }
+
 @media screen and (max-width: 675px) {
   .flipbook .swiper-slide {
     width: 425px;
     height: 600px;
   }
 }
+
 @media screen and (max-width: 500px) {
-  .flipbooksec{
+  .flipbooksec {
     padding: 2rem 2rem;
     height: 80vh;
   }
+
   .flipbook .swiper-slide {
     width: 325px;
     height: 500px;
@@ -1885,7 +1901,156 @@ nav {
 
 /* mySwiper */
 
-.mySwiper .swiper-wrapper{
+.mySwiper .swiper-wrapper {
   display: flex;
   align-items: center;
+}
+
+
+
+/* gallaryslider */
+
+.gallaryslider {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.gallaryslider .swiper-wrapper {
+  display: flex;
+  align-self: center !important;
+}
+
+.gallaryslider .swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  width: 30%;
+  height: 80%;
+  user-select: none;
+  /* background-color: #2345671b; */
+}
+
+.gallaryslider .swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: 0.3s ease-in-out;
+}
+
+.gallaryslider .swiper-slide h3 {
+  font-family: math;
+  font-size: 30px;
+  text-transform: capitalize;
+  font-weight: 500;
+  text-align: left;
+}
+
+.swiper-wrapper {
+  align-items: center;
+}
+
+.gallaryslider .swiper-pagination span {
+  position: relative;
+  background-color: transparent;
+  /* padding: 10px; */
+  width: 15px;
+  height: 15px;
+}
+
+.gallaryslider .swiper-pagination span::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 5px;
+  height: 5px;
+  background-color: #000;
+  border-radius: 50%;
+}
+
+.gallaryslider .swiper-pagination .swiper-pagination-bullet-active::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 8px;
+  height: 8px;
+  background-color: #000;
+  border-radius: 50%;
+}
+
+
+
+
+/* ourclient_swiper */
+.our_clients{
+  position: relative;
+  padding: 3rem;
+}
+.our_clients h2{
+  position: relative;
+  font-size: 40px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+.our_clients h2::before{
+  content: '';
+  height: 2px;
+  background: linear-gradient(to left, #1b4e9b 10%, transparent 50%);
+  display: block;
+  margin-right: 10px;
+  width: 150px;
+}
+.our_clients h2::after{
+  content: '';
+  height: 2px;
+  display: block;
+  background: linear-gradient(to right, #1b4e9b 10%, transparent 50%);
+  margin-left: 10px;
+  width: 150px;
+}
+
+.ourclient_swiper {
+  width: 100%;
+  height: 30vh;
+  user-select: none;
+}
+
+.ourclient_swiper .swiper-wrapper {
+  display: flex;
+  align-self: center !important;
+}
+
+.ourclient_swiper .swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  width: 30%;
+  height: 80%;
+  user-select: none;
+  /* background-color: #2345671b; */
+}
+.ourclient_swiper .swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: 0.3s ease-in-out;
 }

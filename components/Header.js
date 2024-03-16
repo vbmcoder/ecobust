@@ -80,6 +80,7 @@ export default function Header() {
           <li><Link href="/product" className={activeLink === '/product' ? 'active' : ''} onClick={() => handleLinkClick('/product')}>PRODUCTS</Link></li>
           <li><Link href="/flipbook" className={activeLink === '/flipbook' ? 'active' : ''} onClick={() => handleLinkClick('/flipbook')}>FLIPBOOK</Link></li>
           <li><Link href="/userguide" className={activeLink === '/userguide' ? 'active' : ''} onClick={() => handleLinkClick('/userguide')} >USER GUIDE</Link></li>
+          <li><Link href="/gallery" className={activeLink === '/gallery' ? 'active' : ''} onClick={() => handleLinkClick('/gallery')} >GALLARY</Link></li>
         </ul>
       </div>
       <div className="hamburger flex gap-2">
@@ -107,6 +108,7 @@ export default function Header() {
         <li><Link href="/product" className={activeLink === '/product' ? 'active' : ''} onClick={() => handleLinkClick('/product')}>PRODUCTS</Link></li>
         <li><Link href="/flipbook" className={activeLink === '/flipbook' ? 'active' : ''} onClick={() => handleLinkClick('/flipbook')}>FLIPBOOK</Link></li>
         <li><Link href="/userguide" className={activeLink === '/userguide' ? 'active' : ''} onClick={() => handleLinkClick('/userguide')} >USER GUIDE</Link></li>
+        <li><Link href="/gallery" className={activeLink === '/gallery' ? 'active' : ''} onClick={() => handleLinkClick('/gallery')} >GALLARY</Link></li>
       </ul>
     </aside>
     <aside className={`asideright ${openside ? 'open' : ''}`}>
