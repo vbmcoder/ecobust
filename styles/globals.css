@@ -115,10 +115,12 @@ body::-webkit-scrollbar-thumb {
 body {
   overflow-x: hidden !important;
   background-color: #f3f5fe94;
+  scroll-behavior: smooth;
 }
 
 html {
   overflow-x: hidden !important;
+  scroll-behavior: smooth;
 }
 
 a {
@@ -954,6 +956,7 @@ nav {
   width: 100%;
   height: auto;
   padding: 5rem 5rem;
+  margin-top: 13rem;
   overflow: hidden;
 }
 
@@ -1848,6 +1851,11 @@ nav {
   box-shadow: 0 0 10px #000;
 }
 
+@media screen and (max-width: 1530px) {
+  .flipbook .swiper-slide{
+    height: 70vh;
+  }
+}
 @media screen and (max-width: 1336px) {
   .flipbook {
     width: 65%;
@@ -1998,6 +2006,7 @@ nav {
 }
 .our_clients h2{
   position: relative;
+  font-family: math;
   font-size: 40px;
   text-align: center;
   display: flex;
@@ -2053,4 +2062,56 @@ nav {
   height: 100%;
   object-fit: contain;
   transition: 0.3s ease-in-out;
+}
+.verified{
+  margin: 4rem 0;
+}
+
+
+.verified .swiper-slide{
+  width: 20%;
+  height: 30%;
+}
+
+/* grid_container */
+
+.row {
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
+
+/* Create four equal columns that sits next to each other */
+.column {
+  -ms-flex: 25%; /* IE10 */
+  flex: 25%;
+  max-width: 25%;
+  padding: 0 4px;
+}
+
+.column img {
+  margin-top: 8px;
+  vertical-align: middle;
+  width: 100%;
+  cursor: pointer;
+}
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media screen and (max-width: 800px) {
+  .column {
+    -ms-flex: 50%;
+    flex: 50%;
+    max-width: 50%;
+  }
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column {
+    -ms-flex: 100%;
+    flex: 100%;
+    max-width: 100%;
+  }
 }

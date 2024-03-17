@@ -1,3 +1,4 @@
+
 import Head from "next/head";
 import { useEffect, useState } from 'react';
 import { FaBarsStaggered } from "react-icons/fa6";
@@ -58,32 +59,20 @@ export default function Home() {
     };
   }, []);
 
-  const [fullScreenImage, setFullScreenImage] = useState(null);
 
-  const handleClick = (src) => {
-    setFullScreenImage(src);
-  };
-
-  const handleClose = () => {
-    setFullScreenImage(null);
-  };
   const alldata = [
-    { _id: 1, images: "/img/Godrej-Boyce.jpg" },
-    { _id: 2, images: "/img/IAF-1.jpg" },
-    { _id: 4, images: "/img/Indian-ARMY.jpg" },
-    { _id: 5, images: "/img/JDA-Jodhpur-Development.jpg" },
-    { _id: 6, images: "/img/LT.jpg" },
-    { _id: 7, images: "/img/NHAI-2.jpg" },
-    { _id: 7, images: "/img/NKC.jpg" },
-    { _id: 7, images: "/img/Northern-Railway.jpg" },
-    { _id: 7, images: "/img/TATA.jpg" },
+    { _id: 1, images: "/img/alibaba.jpg" },
+    { _id: 2, images: "/img/ex.jpg" },
+    { _id: 4, images: "/img/indiamart-logo.png" },
+    { _id: 5, images: "/img/Justdial_logo.png" },
+    { _id: 6, images: "/img/tradeindia.png" },
   ]
 
   return (
     <>
       <Head>
-        <title>Eco Bust</title>
-        <meta name="description" content="Eco Bust" />
+        <title>Welcome to Ecobust: Your Source for Eco-Friendly Demolition Solutions | ECOBUST</title>
+        <meta name="description" content="Discover Ecobust, the eco-friendly and non-explosive demolition powder revolutionizing the industry. Safely demolish concrete and rock without harming the environment. Try our powerful and safe solution today!" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -203,9 +192,9 @@ export default function Home() {
               </svg>
             </button>
           </div>
-          <div className="rightheaderdata" data-aos="zoom-out">
-            <img src="/img/products.png" alt="image" />
-            <img src="/img/product.png" alt="image" />
+          <div className="rightheaderdata">
+            <img src="/img/products.png" alt="Ecobust in action breaking concrete" />
+            <img src="/img/product.png" alt="Ecobust breaking rock without explosives" />
           </div>
         </div>
       </nav>
@@ -223,52 +212,47 @@ export default function Home() {
           concrete, reinforced concrete,boulders, and ledges are fractured within 2 to 12 hours without
           noise,vibration, or fly rock. Especially, used as environment constraints</span>
       </div>
-      <div className="company_details">
-        <div className="oftitle">
-          <hr />
-          <h2>Company Details</h2>
-        </div>
-        <div className="company_data">
-          <div className="com_left">
-            <h1 >Welcome To <strong>Manveer Group Of Industries</strong> </h1>
-            <p data-aos="fade-up">We are one of the leading Manufacturer and Suppliers of Non-explosive demolition agent in India, we are engaged in providing reliable solutions related to concrete structures demolition, rock excavation and boulders demolition, etc. we have successfully promoted our products to worldwide Customers with our specialization in the domain of Chemical Demolition Technology. ECO BUST is used in an almost unlimited range of applications. It's Particularly used for breaking-cutting of stones in quarries or demolishing stones, concrete and reinforced concrete. Endless Benefits of ECOBUST can be listed against explosives and other methods of breaking, cutting or demolishing. Silent Non-ExplosiveDemolition Agent is a non-toxic and cementation powder, which consists of calcined oxides of calcium, silicon and aluminum, Non-explosive demolition agent becomes a highly powered amazing expansive pressure of 11200 T / m2 when mixed with water. Granite,sandstone, marble, limestone, plain concrete, reinforced concrete,boulders, and ledges are fractured within 2 to 12 hours without noise,vibration, or fly rock. Especially, used as environment constraints</p>
-            <Link href='/about'>Read More</Link>
-          </div>
-          <div className="com_right" data-aos="fade-left" data-aos-duration="1500">
-            <h1>Our Certifications</h1>
-            <div className='flex gap-3 flex-center'>
-              <div className="crimgbox" >
-                <img
-                  src="/img/1.png"
-                  alt="img"
-                  onClick={() => handleClick("/img/1.png")}
-                  style={{ cursor: 'pointer' }} // Add cursor pointer for indication
-                />
-              </div>
-              <div className="crimgbox">
-                <img
-                  src="/img/1 (1).png"
-                  alt="img"
-                  onClick={() => handleClick("/img/1 (1).png")}
-                  style={{ cursor: 'pointer' }} // Add cursor pointer for indication
-                />
-              </div>
-              {fullScreenImage && (
-                <div
-                  className="fullscreen-overlay"
-                  onClick={handleClose}
-                >
-                  <img
-                    src={fullScreenImage}
-                    alt="Fullscreen Image"
-                    className="fullscreen-image"
-                  />
-                </div>
-              )}
-            </div>
-
-          </div>
-        </div>
+      <div className="our_clients verified">
+        <h2>Verified Manufacturer</h2>
+        <Swiper
+          slidesPerView={5}
+          spaceBetween={30}
+          loop={true}
+          pagination={{
+            clickable: true,
+          }}
+          navigation={true}
+          modules={[Pagination, Navigation]}
+          breakpoints={{
+            // when window width is >= 320px
+            320: {
+              slidesPerView: 1,
+              spaceBetween: 10
+            },
+            // when window width is >= 480px
+            480: {
+              slidesPerView: 2,
+              spaceBetween: 20
+            },
+            // when window width is >= 640px
+            640: {
+              slidesPerView: 3,
+              spaceBetween: 30
+            },
+            // when window width is >= 768px
+            768: {
+              slidesPerView: 4,
+              spaceBetween: 30
+            }
+          }}
+          className="ourclient_swiper"
+        >
+          {alldata.map((pro) => (
+            <SwiperSlide key={pro._id}>
+              <img src={pro.images} alt="Product Image" loading="lazy" />
+            </SwiperSlide>
+          ))}
+        </Swiper>
       </div>
       <div className="ourfounders">
         <div className="oftitle">
@@ -277,21 +261,21 @@ export default function Home() {
         </div>
         <div className="founderscards">
           <div className="ofounder" data-aos="fade-right">
-            <img src="/img/vision.png" alt="" />
+            <img src="/img/vision.png" alt="Ecobust Founders" />
             <h2>Our Founders</h2>
             <p>With the able guidance and supervision of our founders, 'Mr. Divyang Gehlot & Mr. Virendra
               Gehlot', we have gained a formidable position for ourselves in the national and international
               markets.</p>
           </div>
           <div className="ofounder" data-aos="fade-up">
-            <img src="/img/mission.png" alt="" />
+            <img src="/img/mission.png" alt="Our USP" />
             <h2>Our USP</h2>
             <p>ECO BUST is used in an almost unlimited range of applications. It's Particularly used for
               breaking-cutting of stones in quarries or demolishing stones, concrete and reinforced concrete.
             </p>
           </div>
           <div className="ofounder" data-aos="fade-left">
-            <img src="/img/values.png" alt="" />
+            <img src="/img/values.png" alt="Why We Choose Ecobust?" />
             <h2>Why Us?</h2>
             <p>Owing to our expertise, we have been able to offer our customers with a quality-assured range of
               products in varied specifications.</p>

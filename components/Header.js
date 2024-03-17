@@ -136,12 +136,11 @@ export default function Header() {
           </li>
           <li>
             <a href="#"><FiPhone /></a>
-            <a href="#">+91-9929031735</a>
+            <a href="#">+91-9929031735 , <br />+91-9929711198</a>
           </li>
           <li>
             <a href="#"> <FaRegClock /></a>
-            <a href="#">Office Hours: 8AM - 11PM Sunday -
-              Weekend Day</a>
+            <a href="#">Office Hours: 8AM - 11PM Sunday -</a>
           </li>
         </ul>
         <span className="flex">

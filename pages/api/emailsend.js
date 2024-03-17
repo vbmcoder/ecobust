@@ -4,7 +4,7 @@ import nodemailer from 'nodemailer';
 
 export default async function handler(req, res) {
   if (req.method === 'POST') {
-    const { name, email, subject, message } = req.body;
+    const { name, email, subject,phone,country, message } = req.body;
 
     // Create a Nodemailer transporter
     const transporter = nodemailer.createTransport({
@@ -22,7 +22,7 @@ export default async function handler(req, res) {
         from: 'cp566997@gmail.com',
         to: email,
         subject: subject,
-        text: `Name: ${name}\nEmail: ${email}\n\n${message}`,
+        text: `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nPhone: ${country}\n\n${message}`,
       });
 
       console.log('Message sent: %s', info.messageId);

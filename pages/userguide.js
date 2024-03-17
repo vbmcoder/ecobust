@@ -1,7 +1,12 @@
+import Head from "next/head"
 import styles from "../styles/Userguide.module.css"
 
 export default function Userguide() {
     return <>
+        <Head>
+            <title>How to Use Ecobust Non Explosive Demolition Powder | ECOBUST</title>
+            <meta name="description" content="Yes, Ecobust is a safe and eco-friendly alternative to traditional demolition methods. Our non-explosive powder allows for the efficient breaking of concrete and rock without the risks associated with explosives" />
+        </Head>
         <div className={styles.userguidesec}>
             <div className={styles.steptitle}>
                 <h1 data-aos="fade-left">STEPS TO USE ECOBUST</h1>

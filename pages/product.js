@@ -6,6 +6,7 @@ import { AiOutlineCloseCircle } from "react-icons/ai";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { FreeMode, Pagination } from 'swiper/modules';
 import 'swiper/swiper-bundle.css';
+import Head from "next/head";
 
 export default function Product() {
     const [isFormVisible, setIsFormVisible] = useState(false);
@@ -79,6 +80,13 @@ export default function Product() {
         { _id: 17, images: "/img/ecobust/ecobust_img17.jpg" },
     ]
     return <>
+        <Head>
+            <meta charset="UTF-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
+            <title>Ecobust Non-Explosive Demolition Powder - Safe and Effective Solution | ECOBUST</title>
+            <meta name="description" content="Ecobust offers a non-explosive demolition powder that provides a safe and effective solution for breaking concrete and rock without compromising the environment. Our eco-friendly product is revolutionizing the industry with its powerful yet safe formula." />
+
+        </Head>
         <div className={styles.container}>
             <div className={styles.titleofproduct}>
                 <h1 data-aos="fade-right">Ecobust Non Explosive Demolition Powder</h1>
@@ -108,16 +116,16 @@ export default function Product() {
                                 <img onClick={() => handleImageClick("/img/ecobust/ecobust_img5.jpg")} src="/img/ecobust/ecobust_img5.jpg" alt="img" />
                             </SwiperSlide>
                             <SwiperSlide>
-                            <img onClick={() => handleImageClick("/img/ecobust/ecobust_img6.jpg")} src="/img/ecobust/ecobust_img6.jpg" alt="img" />
+                                <img onClick={() => handleImageClick("/img/ecobust/ecobust_img6.jpg")} src="/img/ecobust/ecobust_img6.jpg" alt="img" />
                             </SwiperSlide>
                             <SwiperSlide>
-                            <img onClick={() => handleImageClick("/img/ecobust/ecobust_img7.jpg")} src="/img/ecobust/ecobust_img7.jpg" alt="img" />
+                                <img onClick={() => handleImageClick("/img/ecobust/ecobust_img7.jpg")} src="/img/ecobust/ecobust_img7.jpg" alt="img" />
                             </SwiperSlide>
                             <SwiperSlide>
-                            <img onClick={() => handleImageClick("/img/ecobust/ecobust_img10.jpg")} src="/img/ecobust/ecobust_img10.jpg" alt="img" />
+                                <img onClick={() => handleImageClick("/img/ecobust/ecobust_img10.jpg")} src="/img/ecobust/ecobust_img10.jpg" alt="img" />
                             </SwiperSlide>
                             <SwiperSlide>
-                            <img onClick={() => handleImageClick("/img/ecobust/ecobust_img13.jpg")} src="/img/ecobust/ecobust_img13.jpg" alt="img" />
+                                <img onClick={() => handleImageClick("/img/ecobust/ecobust_img13.jpg")} src="/img/ecobust/ecobust_img13.jpg" alt="img" />
                             </SwiperSlide>
                         </Swiper>
                     </div>
@@ -125,7 +133,7 @@ export default function Product() {
                 <div className={styles.rightproinfo} data-aos="fade-left">
                     <div className={styles.r_protitles}>
                         <h1>Ecobust Non Explosive Demolition Powder</h1>
-                        <p>Price: <strong>₹1160.00 - ₹1660.00 / Kilogram</strong> <button onClick={toggleFormVisibility}>Get Best Price</button></p>
+                        <p>Price: <strong>₹1250.00 - ₹1550.00 / Kilogram</strong> <button onClick={toggleFormVisibility}>Get Best Price</button></p>
                         <p>MOQ: <strong>8 Ton</strong></p>
                     </div>
                     <table>
