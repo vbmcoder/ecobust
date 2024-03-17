@@ -1045,8 +1045,27 @@ nav {
   min-width: 30%;
   max-width: 90%;
   max-height: 90%;
+  margin: auto;
+  display: flex;
 }
-
+.controls{
+  position: fixed;
+  top: 0;
+  right: 0;
+}
+.controls button{
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  margin: 1rem;
+  cursor: pointer;
+}
+.controls svg{
+  cursor: pointer;
+  font-size: 30px;
+  color: #fff;
+}
 /* whatsappnoti */
 
 .whatsappnoti {
@@ -1260,6 +1279,7 @@ nav {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  transition: 2s ease-in;
 }
 
 
@@ -1851,14 +1871,20 @@ nav {
   box-shadow: 0 0 10px #000;
 }
 
-@media screen and (max-width: 1530px) {
+@media screen and (max-width: 1600px) {
+  .swiper{
+    height: 100vh;
+  }
   .flipbook .swiper-slide{
-    height: 70vh;
+    height: 66%;
   }
 }
 @media screen and (max-width: 1336px) {
   .flipbook {
     width: 65%;
+  }
+   .flipbook .swiper-slide{
+    height: 70%;
   }
 }
 
@@ -1905,7 +1931,44 @@ nav {
     height: 500px;
   }
 }
+@media screen and (max-width: 450px) {
+  .flipbooksec {
+    padding: 2rem 2rem;
+    height: 80vh;
+  }
 
+  .flipbook .swiper-slide {
+    width: 305px;
+    height: 450px;
+  }
+}
+
+/* animation on footer contact form */
+
+
+/* Apply animation when the .animate class is added */
+.contact_form p{
+  font-size: 30px;
+  font-family: math;
+  text-align: center;
+  background-color: #1b4e9b;
+  color: #fff;
+  border-radius: 30px;
+  padding: 10px;
+  animation: upme 2s ease forwards;
+}
+@keyframes upme {
+  0%{
+    transform: translateY(-550px);
+  }
+  100%{
+    transform: translateY(-250px);
+  }
+}
+.contact_f.animate{
+  opacity: 0;
+  transition: opacity 2s ease-out;
+}
 
 /* mySwiper */
 
@@ -2068,10 +2131,6 @@ nav {
 }
 
 
-.verified .swiper-slide{
-  width: 20%;
-  height: 30%;
-}
 
 /* grid_container */
 

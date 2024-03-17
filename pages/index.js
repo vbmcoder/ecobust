@@ -67,7 +67,6 @@ export default function Home() {
     { _id: 5, images: "/img/Justdial_logo.png" },
     { _id: 6, images: "/img/tradeindia.png" },
   ]
-
   return (
     <>
       <Head>
@@ -159,14 +158,13 @@ export default function Home() {
                 <a href="#" className="text-lowercase">infoecobust@gmail.com</a>
               </li>
               <li>
-                <a href="#"><FiPhone /></a>
-                <a href="#">+91-9929031735</a>
-              </li>
-              <li>
-                <a href="#"> <FaRegClock /></a>
-                <a href="#">Office Hours: 8AM - 11PM Sunday -
-                  Weekend Day</a>
-              </li>
+            <a href="#"><FiPhone /></a>
+            <a href="#">+91-9929031735 , <br />+91-9929711198</a>
+          </li>
+          <li>
+            <a href="#"> <FaRegClock /></a>
+            <a href="#">Office Hours: 8AM - 11PM Sunday -</a>
+          </li>
             </ul>
             <span className="flex">
               <a href="#"><i className="fa-brands fa-facebook"></i></a>
@@ -330,48 +328,6 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </div>
-      <div className="our_clients">
-        <h2>Our Clients</h2>
-        <Swiper
-          slidesPerView={5}
-          spaceBetween={30}
-          loop={true}
-          pagination={{
-            clickable: true,
-          }}
-          navigation={true}
-          modules={[Pagination, Navigation]}
-          breakpoints={{
-            // when window width is >= 320px
-            320: {
-              slidesPerView: 1,
-              spaceBetween: 10
-            },
-            // when window width is >= 480px
-            480: {
-              slidesPerView: 2,
-              spaceBetween: 20
-            },
-            // when window width is >= 640px
-            640: {
-              slidesPerView: 3,
-              spaceBetween: 30
-            },
-            // when window width is >= 768px
-            768: {
-              slidesPerView: 4,
-              spaceBetween: 30
-            }
-          }}
-          className="ourclient_swiper"
-        >
-          {alldata.map((pro) => (
-            <SwiperSlide key={pro._id}>
-              <img src={pro.images} alt="Product Image" loading="lazy" />
-            </SwiperSlide>
-          ))}
-        </Swiper>
       </div>
 
       <div className="footer_contact" >

@@ -4,10 +4,11 @@ import styles from '../styles/Gallary.module.css'
 import { useEffect, useState } from 'react';
 import Link from "next/link";
 import { Swiper, SwiperSlide } from 'swiper/react';
-
+import { IoClose } from "react-icons/io5";
+import { MdFullscreen } from "react-icons/md";
+import { AiOutlineZoomIn , AiOutlineZoomOut} from "react-icons/ai";
 // Import Swiper styles
 import 'swiper/css';
-import 'swiper/css/pagination';
 
 // import required modules
 import { Pagination, Navigation, Autoplay } from 'swiper/modules';
@@ -45,8 +46,8 @@ export default function Gallery() {
         { _id: 17, images: "/img/ecobust/ecobust_img17.jpg", title: "image17" },
     ]
 
-
     const [fullScreenImage, setFullScreenImage] = useState(null);
+    const [zoomLevel, setZoomLevel] = useState(1);
 
     const handleClick = (src) => {
         setFullScreenImage(src);
@@ -55,6 +56,38 @@ export default function Gallery() {
     const handleClose = () => {
         setFullScreenImage(null);
     };
+    const handleZoomIn = () => {
+        setZoomLevel(prevZoom => prevZoom + 1);
+    };
+
+    const handleZoomOut = () => {
+        if (zoomLevel > 0.2) {
+            setZoomLevel(prevZoom => prevZoom - 1);
+        }
+    };
+
+   
+
+    // const openFullScreen = (imageUrl) => {
+    //     setFullScreenImage(imageUrl);
+    //     if (document.documentElement.requestFullscreen) {
+    //         document.documentElement.requestFullscreen();
+    //     } else if (document.documentElement.webkitRequestFullscreen) {
+    //         // Safari
+    //         document.documentElement.webkitRequestFullscreen();
+    //     }
+    // };
+
+    // const closeFullScreen = () => {
+    //     setFullScreenImage(null);
+    //     if (document.exitFullscreen) {
+    //         document.exitFullscreen();
+    //     } else if (document.webkitExitFullscreen) {
+    //         // Safari
+    //         document.webkitExitFullscreen();
+    //     }
+    // };
+
     return <>
         <Head>
             <title>Gallery Photographes of Ecobust Non Explosive Demolition Powder | EcoBust</title>
@@ -104,16 +137,21 @@ export default function Gallery() {
                     <img src="/img/ecobust/ecobust_img2.jpg" onClick={() => handleClick("/img/ecobust/ecobust_img2.jpg")} loading="lazy" />
                 </div>
             </div>
-            {fullScreenImage && (
-                <div
-                    className="fullscreen-overlay"
-                    onClick={handleClose}
-                >
-                    <img
-                        src={fullScreenImage}
-                        alt="Fullscreen Image"
-                        className="fullscreen-image"
-                    />
+             {fullScreenImage && (
+                <div className="fullscreen-overlay">
+                    <div className="image-container">
+                        <img
+                            src={fullScreenImage}
+                            alt="Fullscreen Image"
+                            className="fullscreen-image"
+                            style={{ transform: `scale(${zoomLevel})` } }
+                        />
+                        <div className="controls">
+                            {zoomLevel === 1 ? <AiOutlineZoomIn  onClick={handleZoomIn} /> : <AiOutlineZoomOut  onClick={handleZoomOut} />}
+                            {/* <button onClick={openFullScreen}><MdFullscreen/></button> */}
+                            <button onClick={handleClose}><IoClose/></button>
+                        </div>
+                    </div>
                 </div>
             )}
         </div>

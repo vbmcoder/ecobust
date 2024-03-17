@@ -133,7 +133,7 @@ export default function Product() {
                 <div className={styles.rightproinfo} data-aos="fade-left">
                     <div className={styles.r_protitles}>
                         <h1>Ecobust Non Explosive Demolition Powder</h1>
-                        <p>Price: <strong>₹1250.00 - ₹1550.00 / Kilogram</strong> <button onClick={toggleFormVisibility}>Get Best Price</button></p>
+                        <p>Price: <strong>₹12.50 - ₹15.50 / Kilogram</strong> <button onClick={toggleFormVisibility}>Get Best Price</button></p>
                         <p>MOQ: <strong>8 Ton</strong></p>
                     </div>
                     <table>

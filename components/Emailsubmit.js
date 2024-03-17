@@ -8,7 +8,7 @@ export default function Emailsubmit() {
     const [formData, setFormData] = useState({
         name: '',
         email: '',
-        phone: '', // Assuming this is the default value
+        phone: '+91', // Assuming this is the default value
         country: '', // Assuming this is the default value
         message: ''
     });
@@ -29,25 +29,6 @@ export default function Emailsubmit() {
         setFormData({ ...formData, [name]: value });
     };
 
-    // const handleSubmit = async (event) => {
-    //     event.preventDefault();
-    //     setSubmitting(true);
-    //     try {
-    //         const response = await axios.post('/api/emailsend', formData);
-    //         setMessage(response.data.message);
-    //         setFormData({
-    //             name: '',
-    //             email: '',
-    //             phone: '',
-    //             country: '',
-    //             message: ''
-    //         });
-    //     } catch (error) {
-    //         setMessage('Failed to send email. Please try again later.');
-    //     } finally {
-    //         setSubmitting(false);
-    //     }
-    // };
     const handleSubmit = async (e) => {
         e.preventDefault();
         setSubmitting(true);
@@ -88,7 +69,7 @@ export default function Emailsubmit() {
                         <div className="form_info">
                             <input type="text" name="name" placeholder="Your Name" value={formData.name} onChange={handleChange} required />
                             <input type="email" name="email" placeholder="Your Email" value={formData.email} onChange={handleChange} required />
-                            <input type="text" name="phone" placeholder="Your Number" value={formData.phone} onChange={handleChange} required />
+                            <input type="text" name="phone" placeholder="Your Number" defaultValue="+91" value={formData.phone} onChange={handleChange} required />
                             <input type="text" name="country" placeholder="Your country" value={formData.country} onChange={handleChange} required />
                             <textarea name="message" placeholder="Describe your requirement in details:" value={formData.message} onChange={handleChange} cols="30" rows="10" required></textarea>
                             <button type="submit" disabled={submitting}>{submitting ? 'Sending...' : 'Send Now'}</button>

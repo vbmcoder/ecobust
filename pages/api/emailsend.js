@@ -4,7 +4,7 @@ import nodemailer from 'nodemailer';
 
 export default async function handler(req, res) {
   if (req.method === 'POST') {
-    const { name, email, subject,phone,country, message } = req.body;
+    const { name, email, subject, phone, country, message } = req.body;
 
     // Create a Nodemailer transporter
     const transporter = nodemailer.createTransport({

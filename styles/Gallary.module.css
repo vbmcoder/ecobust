@@ -144,3 +144,43 @@
     color: #777;
 }
 
+@media screen and (max-width: 500px) {
+    .topphonesec{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 2rem;
+    }
+    .lefttitlesec{
+        padding: 3rem 0;
+        text-align: center;
+    }
+    .lefttitlesec h4{
+        font-size: 20px;
+    }
+    .lefttitlesec h1{
+     
+        font-size: 35px;
+    }
+    .lefttitlesec a button{
+        padding: 10px;
+        font-size: 20px;
+    }
+    .rightimgsec {
+        margin: 0;
+        flex-direction: column;
+    }
+    .rightimgsec img{
+       width: 100%;
+       height: auto;
+    }
+    .r_img_top img:nth-child(2){
+        width: 100%;
+        margin: 0;
+    }
+    .ecobus_gallery{
+        font-size: 30px;
+        gap: 1rem;
+        padding: 0 1rem;
+    }
+}
