@@ -163,7 +163,7 @@ export default function Home() {
               </li>
               <li>
                 <a href="#"> <FaRegClock /></a>
-                <a href="#">Office Hours: 8AM - 11PM Sunday -</a>
+                <a href="#">Office Hours: 8AM - 11PM-</a>
               </li>
             </ul>
             <span className="flex">
