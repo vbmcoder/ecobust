@@ -158,13 +158,13 @@ export default function Home() {
                 <a href="#" className="text-lowercase">infoecobust@gmail.com</a>
               </li>
               <li>
-            <a href="#"><FiPhone /></a>
-            <a href="#">+91-9929031735 , <br />+91-9929711198</a>
-          </li>
-          <li>
-            <a href="#"> <FaRegClock /></a>
-            <a href="#">Office Hours: 8AM - 11PM Sunday -</a>
-          </li>
+                <a href="#"><FiPhone /></a>
+                <a href="#">+91-9929031735 , <br />+91-9929711198</a>
+              </li>
+              <li>
+                <a href="#"> <FaRegClock /></a>
+                <a href="#">Office Hours: 8AM - 11PM Sunday -</a>
+              </li>
             </ul>
             <span className="flex">
               <a href="#"><i className="fa-brands fa-facebook"></i></a>
@@ -209,6 +209,19 @@ export default function Home() {
           expansive pressure of 11200 T / m2 when mixed with water. Granite,sandstone, marble, limestone, plain
           concrete, reinforced concrete,boulders, and ledges are fractured within 2 to 12 hours without
           noise,vibration, or fly rock. Especially, used as environment constraints</span>
+      </div>
+      <div className="company_details">
+                <div className="oftitle">
+                    <hr />
+                    <h2>Company Details</h2>
+                </div>
+                <div className="company_data">
+                    <div className="com_left">
+                        <h1 >Welcome To <strong>Manveer Group Of Industries</strong> </h1>
+                        <p data-aos="fade-up">We are one of the leading Manufacturer and Suppliers of Non-explosive demolition agent in India, we are engaged in providing reliable solutions related to concrete structures demolition, rock excavation and boulders demolition, etc. we have successfully promoted our products to worldwide Customers with our specialization in the domain of Chemical Demolition Technology. ECO BUST is used in an almost unlimited range of applications. It's Particularly used for breaking-cutting of stones in quarries or demolishing stones, concrete and reinforced concrete. Endless Benefits of ECOBUST can be listed against explosives and other methods of breaking, cutting or demolishing. Silent Non-ExplosiveDemolition Agent is a non-toxic and cementation powder, which consists of calcined oxides of calcium, silicon and aluminum, Non-explosive demolition agent becomes a highly powered amazing expansive pressure of 11200 T / m2 when mixed with water. Granite,sandstone, marble, limestone, plain concrete, reinforced concrete,boulders, and ledges are fractured within 2 to 12 hours without noise,vibration, or fly rock. Especially, used as environment constraints</p>
+                        <Link href='/about'>Read More</Link>
+                    </div>
+            </div>
       </div>
       <div className="our_clients verified">
         <h2>Verified Manufacturer</h2>

@@ -697,6 +697,7 @@ nav {
   margin-bottom: 40px;
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 1rem;
 }
 
@@ -956,26 +957,28 @@ nav {
   width: 100%;
   height: auto;
   padding: 5rem 5rem;
-  margin-top: 13rem;
+  margin-top: 3rem;
   overflow: hidden;
+  text-align: center;
 }
 
 .company_data {
   display: flex;
   width: 100%;
   height: auto;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
   padding: 0 9rem;
   gap: 8rem;
 }
 
 .com_left {
-  width: 50%;
+  width: 100%;
 }
 
 .com_left h1 {
   font-size: 35px;
+  text-align: center;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   margin-bottom: 20px;
 }
@@ -997,15 +1000,37 @@ nav {
 }
 
 .com_right {
-  width: 50%;
+  margin-top: 3rem;
+  width: 100%;
+  text-align: center;
 }
 
 .com_right h1 {
+  position: relative;
   font-size: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  margin-bottom: 20px;
+  margin-bottom: 3rem;
+}
+.com_right h1::before {
+  content: '';
+  height: 2px;
+  background: linear-gradient(to left, #1b4e9b 10%, transparent 50%);
+  display: block;
+  margin-right: 10px;
+  width: 150px;
 }
 
+.com_right h1::after {
+  content: '';
+  height: 2px;
+  display: block;
+  background: linear-gradient(to right, #1b4e9b 10%, transparent 50%);
+  margin-left: 10px;
+  width: 150px;
+}
 .com_right .crimgbox {
   min-width: 280px;
   max-width: 280px;
@@ -1048,12 +1073,14 @@ nav {
   margin: auto;
   display: flex;
 }
-.controls{
+
+.controls {
   position: fixed;
   top: 0;
   right: 0;
 }
-.controls button{
+
+.controls button {
   padding: 0;
   background-color: transparent;
   border: none;
@@ -1061,11 +1088,13 @@ nav {
   margin: 1rem;
   cursor: pointer;
 }
-.controls svg{
+
+.controls svg {
   cursor: pointer;
   font-size: 30px;
   color: #fff;
 }
+
 /* whatsappnoti */
 
 .whatsappnoti {
@@ -1793,13 +1822,16 @@ nav {
   .right_copy {
     margin-bottom: 2rem;
   }
-  .our_clients h2{
+
+  .our_clients h2 {
     font-size: 28px !important;
   }
-  .our_clients h2::before{
+
+  .our_clients h2::before {
     width: 50px !important;
   }
-  .our_clients h2::after{
+
+  .our_clients h2::after {
     width: 50px !important;
   }
 }
@@ -1872,18 +1904,21 @@ nav {
 }
 
 @media screen and (max-width: 1600px) {
-  .swiper{
+  .swiper {
     height: 100vh;
   }
-  .flipbook .swiper-slide{
+
+  .flipbook .swiper-slide {
     height: 66%;
   }
 }
+
 @media screen and (max-width: 1336px) {
   .flipbook {
     width: 65%;
   }
-   .flipbook .swiper-slide{
+
+  .flipbook .swiper-slide {
     height: 70%;
   }
 }
@@ -1931,6 +1966,7 @@ nav {
     height: 500px;
   }
 }
+
 @media screen and (max-width: 450px) {
   .flipbooksec {
     padding: 2rem 2rem;
@@ -1947,7 +1983,7 @@ nav {
 
 
 /* Apply animation when the .animate class is added */
-.contact_form p{
+.contact_form p {
   font-size: 30px;
   font-family: math;
   text-align: center;
@@ -1957,15 +1993,18 @@ nav {
   padding: 10px;
   animation: upme 2s ease forwards;
 }
+
 @keyframes upme {
-  0%{
+  0% {
     transform: translateY(-550px);
   }
-  100%{
+
+  100% {
     transform: translateY(-250px);
   }
 }
-.contact_f.animate{
+
+.contact_f.animate {
   opacity: 0;
   transition: opacity 2s ease-out;
 }
@@ -2063,11 +2102,12 @@ nav {
 
 
 /* ourclient_swiper */
-.our_clients{
+.our_clients {
   position: relative;
   padding: 3rem;
 }
-.our_clients h2{
+
+.our_clients h2 {
   position: relative;
   font-family: math;
   font-size: 40px;
@@ -2077,7 +2117,8 @@ nav {
   justify-content: center;
   margin-bottom: 2rem;
 }
-.our_clients h2::before{
+
+.our_clients h2::before {
   content: '';
   height: 2px;
   background: linear-gradient(to left, #1b4e9b 10%, transparent 50%);
@@ -2085,7 +2126,8 @@ nav {
   margin-right: 10px;
   width: 150px;
 }
-.our_clients h2::after{
+
+.our_clients h2::after {
   content: '';
   height: 2px;
   display: block;
@@ -2119,6 +2161,7 @@ nav {
   user-select: none;
   /* background-color: #2345671b; */
 }
+
 .ourclient_swiper .swiper-slide img {
   display: block;
   width: 100%;
@@ -2126,7 +2169,8 @@ nav {
   object-fit: contain;
   transition: 0.3s ease-in-out;
 }
-.verified{
+
+.verified {
   margin: 4rem 0;
 }
 
@@ -2135,16 +2179,19 @@ nav {
 /* grid_container */
 
 .row {
-  display: -ms-flexbox; /* IE10 */
+  display: -ms-flexbox;
+  /* IE10 */
   display: flex;
-  -ms-flex-wrap: wrap; /* IE10 */
+  -ms-flex-wrap: wrap;
+  /* IE10 */
   flex-wrap: wrap;
   padding: 0 4px;
 }
 
 /* Create four equal columns that sits next to each other */
 .column {
-  -ms-flex: 25%; /* IE10 */
+  -ms-flex: 25%;
+  /* IE10 */
   flex: 25%;
   max-width: 25%;
   padding: 0 4px;
