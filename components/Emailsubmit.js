@@ -33,35 +33,35 @@ export default function Emailsubmit() {
         e.preventDefault();
         setSubmitting(true);
         try {
-          const response = await fetch('/api/emailsend', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(formData),
-          });
-    
-          if (response.ok) {
-            setMessage('✅️ Email sent successfully');
-            setSubmitting(false);
+            const response = await fetch('/api/emailsend', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
+            });
 
-            setTimeout(() => {
-                setMessage(null);
-            }, 5000);
-            setSubmitting(false);
-          } else {
-            setMessage('❌ Failed to send email, Please Try again...');
-            setSubmitting(false);
+            if (response.ok) {
+                setMessage('✅️ Email sent successfully');
+                setSubmitting(false);
 
-            setTimeout(() => {
-                setMessage(null);
-            }, 5000);
-            // Handle error case
-          }
+                setTimeout(() => {
+                    setMessage(null);
+                }, 5000);
+                setSubmitting(false);
+            } else {
+                setMessage('❌ Failed to send email, Please Try again...');
+                setSubmitting(false);
+
+                setTimeout(() => {
+                    setMessage(null);
+                }, 5000);
+                // Handle error case
+            }
         } catch (error) {
             setMessage('Error occurred:', error.message);
         }
-      };
+    };
     return <>
         <div className="emailsubmitsec">
             <button className="emailclickbtn" onClick={toggleFormVisibility}>
@@ -69,17 +69,17 @@ export default function Emailsubmit() {
             </button>
             {isFormVisible && (
                 <div className="enquiryform">
-                            {message && <h3><p>{message}</p></h3>}
+                    {message && <h3><p>{message}</p></h3>}
                     <form className="form_e" onSubmit={handleSubmit}>
                         <div className="flex flex-sb">
                             <p>Tell us what you are looking for?</p>
                             <AiOutlineCloseCircle onClick={handleCloseForm} />
                         </div>
-                            
+
                         <div className="form_info">
                             <input type="text" name="name" placeholder="Your Name" value={formData.name} onChange={handleChange} required />
                             <input type="email" name="email" placeholder="Your Email" value={formData.email} onChange={handleChange} required />
-                            <input type="text" name="phone" placeholder="Your Number"  value={formData.phone} onChange={handleChange} required />
+                            <input type="text" name="phone" placeholder="Your Number" value={formData.phone} onChange={handleChange} required />
                             <input type="text" name="country" placeholder="Your country" value={formData.country} onChange={handleChange} required />
                             <textarea name="message" placeholder="Describe your requirement in details:" value={formData.message} onChange={handleChange} cols="30" rows="10" required></textarea>
                             <button type="submit" disabled={submitting}>{submitting ? 'Sending...' : 'Send Now'}</button>

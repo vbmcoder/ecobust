@@ -14,7 +14,7 @@ export default function Footer() {
         name: '',
         email: '',
         phone: '+91', // Assuming this is the default value
-        country: '', // Assuming this is the default value
+        country: '', 
         message: ''
     });
 

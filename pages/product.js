@@ -14,7 +14,7 @@ export default function Product() {
     const [formData, setFormData] = useState({
         name: '',
         email: '',
-        phone: '', // Assuming this is the default value
+        phone: '+91', // Assuming this is the default value
         country: '', // Assuming this is the default value
         message: ''
     });
@@ -32,29 +32,40 @@ export default function Product() {
 
     const handleChange = (e) => {
         const { name, value } = e.target;
-        setFormData({
-            ...formData,
-            [name]: value
-        });
+        setFormData({ ...formData, [name]: value });
     };
 
-    const handleSubmit = async (event) => {
-        event.preventDefault();
+    const handleSubmit = async (e) => {
+        e.preventDefault();
         setSubmitting(true);
         try {
-            const response = await axios.post('/api/emailsend', formData);
-            setMessage(response.data.message);
-            setFormData({
-                name: '',
-                email: '',
-                phone: '+91',
-                country: 'India',
-                message: ''
+            const response = await fetch('/api/emailsend', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
             });
+
+            if (response.ok) {
+                setMessage('✅️ Email sent successfully');
+                setSubmitting(false);
+
+                setTimeout(() => {
+                    setMessage(null);
+                }, 5000);
+                setSubmitting(false);
+            } else {
+                setMessage('❌ Failed to send email, Please Try again...');
+                setSubmitting(false);
+
+                setTimeout(() => {
+                    setMessage(null);
+                }, 5000);
+                // Handle error case
+            }
         } catch (error) {
-            setMessage('Failed to send email. Please try again later.');
-        } finally {
-            setSubmitting(false);
+            setMessage('Error occurred:', error.message);
         }
     };
 
@@ -214,23 +225,26 @@ export default function Product() {
                     <li data-aos="fade-up">No flying rocks, no toxic vapors</li>
                 </ul>
                 <div data-aos="fade-up"><button onClick={toggleFormVisibility} >Yes! I am interested</button></div>
-                {isFormVisible && <div className="enquiryform">
-                    <form className="form_e" onSubmit={handleSubmit}>
-                        <div className="flex flex-sb">
-                            <p>Tell us what you are looking for?</p>
-                            <AiOutlineCloseCircle onClick={handleCloseForm} />
-                        </div>
-                        <div className="form_info">
-                            <input type="text" name="name" placeholder="Your Name" value={formData.name} onChange={handleChange} required />
-                            <input type="email" name="email" placeholder="Your Email" value={formData.email} onChange={handleChange} required />
-                            <input type="tel" name="phone" placeholder="Your Number" value={formData.phone} onChange={handleChange} required />
-                            <input type="text" name="country" placeholder="Your country" value={formData.country} onChange={handleChange} required />
-                            <textarea name="message" placeholder="Describe your requirement in details:" value={formData.message} onChange={handleChange} cols="30" rows="10" required></textarea>
-                            <button type="submit" disabled={submitting}>{submitting ? 'Sending...' : 'Send Now'}</button>
-                            {message && <p>{message}</p>}
-                        </div>
-                    </form>
-                </div>}
+                {isFormVisible && (
+                    <div className="enquiryform">
+                        {message && <h3><p>{message}</p></h3>}
+                        <form className="form_e" onSubmit={handleSubmit}>
+                            <div className="flex flex-sb">
+                                <p>Tell us what you are looking for?</p>
+                                <AiOutlineCloseCircle onClick={handleCloseForm} />
+                            </div>
+
+                            <div className="form_info">
+                                <input type="text" name="name" placeholder="Your Name" value={formData.name} onChange={handleChange} required />
+                                <input type="email" name="email" placeholder="Your Email" value={formData.email} onChange={handleChange} required />
+                                <input type="text" name="phone" placeholder="Your Number" value={formData.phone} onChange={handleChange} required />
+                                <input type="text" name="country" placeholder="Your country" value={formData.country} onChange={handleChange} required />
+                                <textarea name="message" placeholder="Describe your requirement in details:" value={formData.message} onChange={handleChange} cols="30" rows="10" required></textarea>
+                                <button type="submit" disabled={submitting}>{submitting ? 'Sending...' : 'Send Now'}</button>
+                            </div>
+                        </form>
+                    </div>
+                )}
             </div>
         </div>
         <div className={styles.container} >
