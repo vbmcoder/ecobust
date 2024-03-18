@@ -173,7 +173,6 @@ export default function Home() {
               <a href="#"><i className="fa-brands fa-linkedin"></i></a>
             </span>
           </div>
-
         </aside>
 
 
@@ -342,7 +341,6 @@ export default function Home() {
           </div>
         </div>
       </div>
-
       <div className="footer_contact" >
         <div className="f_c">
           <img src="/img/callus.png" alt="" />
@@ -355,7 +353,7 @@ export default function Home() {
           <img src="/img/emailus.png" alt="" />
           <div className="f_cinfo">
             <h3>Email Us</h3>
-            <h2>info@ecobust.in</h2>
+            <h2>infoecobust@gmail.com</h2>
           </div>
         </div>
         <div className="f_c">

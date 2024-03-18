@@ -4,15 +4,17 @@ import nodemailer from 'nodemailer';
 
 export default async function handler(req, res) {
   if (req.method === 'POST') {
-    const { name, email, subject, phone, country, message } = req.body;
+    const { name, email, phone, country, message } = req.body;
 
     // Create a Nodemailer transporter
     const transporter = nodemailer.createTransport({
       // Configure your email service provider here
-      service: 'Gmail',
+      host: 'smtp.elasticemail.com',
+      port: 2525,
+      secure: false, // true for 2525, false for other ports
       auth: {
-        user: `${process.env.mail}`,
-        pass: `${process.env.pass}`,
+        user: `${process.env.mymail}`,
+        pass: `${process.env.mypass}`,
       },
     });
 
@@ -20,9 +22,9 @@ export default async function handler(req, res) {
       // Send the email
       const info = await transporter.sendMail({
         from: 'cp566997@gmail.com',
-        to: email,
-        subject: subject,
-        text: `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nPhone: ${country}\n\n${message}`,
+        to: 'infoecobust@gmail.com',
+        subject: 'Ecobust Enquiry',
+        text: `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nCountry: ${country}\n\n${message}`,
       });
 
       console.log('Message sent: %s', info.messageId);

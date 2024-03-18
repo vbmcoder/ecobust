@@ -187,23 +187,23 @@ export default function About() {
                     </div>
                     <div className={styles.ecousecard}>
                         <img src="/img/marble.jpg" alt="" />
-                        <h3>Black Galaxy/Granite Stone Cracking</h3>
+                        <h3>Marble Stone Cracking</h3>
                     </div>
                     <div className={styles.ecousecard}>
                         <img src="/img/masonrystonecracking.jpg" alt="" />
-                        <h3>Black Galaxy/Granite Stone Cracking</h3>
+                        <h3>Concrete/Masonry Stone Cracking</h3>
                     </div>
                     <div className={styles.ecousecard}>
                         <img src="/img/riverstone.jpg" alt="" />
-                        <h3>Black Galaxy/Granite Stone Cracking</h3>
+                        <h3>River Stone Cracking</h3>
                     </div>
                     <div className={styles.ecousecard}>
                         <img src="/img/concrete.jpg" alt="" />
-                        <h3>Black Galaxy/Granite Stone Cracking</h3>
+                        <h3>Concrete Demolition / Cracking</h3>
                     </div>
                     <div className={styles.ecousecard}>
                         <img src="/img/masonrystonecracking2.jpg" alt="" />
-                        <h3>Black Galaxy/Granite Stone Cracking</h3>
+                        <h3>Concrete/Masonry Stone Cracking</h3>
                     </div>
                 </div>
             </div>

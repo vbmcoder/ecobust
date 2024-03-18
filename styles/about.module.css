@@ -315,22 +315,25 @@
     align-items: center;
     justify-content: center;
 }
-.wheretouse h4::before{
+
+.wheretouse h4::before {
     content: '';
     height: 2px;
     background: linear-gradient(to left, #1b4e9b 10%, transparent 50%);
     display: block;
     margin-right: 10px;
     width: 150px;
-  }
-  .wheretouse h4::after{
+}
+
+.wheretouse h4::after {
     content: '';
     height: 2px;
     display: block;
     background: linear-gradient(to right, #1b4e9b 10%, transparent 50%);
     margin-left: 10px;
     width: 150px;
-  }
+}
+
 .wheretouse h2 {
     font-size: 35px;
     margin-bottom: 3rem;
@@ -347,19 +350,20 @@
     gap: 2rem;
 }
 
-.ecousecard{
+.ecousecard {
     position: relative;
     width: 30%;
     overflow: hidden;
 }
 
-.ecousecard img{
+.ecousecard img {
     border-radius: 30px;
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
-.ecousecard h3{
+
+.ecousecard h3 {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -397,6 +401,7 @@
         width: 48%;
     }
 }
+
 @media screen and (max-width: 1555px) {
     .why_cont {
         width: 100%;
@@ -408,6 +413,7 @@
         width: 50%;
     }
 }
+
 @media screen and (max-width: 1500px) {
     .why_cont {
         width: 100%;
@@ -467,6 +473,10 @@
         padding-bottom: 3rem;
     }
 
+    .about_center {
+        margin-bottom: 0;
+    }
+
     .about_right {
         width: 90%;
         height: 300px;
@@ -516,7 +526,7 @@
 
     .whychoose_sec {
         padding: 3rem 20px;
-        margin: 5rem 0;
+        margin: 0 0;
     }
 
     .why_cont {
@@ -581,5 +591,22 @@
 
     .formTable tbody tr td {
         font-size: 18px;
+    }
+
+    .wheretouse {
+        padding: 0 1rem;
+    }
+
+    .ecousecard {
+        width: 100%;
+    }
+
+    .ecousecard h3 {
+        font-size: 16px;
+    }
+
+    .wheretouse h2 {
+        font-size: 27px;
+        text-align: center;
     }
 }

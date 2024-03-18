@@ -1766,7 +1766,7 @@ nav {
 
   .contact_form {
     width: 100%;
-    padding: 3rem 2rem;
+    padding: 2rem 1rem;
   }
 
   .emailclickbtn {
@@ -1798,20 +1798,26 @@ nav {
   .input-container {
     width: 100%;
   }
-
+  .contact_f button{
+    width: 100%;
+  }
   .input-container .input[type="text"],
   .input-container .input[type="email"] {
     width: 100%;
   }
-
-  .contact_f {
-    padding-bottom: 3rem;
+  .verified{
+    margin: 0 !important;
   }
+  /* .contact_f {
+    padding-bottom: 3rem;
+  } */
 
   .copyright_sec {
     height: auto;
     gap: 2rem;
-    padding: 1.5rem 2rem;
+    padding: 2rem 2rem;
+    padding-bottom: 5rem;
+    text-align: center;
   }
 
   .left_copy {
@@ -1851,7 +1857,7 @@ nav {
 
   .copyright_sec {
     justify-content: center;
-    height: 310px;
+    height: auto;
   }
 
   .right_copy {
@@ -1904,7 +1910,7 @@ nav {
 }
 
 @media screen and (max-width: 1600px) {
-  .swiper {
+  .flipbook .swiper {
     height: 100vh;
   }
 
@@ -1964,6 +1970,9 @@ nav {
   .flipbook .swiper-slide {
     width: 325px;
     height: 500px;
+  }
+  .contact_form h2{
+    margin-bottom: 0;
   }
 }
 
