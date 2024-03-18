@@ -7,7 +7,6 @@ import { FaRegClock } from "react-icons/fa";
 import { FiPhone } from "react-icons/fi";
 import { GrMail } from "react-icons/gr";
 import Link from "next/link";
-import Whatsapp from "@/components/Whatsapp";
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 // Import Swiper styles
@@ -145,9 +144,11 @@ export default function Home() {
 
             <p>ECO BUST is used in an almost unlimited range of applications. It's Particularly used for breaking-cutting of stones in quarries or demolishing stones, concrete and reinforced concrete.</p>
 
-            <button href="/about" data-label="Register" className="rainbow-hover">
-              <span className="sp">About Us</span>
-            </button>
+            <Link href="/about">
+              <button data-label="Register" className="rainbow-hover">
+                <span className="sp">About Us</span>
+              </button>
+            </Link>
 
           </div>
           <div className="asidecenter">
@@ -181,6 +182,7 @@ export default function Home() {
             <h1>Ecobust Non Explosive</h1>
             <h1 data-aos="fade-up">Demolition Powder</h1>
             <h2>We are one of the leading Manufacturer and Suppliers of Non-explosive demolition agent in India</h2>
+            <Link href="/contactus">
             <button className="hbtn" data-aos="fade-up">
               <span>Contact Us</span>
               <svg width="15px" height="10px" viewBox="0 0 13 10">
@@ -188,10 +190,11 @@ export default function Home() {
                 <polyline points="8 1 12 5 8 9"></polyline>
               </svg>
             </button>
+            </Link>
           </div>
           <div className="rightheaderdata">
-            <img src="/img/products.png" alt="Ecobust in action breaking concrete" />
-            <img src="/img/product.png" alt="Ecobust breaking rock without explosives" />
+            <img src="/img/products.png" alt="Ecobust in action breaking concrete"  loading="lazy"/>
+            <img src="/img/product.png" alt="Ecobust breaking rock without explosives"  loading="lazy" />
           </div>
         </div>
       </nav>
@@ -210,17 +213,17 @@ export default function Home() {
           noise,vibration, or fly rock. Especially, used as environment constraints</span>
       </div>
       <div className="company_details">
-                <div className="oftitle">
-                    <hr />
-                    <h2>Company Details</h2>
-                </div>
-                <div className="company_data">
-                    <div className="com_left">
-                        <h1 >Welcome To <strong>Manveer Group Of Industries</strong> </h1>
-                        <p data-aos="fade-up">We are one of the leading Manufacturer and Suppliers of Non-explosive demolition agent in India, we are engaged in providing reliable solutions related to concrete structures demolition, rock excavation and boulders demolition, etc. we have successfully promoted our products to worldwide Customers with our specialization in the domain of Chemical Demolition Technology. ECO BUST is used in an almost unlimited range of applications. It's Particularly used for breaking-cutting of stones in quarries or demolishing stones, concrete and reinforced concrete. Endless Benefits of ECOBUST can be listed against explosives and other methods of breaking, cutting or demolishing. Silent Non-ExplosiveDemolition Agent is a non-toxic and cementation powder, which consists of calcined oxides of calcium, silicon and aluminum, Non-explosive demolition agent becomes a highly powered amazing expansive pressure of 11200 T / m2 when mixed with water. Granite,sandstone, marble, limestone, plain concrete, reinforced concrete,boulders, and ledges are fractured within 2 to 12 hours without noise,vibration, or fly rock. Especially, used as environment constraints</p>
-                        <Link href='/about'>Read More</Link>
-                    </div>
-            </div>
+        <div className="oftitle">
+          <hr />
+          <h2>Company Details</h2>
+        </div>
+        <div className="company_data">
+          <div className="com_left">
+            <h1 >Welcome To <strong>Manveer Group Of Industries</strong> </h1>
+            <p data-aos="fade-up">We are one of the leading Manufacturer and Suppliers of Non-explosive demolition agent in India, we are engaged in providing reliable solutions related to concrete structures demolition, rock excavation and boulders demolition, etc. we have successfully promoted our products to worldwide Customers with our specialization in the domain of Chemical Demolition Technology. ECO BUST is used in an almost unlimited range of applications. It's Particularly used for breaking-cutting of stones in quarries or demolishing stones, concrete and reinforced concrete. Endless Benefits of ECOBUST can be listed against explosives and other methods of breaking, cutting or demolishing. Silent Non-ExplosiveDemolition Agent is a non-toxic and cementation powder, which consists of calcined oxides of calcium, silicon and aluminum, Non-explosive demolition agent becomes a highly powered amazing expansive pressure of 11200 T / m2 when mixed with water. Granite,sandstone, marble, limestone, plain concrete, reinforced concrete,boulders, and ledges are fractured within 2 to 12 hours without noise,vibration, or fly rock. Especially, used as environment constraints</p>
+            <Link href='/about'>Read More</Link>
+          </div>
+        </div>
       </div>
       <div className="our_clients verified">
         <h2>Verified Manufacturer</h2>
@@ -369,7 +372,6 @@ export default function Home() {
         <img src="https://cdn-icons-png.flaticon.com/128/684/684908.png" alt="" />
       </div>
 
-      <Whatsapp />
     </>
   );
 }

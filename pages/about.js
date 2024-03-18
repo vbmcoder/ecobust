@@ -46,14 +46,14 @@ export default function About() {
                         <h3>ECO BUST is used in an almost unlimited range of applications. It's Particularly used for breaking-cutting of stones in quarries or demolishing stones, concrete and reinforced concrete.</h3>
                     </div>
                     <div className={styles.about_right} data-aos="fade-left">
-                        <img src="/img/974421.jpg" alt="" />
+                        <img src="/img/974421.jpg" alt="Ecobust Stone Cracking Powder" />
                     </div>
                 </div>
             </div>
             <div className={styles.about_center}>
                 <div className={styles.about_cont}>
                     <div className={styles.abc_img} data-aos="fade-right">
-                        <img src="/img/974421.jpg" alt="" />
+                        <img src="/img/974421.jpg" alt="Ecobust Stone Cracking Powder" />
                     </div>
                     <div className={styles.abc_right} data-aos="fade-left">
                         <h3>ABOUT US</h3>
@@ -73,7 +73,7 @@ export default function About() {
                             <div className="crimgbox" >
                                 <img
                                     src="/img/1.png"
-                                    alt="Ecobust Certification"
+                                    alt="Ecobust Stone Cracking Powder Certification"
                                     onClick={() => handleClick("/img/1.png")}
                                     style={{ cursor: 'pointer' }} // Add cursor pointer for indication
                                 />
@@ -81,7 +81,7 @@ export default function About() {
                             <div className="crimgbox">
                                 <img
                                     src="/img/1 (1).png"
-                                    alt="Ecobust Certification"
+                                    alt="Ecobust Stone Cracking Powder Certification"
                                     onClick={() => handleClick("/img/1 (1).png")}
                                     style={{ cursor: 'pointer' }} // Add cursor pointer for indication
                                 />
@@ -93,7 +93,7 @@ export default function About() {
                                 >
                                     <img
                                         src={fullScreenImage}
-                                        alt="Fullscreen Image"
+                                        alt="Ecobust Stone Cracking Powder"
                                         className="fullscreen-image"
                                     />
                                 </div>
@@ -109,26 +109,26 @@ export default function About() {
                         <h3 data-aos="fade-up">WHY US?</h3>
                         <h1 data-aos="fade-up">Why choose <br /> <span>EcoBust.</span></h1>
                         <h2 data-aos="fade-up">We helping our client to fullfill their needs with our expert.</h2>
-                        <img src="/img/shape_179.svg" alt="" />
+                        <img src="/img/shape_179.svg" alt="Ecobust Stone Cracking Powder" />
                     </div>
                     <div className={styles.right_why}>
                         <div className={styles.right_card} data-aos="fade-left">
-                            <img src="/img/icon_152.svg" alt="" />
+                            <img src="/img/icon_152.svg" alt="Ecobust Stone Cracking Powder" />
                             <h2>Quality Service</h2>
                             <h4>High-quality products, Customized packaging</h4>
                         </div>
                         <div className={styles.right_card} data-aos="fade-right">
-                            <img src="/img/icon_153.svg" alt="" />
+                            <img src="/img/icon_153.svg" alt="Ecobust Stone Cracking Powder" />
                             <h2>24x7 Support</h2>
                             <h4>Skilled team of professionals</h4>
                         </div>
                         <div className={styles.right_card} data-aos="fade-left">
-                            <img src="/img/icon_154.svg" alt="" />
+                            <img src="/img/icon_154.svg" alt="Ecobust Stone Cracking Powder" />
                             <h2>Great Pricing</h2>
                             <h4>Easy payment modes, Transparent dealings</h4>
                         </div>
                         <div className={styles.right_card} data-aos="fade-right">
-                            <img src="/img/icon_155.svg" alt="" />
+                            <img src="/img/icon_155.svg" alt="Ecobust Stone Cracking Powder" />
                             <h2>100% Trusted</h2>
                             <h4>Wide distribution network, Skilled team of professionals</h4>
                         </div>
@@ -172,7 +172,7 @@ export default function About() {
                 >
                     {alldata.map((pro) => (
                         <SwiperSlide key={pro._id}>
-                            <img src={pro.images} alt="Product Image" loading="lazy" />
+                            <img src={pro.images} alt="Ecobust Stone Cracking Powder" loading="lazy" />
                         </SwiperSlide>
                     ))}
                 </Swiper>
@@ -182,27 +182,27 @@ export default function About() {
                 <h2>Where <strong>ECOBUST</strong> Chemical can be used?</h2>
                 <div className={styles.useecobustcards}>
                     <div className={styles.ecousecard}>
-                        <img src="/img/black-granite-blocks.jpg" alt="" />
+                        <img src="/img/black-granite-blocks.jpg" alt="Black Galaxy/Granite Stone Cracking" />
                         <h3>Black Galaxy/Granite Stone Cracking</h3>
                     </div>
                     <div className={styles.ecousecard}>
-                        <img src="/img/marble.jpg" alt="" />
+                        <img src="/img/marble.jpg" alt="Marble Stone Cracking" />
                         <h3>Marble Stone Cracking</h3>
                     </div>
                     <div className={styles.ecousecard}>
-                        <img src="/img/masonrystonecracking.jpg" alt="" />
+                        <img src="/img/masonrystonecracking.jpg" alt="Concrete/Masonry Stone Cracking" />
                         <h3>Concrete/Masonry Stone Cracking</h3>
                     </div>
                     <div className={styles.ecousecard}>
-                        <img src="/img/riverstone.jpg" alt="" />
+                        <img src="/img/riverstone.jpg" alt="River Stone Cracking" />
                         <h3>River Stone Cracking</h3>
                     </div>
                     <div className={styles.ecousecard}>
-                        <img src="/img/concrete.jpg" alt="" />
+                        <img src="/img/concrete.jpg" alt="Concrete Demolition / Cracking" />
                         <h3>Concrete Demolition / Cracking</h3>
                     </div>
                     <div className={styles.ecousecard}>
-                        <img src="/img/masonrystonecracking2.jpg" alt="" />
+                        <img src="/img/masonrystonecracking2.jpg" alt="Concrete/Masonry Stone Cracking" />
                         <h3>Concrete/Masonry Stone Cracking</h3>
                     </div>
                 </div>

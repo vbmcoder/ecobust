@@ -2,6 +2,7 @@ import Emailsubmit from "@/components/Emailsubmit";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import ScrollToTopButton from "@/components/ScrollToTopButton";
+import Whatsapp from "@/components/Whatsapp";
 import "@/styles/globals.css";
 import { useRouter } from "next/router";
 
@@ -20,6 +21,7 @@ export default function App({ Component, pageProps }) {
     <Emailsubmit />
     <Footer />
     <ScrollToTopButton />    
+    <Whatsapp/>
   </>
 
 }

@@ -61,7 +61,13 @@ export default function Product() {
     const [showPhoneNumber, setShowPhoneNumber] = useState(false);
 
     const handleClick = () => {
-        setShowPhoneNumber(prevState => !prevState);
+        // If showPhoneNumber is false, toggle it to true to display the phone number
+        if (!showPhoneNumber) {
+            setShowPhoneNumber(true);
+        } else {
+            // If showPhoneNumber is true, initiate the phone call
+            window.location.href = 'tel:+919929031735';
+        }
     };
 
     const [mainImage, setMainImage] = useState("/img/product.png"); // Initial main image
@@ -81,7 +87,7 @@ export default function Product() {
     ]
     return <>
         <Head>
-            <meta charset="UTF-8" />
+            <meta charSet="UTF-8" />
             <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
             <title>Ecobust Non-Explosive Demolition Powder - Safe and Effective Solution | ECOBUST</title>
             <meta name="description" content="Ecobust offers a non-explosive demolition powder that provides a safe and effective solution for breaking concrete and rock without compromising the environment. Our eco-friendly product is revolutionizing the industry with its powerful yet safe formula." />
@@ -92,14 +98,14 @@ export default function Product() {
                 <h1 data-aos="fade-right">Ecobust Non Explosive Demolition Powder</h1>
             </div>
             <p className={styles.breadcrumb} data-aos="fade-left">
-                <Link href="https://www.ecobust.in/" title="Home">Home</Link>
+                <Link href="/" title="Home">Home</Link>
                 <b>›</b>
                 <Link href="/product" title="Products">Products</Link>
                 <b>›</b> Ecobust Non Explosive Demolition Powder
             </p>
             <div className={styles.productsection}>
                 <div className={styles.leftproimg}>
-                    <img className={styles.mainimage} src={mainImage} alt="" />
+                    <img className={styles.mainimage} src={mainImage} alt="Ecobust: Eco-Friendly Alternative for Rock and Concrete Breaking" />
                     <div className={styles.proimglist} data-aos="fade-up">
                         <Swiper
                             slidesPerView={3}
@@ -110,22 +116,22 @@ export default function Product() {
                             className={styles.mySwiper}
                         >
                             <SwiperSlide>
-                                <img onClick={() => handleImageClick("/img/product.png")} src="/img/product.png" alt="img" />
+                                <img onClick={() => handleImageClick("/img/product.png")} src="/img/product.png" alt="Safe and Eco-Friendly Concrete Breaking with Ecobust" />
                             </SwiperSlide>
                             <SwiperSlide>
-                                <img onClick={() => handleImageClick("/img/ecobust/ecobust_img5.jpg")} src="/img/ecobust/ecobust_img5.jpg" alt="img" />
+                                <img onClick={() => handleImageClick("/img/ecobust/ecobust_img5.jpg")} src="/img/ecobust/ecobust_img5.jpg" alt="Environmentally Conscious Rock Demolition Solution - Ecobust" />
                             </SwiperSlide>
                             <SwiperSlide>
-                                <img onClick={() => handleImageClick("/img/ecobust/ecobust_img6.jpg")} src="/img/ecobust/ecobust_img6.jpg" alt="img" />
+                                <img onClick={() => handleImageClick("/img/ecobust/ecobust_img6.jpg")} src="/img/ecobust/ecobust_img6.jpg" alt="Safe and Eco-Friendly Concrete Breaking with Ecobust" />
                             </SwiperSlide>
                             <SwiperSlide>
-                                <img onClick={() => handleImageClick("/img/ecobust/ecobust_img7.jpg")} src="/img/ecobust/ecobust_img7.jpg" alt="img" />
+                                <img onClick={() => handleImageClick("/img/ecobust/ecobust_img7.jpg")} src="/img/ecobust/ecobust_img7.jpg" alt="Safe and Eco-Friendly Concrete Breaking with Ecobust" />
                             </SwiperSlide>
                             <SwiperSlide>
-                                <img onClick={() => handleImageClick("/img/ecobust/ecobust_img10.jpg")} src="/img/ecobust/ecobust_img10.jpg" alt="img" />
+                                <img onClick={() => handleImageClick("/img/ecobust/ecobust_img10.jpg")} src="/img/ecobust/ecobust_img10.jpg" alt="Safe and Eco-Friendly Concrete Breaking with Ecobust" />
                             </SwiperSlide>
                             <SwiperSlide>
-                                <img onClick={() => handleImageClick("/img/ecobust/ecobust_img13.jpg")} src="/img/ecobust/ecobust_img13.jpg" alt="img" />
+                                <img onClick={() => handleImageClick("/img/ecobust/ecobust_img13.jpg")} src="/img/ecobust/ecobust_img13.jpg" alt="Safe and Eco-Friendly Concrete Breaking with Ecobust" />
                             </SwiperSlide>
                         </Swiper>
                     </div>
@@ -168,7 +174,7 @@ export default function Product() {
                         </table>
                     </div>
                     <div className={styles.reqinqbtns}>
-                        <button onClick={handleClick}>{showPhoneNumber ? "REQUEST TO CALL" : <Link target="_blank" href={"https://wa.me/+919929031735"}>Call On: +91-9929031735</Link>}</button>
+                        <button onClick={handleClick}>{!showPhoneNumber ? "REQUEST TO CALL" : <Link target="_blank" href={"+919929031735"}>Call On: +91-9929031735</Link>}</button>
                         <button onClick={toggleFormVisibility}>SEND ENQUIRY</button>
                     </div>
                 </div>
@@ -244,7 +250,7 @@ export default function Product() {
                     >
                         {alldata.map((pro) => (
                             <SwiperSlide key={pro._id}>
-                                <img src={pro.images} alt="Product Image" loading="lazy" />
+                                <img src={pro.images} alt="Ecobust: Eco-Friendly Alternative for Rock and Concrete Breaking" loading="lazy" />
                             </SwiperSlide>
                         ))}
                     </Swiper>

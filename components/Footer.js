@@ -9,7 +9,6 @@ import { MdTextsms } from "react-icons/md";
 import { useState } from "react";
 
 export default function Footer() {
-    const [isFormVisible, setIsFormVisible] = useState(false);
 
     const [formData, setFormData] = useState({
         name: '',
@@ -21,14 +20,6 @@ export default function Footer() {
 
     const [submitting, setSubmitting] = useState(false);
     const [message, setMessage] = useState('');
-
-    const toggleFormVisibility = () => {
-        setIsFormVisible(!isFormVisible);
-    };
-
-    const handleCloseForm = () => {
-        setIsFormVisible(false);
-    };
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -48,14 +39,19 @@ export default function Footer() {
             });
 
             if (response.ok) {
-                setMessage('Email sent successfully');
+                setMessage('✅️ Email sent successfully');
                 setSubmitting(false);
-                document.querySelector('.contact_f').classList.add('animate');
-                // You can redirect or show a success message here
+
+                setTimeout(() => {
+                    setMessage(null);
+                }, 5000);
             } else {
-                setMessage('Failed to send email');
+                setMessage('❌ Failed to send email, Please Try again...');
                 setSubmitting(false);
-                // Handle error case
+
+                setTimeout(() => {
+                    setMessage(null);
+                }, 5000);
             }
         } catch (error) {
             setMessage('Error occurred:', error.message);
@@ -66,7 +62,7 @@ export default function Footer() {
             <div className="footer_sec">
                 <div className='footer_info'>
                     <div className="f_logo_info">
-                        <img src="/img/blacklogo.png" alt="img" />
+                        <img src="/img/blacklogo.png" alt="Ecobust" />
                         <ul >
                             <li><IoLocationSharp />Jodhpur, Rajasthan</li>
                             <li><FaPhoneVolume />(+91)-9929031735, (+91)-9929711198</li>
@@ -93,11 +89,12 @@ export default function Footer() {
                 </div>
 
                 <div className="contact_form" >
-                    <h2><span>Quick</span> Enquiry</h2>                  
-                        <form className="contact_f" onSubmit={handleSubmit}>
+                    <h2><span>Quick</span> Enquiry</h2>
+                    {message && <h4><p>{message}</p></h4>}
+                    <form className="contact_f" onSubmit={handleSubmit}>
                         <div className="input-container">
                             <label htmlFor="name" className="name">1. Name:</label>
-                            <input placeholder="Enter your name" type="text" className="input" name="name" value={formData.name} onChange={handleChange} />
+                            <input placeholder="Enter your name" type="text" className="input" name="name" value={formData.name} onChange={handleChange} required />
                             <div className="underline"></div>
                         </div>
                         <div className="input-container">
@@ -107,7 +104,7 @@ export default function Footer() {
                         </div>
                         <div className="input-container">
                             <label htmlFor="name" className="name">3. Phone:</label>
-                            <input placeholder="Enter Phone No"  type="text" className="input" name="phone" value={formData.phone} onChange={handleChange} required />
+                            <input placeholder="Enter Phone No" type="text" className="input" name="phone" value={formData.phone} onChange={handleChange} required />
                             <div className="underline"></div>
                         </div>
                         <div className="cn_in">
@@ -116,7 +113,7 @@ export default function Footer() {
                         </div>
                         <button type="submit" disabled={submitting}>{submitting ? 'Sending...' : 'Send Now'}</button>
                     </form>
-                    {message && <p>{message}</p>}
+
                 </div>
             </div>
             <div className="copyright_sec flex flex-sb flex-wrap">

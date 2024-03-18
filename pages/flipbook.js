@@ -38,22 +38,22 @@ export default function Flipbook() {
                 className="flipbook"
             >
                 <SwiperSlide>
-                    <img src="/img/flipbook1.jpg" />
+                    <img src="/img/flipbook1.jpg" alt="Ecobust Stone Cracking Powder flipbook information" />
                 </SwiperSlide>
                 <SwiperSlide>
-                    <img src="/img/flipbook2.jpg" />
+                    <img src="/img/flipbook2.jpg" alt="Ecobust Stone Cracking Powder flipbook information" />
                 </SwiperSlide>
                 <SwiperSlide>
-                    <img src="/img/flipbook3.jpg" />
+                    <img src="/img/flipbook3.jpg" alt="Ecobust Stone Cracking Powder flipbook information" />
                 </SwiperSlide>
                 <SwiperSlide>
-                    <img src="/img/flipbook4.jpg" />
+                    <img src="/img/flipbook4.jpg" alt="Ecobust Stone Cracking Powder flipbook information" />
                 </SwiperSlide>
                 <SwiperSlide>
-                    <img src="/img/flipbook5.jpg" />
+                    <img src="/img/flipbook5.jpg" alt="Ecobust Stone Cracking Powder flipbook information" />
                 </SwiperSlide>
                 <SwiperSlide>
-                    <img src="/img/flipbook6.jpg" />
+                    <img src="/img/flipbook6.jpg" alt="Ecobust Stone Cracking Powder flipbook information" />
                 </SwiperSlide>
             </Swiper>
         </div>

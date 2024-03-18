@@ -73,7 +73,7 @@ export default function Header() {
   return <>
     <header className={`${styles.main_nav} ${isSticky ? `${styles.sticky}` : ''}`}>
       <div className="logo flex">
-        <Link href='/'><img src="/img/greenlogo.png" alt="" /></Link>
+        <Link href='/'><img src="/img/greenlogo.png" alt="Ecobust" /></Link>
         <ul className="nav_items">
           <li><Link href="/">HOME</Link></li>
           <li><Link href="/about" className={activeLink === '/about' ? 'active' : ''} onClick={() => handleLinkClick('/about')}>ABOUT US</Link></li>
@@ -81,6 +81,7 @@ export default function Header() {
           <li><Link href="/flipbook" className={activeLink === '/flipbook' ? 'active' : ''} onClick={() => handleLinkClick('/flipbook')}>FLIPBOOK</Link></li>
           <li><Link href="/userguide" className={activeLink === '/userguide' ? 'active' : ''} onClick={() => handleLinkClick('/userguide')} >USER GUIDE</Link></li>
           <li><Link href="/gallery" className={activeLink === '/gallery' ? 'active' : ''} onClick={() => handleLinkClick('/gallery')} >GALLARY</Link></li>
+          <li><Link href="/contactus" className={activeLink === '/contactus' ? 'active' : ''} onClick={() => handleLinkClick('/contactus')} >CONTACT US</Link></li>
         </ul>
       </div>
       <div className="hamburger flex gap-2">
@@ -98,7 +99,7 @@ export default function Header() {
     <aside className={`navright ${openNav ? 'open' : ''}`}>
       <div className="asidetop">
         <div className="flex flex-sb">
-          <Link href='/'><img src="/img/greenlogo.png" alt="" /></Link>
+          <Link href='/'><img src="/img/greenlogo.png" alt="Ecobust" /></Link>
           <button onClick={closeNavbar} className="fa_xmark"><HiMiniXMark /></button>
         </div>
       </div>
@@ -109,22 +110,25 @@ export default function Header() {
         <li><Link href="/flipbook" className={activeLink === '/flipbook' ? 'active' : ''} onClick={() => handleLinkClick('/flipbook')}>FLIPBOOK</Link></li>
         <li><Link href="/userguide" className={activeLink === '/userguide' ? 'active' : ''} onClick={() => handleLinkClick('/userguide')} >USER GUIDE</Link></li>
         <li><Link href="/gallery" className={activeLink === '/gallery' ? 'active' : ''} onClick={() => handleLinkClick('/gallery')} >GALLARY</Link></li>
+        <li><Link href="/contactus" className={activeLink === '/contactus' ? 'active' : ''} onClick={() => handleLinkClick('/contactus')} >CONTACT US</Link></li>
       </ul>
     </aside>
     <aside className={`asideright ${openside ? 'open' : ''}`}>
       <div className="asidetop">
         <div className="flex flex-sb">
 
-          <img src="/img/greenlogo.png" alt="" />
+          <img src="/img/greenlogo.png" alt="Ecobust" />
           <button onClick={closeSidebar} className="fa_xmark"><HiMiniXMark /></button>
 
         </div>
 
         <p>ECO BUST is used in an almost unlimited range of applications. It's Particularly used for breaking-cutting of stones in quarries or demolishing stones, concrete and reinforced concrete.</p>
 
-        <button href="/" data-label="Register" className="rainbow-hover">
-          <span className="sp">About Us</span>
-        </button>
+        <Link href="/about">
+          <button data-label="Register" className="rainbow-hover">
+            <span className="sp">About Us</span>
+          </button>
+        </Link>
 
       </div>
       <div className="asidecenter">
@@ -135,8 +139,8 @@ export default function Header() {
             <a href="#" className="text-lowercase">info@ecobust.in</a>
           </li>
           <li>
-            <a href="#"><FiPhone /></a>
-            <a href="#">+91-9929031735 , <br />+91-9929711198</a>
+            <a href="https://wa.me/+919929031735"><FiPhone /></a>
+            <a href="https://wa.me/+919929031735">+91-9929031735 , <br />+91-9929711198</a>
           </li>
           <li>
             <a href="#"> <FaRegClock /></a>

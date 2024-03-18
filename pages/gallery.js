@@ -101,10 +101,10 @@ export default function Gallery() {
                 <Link href='#images'><button>VIEW MORE</button></Link>
             </div>
             <div className={styles.rightimgsec}>
-                <img src="/img/ecobust/ecobust_img2.jpg" alt="" />
+                <img src="/img/ecobust/ecobust_img2.jpg" alt="Ecobust: Revolutionizing Demolition Practices with Green Technology" />
                 <div className={styles.r_img_top}>
-                    <img src="/img/ecobust/ecobust_img3.jpg" alt="" />
-                    <img src="/img/ecobust/ecobust_img11.jpg" alt="" />
+                    <img src="/img/ecobust/ecobust_img3.jpg" alt="Non-Toxic Concrete Demolition Made Easy with Ecobust" />
+                    <img src="/img/ecobust/ecobust_img11.jpg" alt="Ecobust: Eco-Friendly Alternative for Rock and Concrete Breaking" />
                 </div>
             </div>
         </div>
@@ -142,7 +142,7 @@ export default function Gallery() {
                     <div className="image-container">
                         <img
                             src={fullScreenImage}
-                            alt="Fullscreen Image"
+                            alt="Ecobust Stone Cracking Powder"
                             className="fullscreen-image"
                             style={{ transform: `scale(${zoomLevel})` } }
                         />
