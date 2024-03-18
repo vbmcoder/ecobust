@@ -10,18 +10,18 @@ export default function Userguide() {
         <div className={styles.userguidesec}>
             <div className={styles.steptitle}>
                 <h1 data-aos="fade-left">STEPS TO USE ECOBUST</h1>
-                <div class={styles.top_bg}>
+                <div className={styles.top_bg}>
                     <svg viewBox="0 0 100 6" xmlns="http://www.w3.org/2000/svg">
-                        <path class="g_fill_1" d="M100,7C66.7,7,33.4,7,0,7c0-2.5,0-4.5,0-7h100C100,2.5,100,4.5,100,7z" fill="#eeeeee"></path>
+                        <path className="g_fill_1" d="M100,7C66.7,7,33.4,7,0,7c0-2.5,0-4.5,0-7h100C100,2.5,100,4.5,100,7z" fill="#eeeeee"></path>
                         <linearGradient id="fill_1">
-                            <stop class="g_fill_2" offset="0" stop-color="currentcolor"></stop>
-                            <stop class="g_fill_3" offset="1" stop-color="currentcolor"></stop>
+                            <stop className="g_fill_2" offset="0" stopColor="currentcolor"></stop>
+                            <stop className="g_fill_3" offset="1" stopColor="currentcolor"></stop>
                         </linearGradient>
                         <path d="M0-1c0,1,0,3,0,4c20,3.3,38.3,3.3,55,0s31.7-3.7,45-1c0-0.7,0-2.3,0-3C66.7-1,33.3-1,0-1z" fill="#0080003b"></path>
                         <clipPath id="clip_1">
                             <path d="M0,0c0,1,0,2,0,3c20,3.3,38.3,3.3,55,0s31.7-3.7,45-1c0-0.7,0-1.3,0-2C66.7,0,33.3,0,0,0z"></path>
                         </clipPath>
-                        <path clip-path="#fff" d="M0,6c20-8,40-8,60,0C40,6,20,6,0,6z" fill="#eeeeee" opacity=".5"></path>
+                        <path clipPath="#fff" d="M0,6c20-8,40-8,60,0C40,6,20,6,0,6z" fill="#eeeeee" opacity=".5"></path>
                     </svg>
                 </div>
             </div>

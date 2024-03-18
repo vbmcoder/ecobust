@@ -69,7 +69,7 @@ export default function Emailsubmit() {
                         <div className="form_info">
                             <input type="text" name="name" placeholder="Your Name" value={formData.name} onChange={handleChange} required />
                             <input type="email" name="email" placeholder="Your Email" value={formData.email} onChange={handleChange} required />
-                            <input type="text" name="phone" placeholder="Your Number" defaultValue="+91" value={formData.phone} onChange={handleChange} required />
+                            <input type="text" name="phone" placeholder="Your Number"  value={formData.phone} onChange={handleChange} required />
                             <input type="text" name="country" placeholder="Your country" value={formData.country} onChange={handleChange} required />
                             <textarea name="message" placeholder="Describe your requirement in details:" value={formData.message} onChange={handleChange} cols="30" rows="10" required></textarea>
                             <button type="submit" disabled={submitting}>{submitting ? 'Sending...' : 'Send Now'}</button>

@@ -107,7 +107,7 @@ export default function Footer() {
                         </div>
                         <div className="input-container">
                             <label htmlFor="name" className="name">3. Phone:</label>
-                            <input placeholder="Enter Phone No" defaultValue="+91" type="text" className="input" name="phone" value={formData.phone} onChange={handleChange} required />
+                            <input placeholder="Enter Phone No"  type="text" className="input" name="phone" value={formData.phone} onChange={handleChange} required />
                             <div className="underline"></div>
                         </div>
                         <div className="cn_in">
