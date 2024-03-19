@@ -27,6 +27,8 @@ export default function Contactus() {
                     setMessage(null);
                     document.querySelector(".emailsuccess").classList.remove('opensuc');
                 }, 5000);
+                // Send thank you email to the sender
+                sendThankYouEmail();
             },
             (error) => {
                 console.log('FAILED...', error.text);
