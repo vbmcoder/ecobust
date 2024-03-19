@@ -20,7 +20,7 @@ export default async function handler(req, res) {
       // Send the inquiry email
       const info = await transporter.sendMail({
         from: 'cp566997@gmail.com', 
-        to: 'vaibhav111abc@gmail.com', // Receiver's email
+        to: 'infoecobust@gmail.com', // Receiver's email
         subject: 'Ecobust Enquiry',
         text: `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nCountry: ${country}\n\n${message}`,
       });
@@ -38,10 +38,12 @@ export default async function handler(req, res) {
       console.log('Thank you message sent: %s', thankYouInfo.messageId);
 
       res.status(200).json({ success: true });
+
     } catch (error) {
       console.error('Error occurred while sending email:', error.message);
       res.status(500).json({ success: false, error: error.message });
     }
+    
   } else {
     res.setHeader('Allow', ['POST']);
     res.status(405).end(`Method ${req.method} Not Allowed`);
