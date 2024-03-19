@@ -43,7 +43,7 @@ export default async function handler(req, res) {
       console.error('Error occurred while sending email:', error.message);
       res.status(500).json({ success: false, error: error.message });
     }
-    
+
   } else {
     res.setHeader('Allow', ['POST']);
     res.status(405).end(`Method ${req.method} Not Allowed`);

@@ -1512,6 +1512,26 @@ nav {
   animation: upme 1s ease-in-out;
   display: flex;
 }
+.prodemailsuccess {
+  position: fixed;
+  top: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #fff;
+  z-index: 99999999;
+  color: #000;
+  padding: 10px;
+  font-size: 25px;
+  font-family: math;
+  box-shadow: 0 0 10px #999;
+  border-radius: 10px;
+  display: none;
+}
+
+.prodemailsuccess.opensuc {
+  animation: upme 1s ease-in-out;
+  display: flex;
+}
 
 @keyframes upme {
   0% {

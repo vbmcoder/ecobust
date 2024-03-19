@@ -48,21 +48,30 @@ export default function Product() {
             });
 
             if (response.ok) {
-                setMessage('✅️ Email sent successfully');
                 setSubmitting(false);
-
+                setFormData({
+                    name: '',
+                    email: '',
+                    phone: '+91',
+                    country: '',
+                    message: ''
+                });
+                document.querySelector(".prodemailsuccess").classList.add('opensuc');
+                setMessage('✅️ Email sent successfully');
                 setTimeout(() => {
                     setMessage(null);
+                    document.querySelector(".prodemailsuccess").classList.remove('opensuc');
                 }, 5000);
                 setSubmitting(false);
             } else {
+                document.querySelector(".prodemailsuccess").classList.add('opensuc');
                 setMessage('❌ Failed to send email, Please Try again...');
                 setSubmitting(false);
 
                 setTimeout(() => {
                     setMessage(null);
+                    document.querySelector(".prodemailsuccess").classList.remove('opensuc');
                 }, 5000);
-                // Handle error case
             }
         } catch (error) {
             setMessage('Error occurred:', error.message);
@@ -104,6 +113,9 @@ export default function Product() {
             <meta name="description" content="Ecobust offers a non-explosive demolition powder that provides a safe and effective solution for breaking concrete and rock without compromising the environment. Our eco-friendly product is revolutionizing the industry with its powerful yet safe formula." />
 
         </Head>
+        <div className="prodemailsuccess">
+            {message && <h4><p>{message}</p></h4>}
+        </div>
         <div className={styles.container}>
             <div className={styles.titleofproduct}>
                 <h1 data-aos="fade-right">Ecobust Non Explosive Demolition Powder</h1>
