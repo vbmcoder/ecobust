@@ -9,7 +9,7 @@ const handleClick = () => {
 
 export default function Whatsapp() {
     return <>
-        <button onClick={handleClick} className='whatsappnoti'>
+        <button title="Whatsapp Chat" onClick={handleClick} className='whatsappnoti'>
             <FaWhatsapp />
         </button>
     </>

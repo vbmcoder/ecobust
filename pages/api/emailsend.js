@@ -19,7 +19,7 @@ export default async function handler(req, res) {
     try {
       // Send the inquiry email
       const info = await transporter.sendMail({
-        from: 'cp566997@gmail.com', 
+        from: 'demo@gmail.com', 
         to: 'infoecobust@gmail.com', // Receiver's email
         subject: 'Ecobust Enquiry',
         text: `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nCountry: ${country}\n\n${message}`,
@@ -29,7 +29,7 @@ export default async function handler(req, res) {
 
       // Send the thank you email
       const thankYouInfo = await transporter.sendMail({
-        from: 'cp566997@gmail.com',
+        from: 'demo@gmail.com',
         to: email, // Sending thank you email to the user who submitted the inquiry
         subject: 'Thank you for your inquiry',
         text: `Dear ${name},\n\nThank you for contacting us. We have received your inquiry and will get back to you as soon as possible.\n\nBest Regards,\nYour Company Name`,

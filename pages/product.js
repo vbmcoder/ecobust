@@ -111,7 +111,6 @@ export default function Product() {
             <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
             <title>Ecobust Non-Explosive Demolition Powder - Safe and Effective Solution | ECOBUST</title>
             <meta name="description" content="Ecobust offers a non-explosive demolition powder that provides a safe and effective solution for breaking concrete and rock without compromising the environment. Our eco-friendly product is revolutionizing the industry with its powerful yet safe formula." />
-
         </Head>
         <div className="prodemailsuccess">
             {message && <h4><p>{message}</p></h4>}
@@ -204,7 +203,7 @@ export default function Product() {
             </div>
 
         </div>
-        <div className={styles.container} >
+        <div className={styles.container}>
             <div className={styles.prodetailssec} >
                 <h2 data-aos="fade-right">Product Details</h2>
                 <table>
@@ -259,7 +258,7 @@ export default function Product() {
                 )}
             </div>
         </div>
-        <div className={styles.container} >
+        <div className={styles.container}>
             <div className={styles.productimges}>
                 <h2 data-aos="fade-right">Product Images</h2>
                 <div className={styles.product_imges} data-aos="fade-left">

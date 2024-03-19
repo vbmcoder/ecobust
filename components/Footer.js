@@ -6,70 +6,48 @@ import { IoLocationSharp } from "react-icons/io5";
 import { FaPhoneVolume } from "react-icons/fa6";
 import { IoMailOpen } from "react-icons/io5";
 import { MdTextsms } from "react-icons/md";
-import { useState } from "react";
-import toast from "react-hot-toast";
+import React, { useRef, useState } from 'react';
+import emailjs from '@emailjs/browser';
 
 export default function Footer() {
 
-    const [formData, setFormData] = useState({
-        name: '',
-        email: '',
-        phone: '+91', // Assuming this is the default value
-        country: '',
-        message: ''
-    });
 
-    const [submitting, setSubmitting] = useState(false);
+
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const form = useRef();
     const [message, setMessage] = useState('');
 
-    const handleChange = (e) => {
-        const { name, value } = e.target;
-        setFormData({ ...formData, [name]: value });
-    };
-
-
-    const handleSubmit = async (e) => {
+    const sendEmail = (e) => {
         e.preventDefault();
-        setSubmitting(true);
-        try {
-            const response = await fetch('/api/emailsend', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(formData),
-            });
 
-            if (response.ok) {
-                setSubmitting(false);
-                setFormData({
-                    name: '',
-                    email: '',
-                    phone: '+91',
-                    country: '', 
-                    message: ''
-                });
+        emailjs.sendForm('service_i5akxh8', 'template_5oskses', form.current, {
+            publicKey: 'RxmiQYaA5K8SX0Ipw',
+        }).then(
+            () => {
+                console.log('SUCCESS!');
+                // Reset form fields after successful submission
+                form.current.reset();
                 document.querySelector(".footeremailsuccess").classList.add('opensuc');
                 setMessage('✅️ Email sent successfully');
                 setTimeout(() => {
                     setMessage(null);
                     document.querySelector(".footeremailsuccess").classList.remove('opensuc');
                 }, 5000);
-                setSubmitting(false);
-            } else {
+                setIsSubmitting(false);
+            },
+            (error) => {
+                console.log('FAILED...', error.text);
                 document.querySelector(".footeremailsuccess").classList.add('opensuc');
                 setMessage('❌ Failed to send email, Please Try again...');
-                setSubmitting(false);
-                
                 setTimeout(() => {
                     setMessage(null);
                     document.querySelector(".footeremailsuccess").classList.remove('opensuc');
                 }, 5000);
-            }
-        } catch (error) {
-            setMessage('Error occurred:', error.message);
-        }
+                setIsSubmitting(false);
+            },
+        );
     };
+
     return <>
         <div className="footeremailsuccess">
             {message && <h4><p>{message}</p></h4>}
@@ -101,33 +79,36 @@ export default function Footer() {
                             </div>
                         </div>
                     </div>
-
                 </div>
 
                 <div className="contact_form" >
                     <h2><span>Quick</span> Enquiry</h2>
                     {/* {message && <h4><p>{message}</p></h4>} */}
-                    <form className="contact_f" onSubmit={handleSubmit}>
+                    <form className="contact_f" ref={form} onSubmit={sendEmail}>
                         <div className="input-container">
-                            <label htmlFor="name" className="name">1. Name:</label>
-                            <input placeholder="Enter your name" type="text" className="input" name="name" value={formData.name} onChange={handleChange} required />
+                            <label htmlFor="user_name" className="name">1. Name:</label>
+                            <input placeholder="Enter your name" type="text" className="input" name="user_name" required />
                             <div className="underline"></div>
                         </div>
                         <div className="input-container">
-                            <label htmlFor="email" className="name">2. Email:</label>
-                            <input placeholder="Enter Email" type="email" className="input" name="email" value={formData.email} onChange={handleChange} required />
+                            <label htmlFor="user_email" className="name">2. Email:</label>
+                            <input placeholder="Enter Email" type="email" className="input" name="user_email" required />
                             <div className="underline"></div>
                         </div>
                         <div className="input-container">
-                            <label htmlFor="name" className="name">3. Phone:</label>
-                            <input placeholder="Enter Phone No" type="text" className="input" name="phone" value={formData.phone} onChange={handleChange} required />
+                            <label htmlFor="user_phone" className="name">3. Phone:</label>
+                            <input placeholder="Enter Phone No" type="text" className="input" name="user_phone" required />
                             <div className="underline"></div>
                         </div>
                         <div className="cn_in">
                             <label htmlFor="">4. Your Message:</label>
-                            <textarea placeholder='Your Message' name="message" cols="100" rows="5" value={formData.message} onChange={handleChange} required></textarea>
+                            <textarea placeholder='Your Message' name="message" cols="100" rows="5" required></textarea>
                         </div>
-                        <button type="submit" disabled={submitting}>{submitting ? 'Sending...' : 'Send Now'}</button>
+                        {isSubmitting ? (
+                            <button type="button" disabled>Submitting...</button>
+                        ) : (
+                            <button type="submit" value="Send">Send Now</button>
+                        )}
                     </form>
 
                 </div>

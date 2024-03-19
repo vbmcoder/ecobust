@@ -4,67 +4,55 @@ import { FiPhoneCall } from "react-icons/fi";
 import { FaTelegramPlane } from "react-icons/fa";
 import { IoEarth } from "react-icons/io5";
 import styles from "../styles/Contactus.module.css"
-import { useState } from "react";
+import React, { useRef, useState } from 'react';
+import emailjs from '@emailjs/browser';
 
 export default function Contactus() {
-
-    const [formData, setFormData] = useState({
-        name: '',
-        email: '',
-        phone: '+91', // Assuming this is the default value
-        country: '', // Assuming this is the default value
-        message: ''
-    });
-
-    const [submitting, setSubmitting] = useState(false);
+    const form = useRef();
     const [message, setMessage] = useState('');
 
-    const handleChange = (e) => {
-        const { name, value } = e.target;
-        setFormData({ ...formData, [name]: value });
-    };
-
-    const handleSubmit = async (e) => {
+    const sendEmail = (e) => {
         e.preventDefault();
-        setSubmitting(true);
-        try {
-            const response = await fetch('/api/emailsend', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(formData),
-            });
 
-            if (response.ok) {
-                setSubmitting(false);
-                setFormData({
-                    name: '',
-                    email: '',
-                    phone: '+91',
-                    country: '', 
-                    message: ''
-                });
+        emailjs.sendForm('service_i5akxh8', 'template_5oskses', form.current, {
+            publicKey: 'RxmiQYaA5K8SX0Ipw',
+        }).then(
+            () => {
+                console.log('SUCCESS!');
+                // Reset form fields after successful submission
+                form.current.reset();
                 document.querySelector(".emailsuccess").classList.add('opensuc');
                 setMessage('✅️ Email sent successfully');
                 setTimeout(() => {
                     setMessage(null);
                     document.querySelector(".emailsuccess").classList.remove('opensuc');
                 }, 5000);
-                setSubmitting(false);
-            } else {
+            },
+            (error) => {
+                console.log('FAILED...', error.text);
                 document.querySelector(".emailsuccess").classList.add('opensuc');
                 setMessage('❌ Failed to send email, Please Try again...');
-                setSubmitting(false);
-               
                 setTimeout(() => {
                     setMessage(null);
                     document.querySelector(".emailsuccess").classList.remove('opensuc');
                 }, 5000);
-            }
-        } catch (error) {
-            setMessage('Error occurred:', error.message);
-        }
+            },
+        );
+    };
+    const sendThankYouEmail = () => {
+        // Replace these placeholders with your own EmailJS service ID, template ID, and user ID
+        emailjs
+            .send('service_i5akxh8', 'template_52x7h8o', {
+                to_email: form.current.user_email.value,
+            })
+            .then(
+                (response) => {
+                    console.log('Thank you email sent successfully:', response);
+                },
+                (error) => {
+                    console.error('Thank you email could not be sent:', error.text);
+                }
+            );
     };
     return <>
         <div className="emailsuccess">
@@ -83,28 +71,28 @@ export default function Contactus() {
                 <div className={styles.contact_submit_form}>
                     <div className={styles.contact_from}>
                         <h3>Contact Us</h3>
-                        <form onSubmit={handleSubmit}>
+                        <form ref={form} onSubmit={sendEmail}>
                             <div>
-                                <label htmlFor="name">Name</label>
-                                <input type="text" name="name" placeholder="Your name" value={formData.name} onChange={handleChange} required />
+                                <label htmlFor="user_name">Name</label>
+                                <input type="text" name="user_name" placeholder="Your name" required />
                             </div>
                             <div>
-                                <label htmlFor="email">Email</label>
-                                <input type="email" name="email" placeholder="Your Email" value={formData.email} onChange={handleChange} required />
+                                <label htmlFor="user_email">Email</label>
+                                <input type="email" name="user_email" placeholder="Your Email" required />
                             </div>
                             <div>
-                                <label htmlFor="phone">Phone</label>
-                                <input type="text" name="phone" placeholder="Your Phone" value={formData.phone} onChange={handleChange} required />
+                                <label htmlFor="user_phone">Phone</label>
+                                <input type="text" name="user_phone" defaultValue="+91" placeholder="Your Phone" required />
                             </div>
                             <div>
                                 <label htmlFor="country">Subject</label>
-                                <input type="text" name="country" placeholder="Subject" value={formData.country} onChange={handleChange} required />
+                                <input type="text" name="user_country" placeholder="Subject" required />
                             </div>
                             <div>
                                 <label htmlFor="message">Message</label>
-                                <textarea type="text" name="message" placeholder="Describe your requirements" cols="30" rows="10" value={formData.message} onChange={handleChange} required ></textarea>
+                                <textarea type="text" name="message" placeholder="Describe your requirements" cols="30" rows="10" required ></textarea>
                             </div>
-                            <button type="submit" disabled={submitting}>{submitting ? 'Sending...' : 'Send Now'}</button>
+                            <button type="submit" value="Send">Send Now</button>
                         </form>
                     </div>
                     <img src="https://www.poornima.org/img/contact-img.png" alt="" />

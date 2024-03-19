@@ -1,20 +1,10 @@
 import { IoIosArrowUp } from "react-icons/io";
 import { AiOutlineCloseCircle } from "react-icons/ai";
-import { useState } from "react";
+import React, { useRef, useState } from 'react';
+import emailjs from '@emailjs/browser';
 
 export default function Emailsubmit() {
     const [isFormVisible, setIsFormVisible] = useState(false);
-
-    const [formData, setFormData] = useState({
-        name: '',
-        email: '',
-        phone: '+91', // Assuming this is the default value
-        country: '', // Assuming this is the default value
-        message: ''
-    });
-
-    const [submitting, setSubmitting] = useState(false);
-    const [message, setMessage] = useState('');
 
     const toggleFormVisibility = () => {
         setIsFormVisible(!isFormVisible);
@@ -24,53 +14,39 @@ export default function Emailsubmit() {
         setIsFormVisible(false);
     };
 
-    const handleChange = (e) => {
-        const { name, value } = e.target;
-        setFormData({ ...formData, [name]: value });
-    };
+    const form = useRef();
+    const [message, setMessage] = useState('');
 
-    const handleSubmit = async (e) => {
+    const sendEmail = (e) => {
         e.preventDefault();
-        setSubmitting(true);
-        try {
-            const response = await fetch('/api/emailsend', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(formData),
-            });
 
-            if (response.ok) {
-                setSubmitting(false);
-                setFormData({
-                    name: '',
-                    email: '',
-                    phone: '+91',
-                    country: '', 
-                    message: ''
-                });
+        emailjs.sendForm('service_i5akxh8', 'template_5oskses', form.current, {
+            publicKey: 'RxmiQYaA5K8SX0Ipw',
+        }).then(
+            () => {
+                console.log('SUCCESS!');
+                // Reset form fields after successful submission
+                form.current.reset();
                 document.querySelector(".emailsuccesscomp").classList.add('opensuc');
                 setMessage('✅️ Email sent successfully');
                 setTimeout(() => {
                     setMessage(null);
                     document.querySelector(".emailsuccesscomp").classList.remove('opensuc');
                 }, 5000);
-                setSubmitting(false);
-            } else {
+            },
+            (error) => {
+                console.log('FAILED...', error.text);
                 document.querySelector(".emailsuccesscomp").classList.add('opensuc');
                 setMessage('❌ Failed to send email, Please Try again...');
-                setSubmitting(false);
-                
                 setTimeout(() => {
                     setMessage(null);
                     document.querySelector(".emailsuccesscomp").classList.remove('opensuc');
                 }, 5000);
-            }
-        } catch (error) {
-            setMessage('Error occurred:', error.message);
-        }
+            },
+        );
     };
+
+
     return <>
         <div className="emailsuccesscomp">
             {message && <h4><p>{message}</p></h4>}
@@ -81,18 +57,18 @@ export default function Emailsubmit() {
             </button>
             {isFormVisible && (
                 <div className="enquiryform">
-                    <form className="form_e" onSubmit={handleSubmit}>
+                    <form className="form_e" ref={form} onSubmit={sendEmail}>
                         <div className="flex flex-sb">
                             <p>Tell us what you are looking for?</p>
                             <AiOutlineCloseCircle onClick={handleCloseForm} />
                         </div>
                         <div className="form_info">
-                            <input type="text" name="name" placeholder="Your Name" value={formData.name} onChange={handleChange} required />
-                            <input type="email" name="email" placeholder="Your Email" value={formData.email} onChange={handleChange} required />
-                            <input type="text" name="phone" placeholder="Your Number" value={formData.phone} onChange={handleChange} required />
-                            <input type="text" name="country" placeholder="Your country" value={formData.country} onChange={handleChange} required />
-                            <textarea name="message" placeholder="Describe your requirement in details:" value={formData.message} onChange={handleChange} cols="30" rows="10" required></textarea>
-                            <button type="submit" disabled={submitting}>{submitting ? 'Sending...' : 'Send Now'}</button>
+                            <input type="text" name="user_name" placeholder="Your Name" required />
+                            <input type="email" name="user_email" placeholder="Your Email" required />
+                            <input type="text" name="user_phone" placeholder="Your Number" defaultValue="+91"  required />
+                            <input type="text" name="user_country" placeholder="Your country"  required />
+                            <textarea name="message" placeholder="Describe your requirement in details:" cols="30" rows="10" required></textarea>
+                            <button type="submit" value="Send" >Send now</button>
                         </div>
                     </form>
                 </div>
