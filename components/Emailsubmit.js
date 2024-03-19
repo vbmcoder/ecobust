@@ -5,6 +5,7 @@ import emailjs from '@emailjs/browser';
 
 export default function Emailsubmit() {
     const [isFormVisible, setIsFormVisible] = useState(false);
+    
 
     const toggleFormVisibility = () => {
         setIsFormVisible(!isFormVisible);
@@ -16,6 +17,7 @@ export default function Emailsubmit() {
 
     const form = useRef();
     const [message, setMessage] = useState('');
+    const [isSubmitting, setIsSubmitting] = useState(false);
 
     const sendEmail = (e) => {
         e.preventDefault();
@@ -33,6 +35,9 @@ export default function Emailsubmit() {
                     setMessage(null);
                     document.querySelector(".emailsuccesscomp").classList.remove('opensuc');
                 }, 5000);
+                setIsSubmitting(false);
+                // Send thank you email to the sender
+                sendThankYouEmail();
             },
             (error) => {
                 console.log('FAILED...', error.text);
@@ -42,10 +47,25 @@ export default function Emailsubmit() {
                     setMessage(null);
                     document.querySelector(".emailsuccesscomp").classList.remove('opensuc');
                 }, 5000);
+                setIsSubmitting(false);
             },
         );
     };
-
+    const sendThankYouEmail = () => {
+        // Replace these placeholders with your own EmailJS service ID, template ID, and user ID
+        emailjs
+            .send('service_i5akxh8', 'template_52x7h8o', {
+                to_email: form.current.user_email.value,
+            })
+            .then(
+                (response) => {
+                    console.log('Thank you email sent successfully:', response);
+                },
+                (error) => {
+                    console.error('Thank you email could not be sent:', error.text);
+                }
+            );
+    };
 
     return <>
         <div className="emailsuccesscomp">
@@ -68,7 +88,11 @@ export default function Emailsubmit() {
                             <input type="text" name="user_phone" placeholder="Your Number" defaultValue="+91"  required />
                             <input type="text" name="user_country" placeholder="Your country"  required />
                             <textarea name="message" placeholder="Describe your requirement in details:" cols="30" rows="10" required></textarea>
-                            <button type="submit" value="Send" >Send now</button>
+                            {isSubmitting ? (
+                            <button type="button" disabled>Submitting...</button>
+                        ) : (
+                            <button type="submit" value="Send">Send Now</button>
+                        )}
                         </div>
                     </form>
                 </div>

@@ -10,6 +10,7 @@ import emailjs from '@emailjs/browser';
 export default function Contactus() {
     const form = useRef();
     const [message, setMessage] = useState('');
+    const [isSubmitting, setIsSubmitting] = useState(false);
 
     const sendEmail = (e) => {
         e.preventDefault();
@@ -27,6 +28,8 @@ export default function Contactus() {
                     setMessage(null);
                     document.querySelector(".emailsuccess").classList.remove('opensuc');
                 }, 5000);
+                setIsSubmitting(false);
+
                 // Send thank you email to the sender
                 sendThankYouEmail();
             },
@@ -38,6 +41,7 @@ export default function Contactus() {
                     setMessage(null);
                     document.querySelector(".emailsuccess").classList.remove('opensuc');
                 }, 5000);
+                setIsSubmitting(false);
             },
         );
     };
@@ -94,7 +98,11 @@ export default function Contactus() {
                                 <label htmlFor="message">Message</label>
                                 <textarea type="text" name="message" placeholder="Describe your requirements" cols="30" rows="10" required ></textarea>
                             </div>
-                            <button type="submit" value="Send">Send Now</button>
+                            {isSubmitting ? (
+                                <button type="button" disabled>Submitting...</button>
+                            ) : (
+                                <button type="submit" value="Send">Send Now</button>
+                            )}
                         </form>
                     </div>
                     <img src="https://www.poornima.org/img/contact-img.png" alt="" />
