@@ -37,18 +37,29 @@ export default function Contactus() {
             });
 
             if (response.ok) {
-                setMessage('✅️ Email sent successfully');
                 setSubmitting(false);
-
+                setFormData({
+                    name: '',
+                    email: '',
+                    phone: '+91',
+                    country: '', 
+                    message: ''
+                });
+                document.querySelector(".emailsuccess").classList.add('opensuc');
+                setMessage('✅️ Email sent successfully');
                 setTimeout(() => {
                     setMessage(null);
+                    document.querySelector(".emailsuccess").classList.remove('opensuc');
                 }, 5000);
+                setSubmitting(false);
             } else {
+                document.querySelector(".emailsuccess").classList.add('opensuc');
                 setMessage('❌ Failed to send email, Please Try again...');
                 setSubmitting(false);
-
+               
                 setTimeout(() => {
                     setMessage(null);
+                    document.querySelector(".emailsuccess").classList.remove('opensuc');
                 }, 5000);
             }
         } catch (error) {
@@ -56,6 +67,9 @@ export default function Contactus() {
         }
     };
     return <>
+        <div className="emailsuccess">
+            {message && <h4><p>{message}</p></h4>}
+        </div>
         <div className={styles.contact_cont}>
             <div className={styles.bg_contact}>
                 <h1>Contact Us</h1>
@@ -66,12 +80,9 @@ export default function Contactus() {
                 <p>We are here to answer all of your questions. Feel free to ask... We will answer it shortly...</p>
             </div>
             <div className={styles.contact_container}>
-
-
                 <div className={styles.contact_submit_form}>
                     <div className={styles.contact_from}>
                         <h3>Contact Us</h3>
-                        {message && <h4><p>{message}</p></h4>}
                         <form onSubmit={handleSubmit}>
                             <div>
                                 <label htmlFor="name">Name</label>

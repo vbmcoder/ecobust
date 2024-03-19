@@ -5,6 +5,7 @@ import ScrollToTopButton from "@/components/ScrollToTopButton";
 import Whatsapp from "@/components/Whatsapp";
 import "@/styles/globals.css";
 import { useRouter } from "next/router";
+import TopLoadingLine from "../components/TopLoadingLine";
 
 export default function App({ Component, pageProps }) {
   const router = useRouter();
@@ -13,15 +14,16 @@ export default function App({ Component, pageProps }) {
   // const hidegallary = router.pathname === '/gallery';
   return <>
 
-    {!hideHeader &&  <Header />}
+    {!hideHeader && <Header />}
     <main>
-        <Component {...pageProps} />
+      <TopLoadingLine />
+      <Component {...pageProps} />
     </main>
     {/* <ContactForm/> */}
     <Emailsubmit />
     <Footer />
-    <ScrollToTopButton />    
-    <Whatsapp/>
+    <ScrollToTopButton />
+    <Whatsapp />
   </>
 
 }

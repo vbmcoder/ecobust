@@ -42,40 +42,50 @@ export default function Emailsubmit() {
             });
 
             if (response.ok) {
-                setMessage('✅️ Email sent successfully');
                 setSubmitting(false);
-
+                setFormData({
+                    name: '',
+                    email: '',
+                    phone: '+91',
+                    country: '', 
+                    message: ''
+                });
+                document.querySelector(".emailsuccesscomp").classList.add('opensuc');
+                setMessage('✅️ Email sent successfully');
                 setTimeout(() => {
                     setMessage(null);
+                    document.querySelector(".emailsuccesscomp").classList.remove('opensuc');
                 }, 5000);
                 setSubmitting(false);
             } else {
+                document.querySelector(".emailsuccesscomp").classList.add('opensuc');
                 setMessage('❌ Failed to send email, Please Try again...');
                 setSubmitting(false);
-
+                
                 setTimeout(() => {
                     setMessage(null);
+                    document.querySelector(".emailsuccesscomp").classList.remove('opensuc');
                 }, 5000);
-                // Handle error case
             }
         } catch (error) {
             setMessage('Error occurred:', error.message);
         }
     };
     return <>
+        <div className="emailsuccesscomp">
+            {message && <h4><p>{message}</p></h4>}
+        </div>
         <div className="emailsubmitsec">
             <button className="emailclickbtn" onClick={toggleFormVisibility}>
                 Quick Enquiry<IoIosArrowUp />
             </button>
             {isFormVisible && (
                 <div className="enquiryform">
-                    {message && <h3><p>{message}</p></h3>}
                     <form className="form_e" onSubmit={handleSubmit}>
                         <div className="flex flex-sb">
                             <p>Tell us what you are looking for?</p>
                             <AiOutlineCloseCircle onClick={handleCloseForm} />
                         </div>
-
                         <div className="form_info">
                             <input type="text" name="name" placeholder="Your Name" value={formData.name} onChange={handleChange} required />
                             <input type="email" name="email" placeholder="Your Email" value={formData.email} onChange={handleChange} required />

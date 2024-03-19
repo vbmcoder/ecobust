@@ -7,6 +7,7 @@ import { FaPhoneVolume } from "react-icons/fa6";
 import { IoMailOpen } from "react-icons/io5";
 import { MdTextsms } from "react-icons/md";
 import { useState } from "react";
+import toast from "react-hot-toast";
 
 export default function Footer() {
 
@@ -14,7 +15,7 @@ export default function Footer() {
         name: '',
         email: '',
         phone: '+91', // Assuming this is the default value
-        country: '', 
+        country: '',
         message: ''
     });
 
@@ -25,6 +26,7 @@ export default function Footer() {
         const { name, value } = e.target;
         setFormData({ ...formData, [name]: value });
     };
+
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -39,18 +41,29 @@ export default function Footer() {
             });
 
             if (response.ok) {
-                setMessage('✅️ Email sent successfully');
                 setSubmitting(false);
-
+                setFormData({
+                    name: '',
+                    email: '',
+                    phone: '+91',
+                    country: '', 
+                    message: ''
+                });
+                document.querySelector(".footeremailsuccess").classList.add('opensuc');
+                setMessage('✅️ Email sent successfully');
                 setTimeout(() => {
                     setMessage(null);
+                    document.querySelector(".footeremailsuccess").classList.remove('opensuc');
                 }, 5000);
+                setSubmitting(false);
             } else {
+                document.querySelector(".footeremailsuccess").classList.add('opensuc');
                 setMessage('❌ Failed to send email, Please Try again...');
                 setSubmitting(false);
-
+                
                 setTimeout(() => {
                     setMessage(null);
+                    document.querySelector(".footeremailsuccess").classList.remove('opensuc');
                 }, 5000);
             }
         } catch (error) {
@@ -58,6 +71,9 @@ export default function Footer() {
         }
     };
     return <>
+        <div className="footeremailsuccess">
+            {message && <h4><p>{message}</p></h4>}
+        </div>
         <footer className="footer">
             <div className="footer_sec">
                 <div className='footer_info'>
@@ -90,7 +106,7 @@ export default function Footer() {
 
                 <div className="contact_form" >
                     <h2><span>Quick</span> Enquiry</h2>
-                    {message && <h4><p>{message}</p></h4>}
+                    {/* {message && <h4><p>{message}</p></h4>} */}
                     <form className="contact_f" onSubmit={handleSubmit}>
                         <div className="input-container">
                             <label htmlFor="name" className="name">1. Name:</label>
@@ -121,6 +137,5 @@ export default function Footer() {
                 <p>Developed & Managed By <Link href={'/'}>Ecobust.In</Link> Pvt. Ltd.</p>
             </div>
         </footer>
-
     </>
 }

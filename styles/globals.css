@@ -15,6 +15,22 @@ body::-webkit-scrollbar-thumb {
   border-radius: 10px;
 }
 
+.topLoadingLine {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 4px;
+  background-color: #1b4e9b;
+  /* Customize the color as needed */
+  transition: width 0.3s ease-in-out;
+  z-index: 999999999999;
+}
+
+.topLoadingLine.loading {
+  width: 100%;
+}
+
+
 /* flex class */
 .flex {
   display: flex;
@@ -1433,10 +1449,88 @@ nav {
 }
 
 
+/* email send popup */
+.emailsuccess {
+  position: fixed;
+  top: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #fff;
+  z-index: 99999999;
+  color: #000;
+  padding: 10px;
+  font-size: 25px;
+  font-family: math;
+  box-shadow: 0 0 10px #999;
+  border-radius: 10px;
+  display: none;
+}
+
+.emailsuccess.opensuc {
+  animation: upme 1s ease-in-out;
+  display: flex;
+}
 
 
+.footeremailsuccess {
+  position: fixed;
+  top: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #fff;
+  z-index: 99999999;
+  color: #000;
+  padding: 10px;
+  font-size: 25px;
+  font-family: math;
+  box-shadow: 0 0 10px #999;
+  border-radius: 10px;
+  display: none;
+}
 
+.footeremailsuccess.opensuc {
+  animation: upme 1s ease-in-out;
+  display: flex;
+}
+.emailsuccesscomp {
+  position: fixed;
+  top: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #fff;
+  z-index: 99999999;
+  color: #000;
+  padding: 10px;
+  font-size: 25px;
+  font-family: math;
+  box-shadow: 0 0 10px #999;
+  border-radius: 10px;
+  display: none;
+}
 
+.emailsuccesscomp.opensuc {
+  animation: upme 1s ease-in-out;
+  display: flex;
+}
+
+@keyframes upme {
+  0% {
+    margin-top: -100px;
+  }
+
+  100% {
+    margin-top: 0;
+  }
+}
+@media screen and (max-width: 500px) {
+  .emailsuccess,
+  .footeremailsuccess,
+  .emailsuccesscomp{
+    font-size: 15px;
+    width: 90%;
+    box-shadow: 0 5px 10px #000;
+  }
+}
 .emailsubmitsec {
   width: 100%;
   position: relative;
@@ -1493,12 +1587,13 @@ nav {
   justify-content: center;
   font-size: 25px;
 }
-.form_e h3 p{
+
+.form_e h3 p {
   color: green;
-	font-size: 25px;
-	text-align: center;
-	box-shadow: 0 0 5px #999;
-	padding: 5px;
+  font-size: 25px;
+  text-align: center;
+  box-shadow: 0 0 5px #999;
+  padding: 5px;
 }
 
 .form_e .flex-sb {

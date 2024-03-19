@@ -102,6 +102,7 @@ export default function Home() {
               <li><Link href="/flipbook">FLIPBOOK</Link></li>
               <li><Link href="/userguide">USER GUIDE</Link></li>
               <li><Link href="/gallery">GALLARY</Link></li>
+              <li><Link href="/contactus">CONTACT US</Link></li>
             </ul>
           </div>
           <div className="hamburger flex gap-2">
@@ -130,6 +131,7 @@ export default function Home() {
             <li><Link href="/flipbook">FLIPBOOK</Link></li>
             <li><Link href="/userguide">USER GUIDE</Link></li>
             <li><Link href="/gallery">GALLARY</Link></li>
+            <li><Link href="/contactus">CONTACT US</Link></li>
           </ul>
         </aside>
 
