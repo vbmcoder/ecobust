@@ -1,7 +1,6 @@
 
 import Link from "next/link";
 import styles from "../styles/product.module.css";
-import { useState } from "react";
 import { AiOutlineCloseCircle } from "react-icons/ai";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { FreeMode, Pagination } from 'swiper/modules';
