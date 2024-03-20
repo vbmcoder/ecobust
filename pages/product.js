@@ -7,6 +7,8 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { FreeMode, Pagination } from 'swiper/modules';
 import 'swiper/swiper-bundle.css';
 import Head from "next/head";
+import React, { useRef, useState } from 'react';
+import emailjs from '@emailjs/browser';
 
 export default function Product() {
     const [isFormVisible, setIsFormVisible] = useState(false);
