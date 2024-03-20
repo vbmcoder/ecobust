@@ -12,8 +12,6 @@ import emailjs from '@emailjs/browser';
 export default function Product() {
     const [isFormVisible, setIsFormVisible] = useState(false);
 
-
-
     const toggleFormVisibility = () => {
         setIsFormVisible(!isFormVisible);
     };
