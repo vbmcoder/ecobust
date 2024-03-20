@@ -33,6 +33,8 @@ export default function Product() {
         }).then(
             () => {
                 console.log('SUCCESS!');
+                // Send thank you email to the sender
+                sendThankYouEmail();
                 // Reset form fields after successful submission
                 form.current.reset();
                 document.querySelector(".prodemailsuccess").classList.add('opensuc');
@@ -42,8 +44,6 @@ export default function Product() {
                     document.querySelector(".prodemailsuccess").classList.remove('opensuc');
                 }, 5000);
                 setIsSubmitting(false);
-                // Send thank you email to the sender
-                sendThankYouEmail();
             },
             (error) => {
                 console.log('FAILED...', error.text);
@@ -56,22 +56,23 @@ export default function Product() {
                 setIsSubmitting(false);
             },
         );
+        const sendThankYouEmail = () => {
+            // Replace these placeholders with your own EmailJS service ID, template ID, and user ID
+            emailjs
+                .send('service_i5akxh8', 'template_52x7h8o', {
+                    user_email: form.current.user_email.value,
+                })
+                .then(
+                    (response) => {
+                        console.log('Thank you email sent successfully:', response);
+                    },
+                    (error) => {
+                        console.error('Thank you email could not be sent:', error.text);
+                    }
+                );
+        };
     };
-    const sendThankYouEmail = () => {
-        // Replace these placeholders with your own EmailJS service ID, template ID, and user ID
-        emailjs
-            .send('service_i5akxh8', 'template_52x7h8o', {
-                to_email: form.current.user_email.value,
-            })
-            .then(
-                (response) => {
-                    console.log('Thank you email sent successfully:', response);
-                },
-                (error) => {
-                    console.error('Thank you email could not be sent:', error.text);
-                }
-            );
-    };
+   
 
 
     const [showPhoneNumber, setShowPhoneNumber] = useState(false);
@@ -234,24 +235,22 @@ export default function Product() {
                 <div data-aos="fade-up"><button onClick={toggleFormVisibility} >Yes! I am interested</button></div>
                 {isFormVisible && (
                     <div className="enquiryform">
-                        {message && <h3><p>{message}</p></h3>}
-                        <form className="form_e" onSubmit={handleSubmit}>
-                            <div className="flex flex-sb">
-                                <p>Tell us what you are looking for?</p>
-                                <AiOutlineCloseCircle onClick={handleCloseForm} />
-                            </div>
-
-                            <div className="form_info">
-                                <input type="text" name="user_name" placeholder="Your Name" required />
-                                <input type="email" name="user_email" placeholder="Your Email" required />
-                                <input type="text" name="user_phone" placeholder="Your Number" defaultValue="+91" required />
-                                <input type="text" name="user_country" placeholder="Your country" required />
-                                <textarea name="message" placeholder="Describe your requirement in details:" cols="30" rows="10" required></textarea>
-                                {isSubmitting ? (
-                                    <button type="button" disabled>Submitting...</button>
-                                ) : (
-                                    <button type="submit" value="Send">Send Now</button>
-                                )}
+                        <form className="form_e" ref={form} onSubmit={sendEmail}>
+                        <div className="flex flex-sb">
+                            <p>Tell us what you are looking for?</p>
+                            <AiOutlineCloseCircle onClick={handleCloseForm} />
+                        </div>
+                        <div className="form_info">
+                            <input type="text" name="user_name" placeholder="Your Name" required />
+                            <input type="email" name="user_email" placeholder="Your Email" required />
+                            <input type="text" name="user_phone" placeholder="Your Number" defaultValue="+91"  required />
+                            <input type="text" name="user_country" placeholder="Your country"  required />
+                            <textarea name="message" placeholder="Describe your requirement in details:" cols="30" rows="10" required></textarea>
+                            {isSubmitting ? (
+                            <button type="button" disabled>Submitting...</button>
+                        ) : (
+                            <button type="submit" value="Send">Send Now</button>
+                        )}
                             </div>
                         </form>
                     </div>

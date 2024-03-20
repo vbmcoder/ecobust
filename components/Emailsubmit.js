@@ -27,6 +27,8 @@ export default function Emailsubmit() {
         }).then(
             () => {
                 console.log('SUCCESS!');
+                // Send thank you email to the sender
+                sendThankYouEmail();
                 // Reset form fields after successful submission
                 form.current.reset();
                 document.querySelector(".emailsuccesscomp").classList.add('opensuc');
@@ -36,8 +38,6 @@ export default function Emailsubmit() {
                     document.querySelector(".emailsuccesscomp").classList.remove('opensuc');
                 }, 5000);
                 setIsSubmitting(false);
-                // Send thank you email to the sender
-                sendThankYouEmail();
             },
             (error) => {
                 console.log('FAILED...', error.text);
@@ -50,22 +50,24 @@ export default function Emailsubmit() {
                 setIsSubmitting(false);
             },
         );
+
+        const sendThankYouEmail = () => {
+            // Replace these placeholders with your own EmailJS service ID, template ID, and user ID
+            emailjs
+                .send('service_i5akxh8', 'template_52x7h8o', {
+                    user_email: form.current.user_email.value,
+                })
+                .then(
+                    (response) => {
+                        console.log('Thank you email sent successfully:', response);
+                    },
+                    (error) => {
+                        console.error('Thank you email could not be sent:', error.text);
+                    }
+                );
+        };
     };
-    const sendThankYouEmail = () => {
-        // Replace these placeholders with your own EmailJS service ID, template ID, and user ID
-        emailjs
-            .send('service_i5akxh8', 'template_52x7h8o', {
-                to_email: form.current.user_email.value,
-            })
-            .then(
-                (response) => {
-                    console.log('Thank you email sent successfully:', response);
-                },
-                (error) => {
-                    console.error('Thank you email could not be sent:', error.text);
-                }
-            );
-    };
+   
 
     return <>
         <div className="emailsuccesscomp">
