@@ -27,51 +27,50 @@ export default function Product() {
     const sendEmail = (e) => {
         e.preventDefault();
 
-        emailjs.sendForm('service_i5akxh8', 'template_5oskses', form.current, {
-            publicKey: 'RxmiQYaA5K8SX0Ipw',
+        emailjs.sendForm('service_webgljn', 'template_l05swu9', form.current, {
+            publicKey: 'vWf6b2mF5gEYcEBlb',
         }).then(
             () => {
                 console.log('SUCCESS!');
+                // Reset form fields after successful submission
                 // Send thank you email to the sender
                 sendThankYouEmail();
-                // Reset form fields after successful submission
                 form.current.reset();
-                document.querySelector(".prodemailsuccess").classList.add('opensuc');
+                document.querySelector(".emailsuccess").classList.add('opensuc');
                 setMessage('✅️ Email sent successfully');
                 setTimeout(() => {
                     setMessage(null);
-                    document.querySelector(".prodemailsuccess").classList.remove('opensuc');
+                    document.querySelector(".emailsuccess").classList.remove('opensuc');
                 }, 5000);
                 setIsSubmitting(false);
+
+
             },
             (error) => {
                 console.log('FAILED...', error.text);
-                document.querySelector(".prodemailsuccess").classList.add('opensuc');
+                document.querySelector(".emailsuccess").classList.add('opensuc');
                 setMessage('❌ Failed to send email, Please Try again...');
                 setTimeout(() => {
                     setMessage(null);
-                    document.querySelector(".prodemailsuccess").classList.remove('opensuc');
+                    document.querySelector(".emailsuccess").classList.remove('opensuc');
                 }, 5000);
                 setIsSubmitting(false);
             },
         );
         const sendThankYouEmail = () => {
             // Replace these placeholders with your own EmailJS service ID, template ID, and user ID
-            emailjs
-                .send('service_i5akxh8', 'template_52x7h8o', {
-                    user_email: form.current.user_email.value,
-                })
-                .then(
-                    (response) => {
-                        console.log('Thank you email sent successfully:', response);
-                    },
-                    (error) => {
-                        console.error('Thank you email could not be sent:', error.text);
-                    }
-                );
+            emailjs.send('service_webgljn', 'template_8iwk7n3', {
+                user_email: form.current.user_email.value,
+            }).then(
+                (response) => {
+                    console.log('Thank you email sent successfully:', response);
+                },
+                (error) => {
+                    console.error('Thank you email could not be sent:', error.text);
+                }
+            );
         };
     };
-   
 
 
     const [showPhoneNumber, setShowPhoneNumber] = useState(false);
@@ -243,7 +242,7 @@ export default function Product() {
                             <input type="text" name="user_name" placeholder="Your Name" required />
                             <input type="email" name="user_email" placeholder="Your Email" required />
                             <input type="text" name="user_phone" placeholder="Your Number" defaultValue="+91"  required />
-                            <input type="text" name="user_country" placeholder="Your country"  required />
+                            <input type="text" name="user_country" placeholder="Your Subject"  required />
                             <textarea name="message" placeholder="Describe your requirement in details:" cols="30" rows="10" required></textarea>
                             {isSubmitting ? (
                             <button type="button" disabled>Submitting...</button>
