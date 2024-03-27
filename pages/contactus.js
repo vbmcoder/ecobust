@@ -6,6 +6,7 @@ import { IoEarth } from "react-icons/io5";
 import styles from "../styles/Contactus.module.css"
 import React, { useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
+import Head from "next/head";
 
 export default function Contactus() {
     const form = useRef();
@@ -60,6 +61,9 @@ export default function Contactus() {
     };
 
     return <>
+        <Head>
+            <title>Feel free to contact us | Eco Bust</title>
+        </Head>
         <div className="emailsuccess">
             {message && <h4><p>{message}</p></h4>}
         </div>

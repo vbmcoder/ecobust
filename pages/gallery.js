@@ -90,8 +90,8 @@ export default function Gallery() {
 
     return <>
         <Head>
-            {/* <title>Gallery Photographes of Ecobust Non Explosive Demolition Powder | EcoBust</title>
-            <meta name="description" content="Explore the impressive gallery showcasing Ecobust in action, the leading non-explosive demolition powder. Witness the eco-friendly and effective solution breaking concrete and rock with ease. Browse our gallery for inspiration on sustainable demolition practices." /> */}
+            <title>Gallery Photographes of Ecobust Non Explosive Demolition Powder | EcoBust</title>
+            <meta name="description" content="Explore the impressive gallery showcasing Ecobust in action, the leading non-explosive demolition powder. Witness the eco-friendly and effective solution breaking concrete and rock with ease. Browse our gallery for inspiration on sustainable demolition practices." />
         </Head>
 
         <div className={styles.topphonesec}>

@@ -15,8 +15,8 @@ import Head from 'next/head';
 export default function Flipbook() {
     return <>
         <Head>
-            {/* <title>Flipbook of Ecobust Non Explosive Demolition Powder | Eco Bust</title>
-            <meta name="description" content="Discover the power of Ecobust through our dynamic flipbook, showcasing its revolutionary non-explosive demolition capabilities. Dive into a visual journey of eco-friendly concrete and rock breaking, illustrating Ecobust's effectiveness and sustainability. Explore our flipbook for a captivating glimpse into safer and greener demolition solutions." /> */}
+            <title>Flipbook of Ecobust Non Explosive Demolition Powder | Eco Bust</title>
+            <meta name="description" content="Discover the power of Ecobust through our dynamic flipbook, showcasing its revolutionary non-explosive demolition capabilities. Dive into a visual journey of eco-friendly concrete and rock breaking, illustrating Ecobust's effectiveness and sustainability. Explore our flipbook for a captivating glimpse into safer and greener demolition solutions." />
         </Head>
         <div className='flipbooksec'>
             <Swiper

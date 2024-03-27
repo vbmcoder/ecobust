@@ -35,8 +35,8 @@ export default function About() {
 
     return <>
         <Head>
-            {/* <title>Manveer Group Of Industries - Manufacturer, Exporter & Supplier from Jodhpur India</title>
-            <meta name="description" content="At Ecobust, we are committed to providing eco-friendly demolition solutions with our non-explosive powder. Learn more about our dedication to sustainability and safety" /> */}
+            <title>Manveer Group Of Industries - Manufacturer, Exporter & Supplier from Jodhpur India</title>
+            <meta name="description" content="At Ecobust, we are committed to providing eco-friendly demolition solutions with our non-explosive powder. Learn more about our dedication to sustainability and safety" />
         </Head>
         <div className={styles.about_sec}>
             <div className={styles.about_top}>

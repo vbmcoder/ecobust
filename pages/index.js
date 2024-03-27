@@ -70,10 +70,10 @@ export default function Home() {
     <>
       <Head>
         <title>ECOBUST</title>
-        {/* <title>Welcome to Ecobust: Your Source for Eco-Friendly Demolition Solutions | ECOBUST</title>
+        <title>Welcome to Ecobust: Your Source for Eco-Friendly Demolition Solutions | ECOBUST</title>
         <meta name="description" content="Discover Ecobust, the eco-friendly and non-explosive demolition powder revolutionizing the industry. Safely demolish concrete and rock without harming the environment. Try our powerful and safe solution today!" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" /> */}
+        <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <nav>
