@@ -101,10 +101,10 @@ export default function Product() {
     ]
     return <>
         <Head>
-            <meta charSet="UTF-8" />
+            {/* <meta charSet="UTF-8" />
             <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
             <title>Ecobust Non-Explosive Demolition Powder - Safe and Effective Solution | ECOBUST</title>
-            <meta name="description" content="Ecobust offers a non-explosive demolition powder that provides a safe and effective solution for breaking concrete and rock without compromising the environment. Our eco-friendly product is revolutionizing the industry with its powerful yet safe formula." />
+            <meta name="description" content="Ecobust offers a non-explosive demolition powder that provides a safe and effective solution for breaking concrete and rock without compromising the environment. Our eco-friendly product is revolutionizing the industry with its powerful yet safe formula." /> */}
         </Head>
         <div className="prodemailsuccess">
             {message && <h4><p>{message}</p></h4>}
