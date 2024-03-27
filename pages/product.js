@@ -37,22 +37,22 @@ export default function Product() {
                 // Send thank you email to the sender
                 sendThankYouEmail();
                 form.current.reset();
-                document.querySelector(".emailsuccess").classList.add('opensuc');
+                document.querySelector(".prodemailsuccess").classList.add('opensuc');
                 setMessage('✅️ Email sent successfully');
                 setIsSubmitting(false);
                 setTimeout(() => {
                     setMessage(null);
-                    document.querySelector(".emailsuccess").classList.remove('opensuc');
+                    document.querySelector(".prodemailsuccess").classList.remove('opensuc');
                 }, 5000);
             },
             (error) => {
                 console.log('FAILED...', error.text);
-                document.querySelector(".emailsuccess").classList.add('opensuc');
+                document.querySelector(".prodemailsuccess").classList.add('opensuc');
                 setMessage('❌ Failed to send email, Please Try again...');
                 setIsSubmitting(false);
                 setTimeout(() => {
                     setMessage(null);
-                    document.querySelector(".emailsuccess").classList.remove('opensuc');
+                    document.querySelector(".prodemailsuccess").classList.remove('opensuc');
                 }, 5000);
             },
         );
