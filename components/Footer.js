@@ -19,6 +19,7 @@ export default function Footer() {
 
     const sendEmail = (e) => {
         e.preventDefault();
+        setIsSubmitting(true);
 
         emailjs.sendForm('service_webgljn', 'template_l05swu9', form.current, {
             publicKey: 'vWf6b2mF5gEYcEBlb',
@@ -29,25 +30,25 @@ export default function Footer() {
                 // Send thank you email to the sender
                 sendThankYouEmail();
                 form.current.reset();
-                document.querySelector(".emailsuccess").classList.add('opensuc');
+                document.querySelector(".footeremailsuccess").classList.add('opensuc');
                 setMessage('✅️ Email sent successfully');
+                setIsSubmitting(false);
                 setTimeout(() => {
                     setMessage(null);
-                    document.querySelector(".emailsuccess").classList.remove('opensuc');
+                    document.querySelector(".footeremailsuccess").classList.remove('opensuc');
                 }, 5000);
-                setIsSubmitting(false);
 
 
             },
             (error) => {
                 console.log('FAILED...', error.text);
-                document.querySelector(".emailsuccess").classList.add('opensuc');
+                document.querySelector(".footeremailsuccess").classList.add('opensuc');
                 setMessage('❌ Failed to send email, Please Try again...');
+                setIsSubmitting(false);
                 setTimeout(() => {
                     setMessage(null);
-                    document.querySelector(".emailsuccess").classList.remove('opensuc');
+                    document.querySelector(".footeremailsuccess").classList.remove('opensuc');
                 }, 5000);
-                setIsSubmitting(false);
             },
         );
         const sendThankYouEmail = () => {
@@ -122,11 +123,7 @@ export default function Footer() {
                             <label htmlFor="">4. Your Message:</label>
                             <textarea placeholder='Your Message' name="message" cols="100" rows="5" required></textarea>
                         </div>
-                        {isSubmitting ? (
-                            <button type="button" disabled>Submitting...</button>
-                        ) : (
-                            <button type="submit" value="Send">Send Now</button>
-                        )}
+                        <button type="submit" className="btn_loading" value="Send">{isSubmitting ? <div></div> : 'Send Now'}</button>
                     </form>
 
                 </div>

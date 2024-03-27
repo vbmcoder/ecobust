@@ -26,6 +26,7 @@ export default function Product() {
 
     const sendEmail = (e) => {
         e.preventDefault();
+        setIsSubmitting(true);
 
         emailjs.sendForm('service_webgljn', 'template_l05swu9', form.current, {
             publicKey: 'vWf6b2mF5gEYcEBlb',
@@ -38,23 +39,21 @@ export default function Product() {
                 form.current.reset();
                 document.querySelector(".emailsuccess").classList.add('opensuc');
                 setMessage('✅️ Email sent successfully');
+                setIsSubmitting(false);
                 setTimeout(() => {
                     setMessage(null);
                     document.querySelector(".emailsuccess").classList.remove('opensuc');
                 }, 5000);
-                setIsSubmitting(false);
-
-
             },
             (error) => {
                 console.log('FAILED...', error.text);
                 document.querySelector(".emailsuccess").classList.add('opensuc');
                 setMessage('❌ Failed to send email, Please Try again...');
+                setIsSubmitting(false);
                 setTimeout(() => {
                     setMessage(null);
                     document.querySelector(".emailsuccess").classList.remove('opensuc');
                 }, 5000);
-                setIsSubmitting(false);
             },
         );
         const sendThankYouEmail = () => {
@@ -244,11 +243,7 @@ export default function Product() {
                             <input type="text" name="user_phone" placeholder="Your Number" defaultValue="+91"  required />
                             <input type="text" name="user_country" placeholder="Your Subject"  required />
                             <textarea name="message" placeholder="Describe your requirement in details:" cols="30" rows="10" required></textarea>
-                            {isSubmitting ? (
-                            <button type="button" disabled>Submitting...</button>
-                        ) : (
-                            <button type="submit" value="Send">Send Now</button>
-                        )}
+                            <button type="submit" className="btn_loading" value="Send">{isSubmitting ? <div></div> : 'Send Now'}</button>
                             </div>
                         </form>
                     </div>

@@ -941,12 +941,10 @@ nav {
   border: 1px solid #b5b5b56a;
   border-radius: 45px;
   padding: 40px;
-
-  img {
-    margin-bottom: 32px;
-  }
 }
-
+.container-card img{
+  margin-bottom: 20px;
+}
 .card-title {
   font-weight: 600;
   color: #000;
@@ -1657,18 +1655,36 @@ nav {
   border: none;
   outline: none;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   transition: 0.3s ease;
 }
+.btn_loading div{
+  width: 20px;
+  height: 20px;
+  border: 2px solid #fff;
+  border-top: 2px solid #1b4e9b;
+  border-radius: 50%;
+  animation: rotete 1s infinite forwards;
+  transition: 0.3s;
+}
 
-.form_info button:hover {
-  background-color: #7b94bb;
+@keyframes rotete {
+  0%{
+    transform: rotate(0);
+  }
+  
+  100%{
+    transform: rotate(360deg);
+  }
 }
 
 /*  ==============================================================  responsive Navbar ====*/
 /*  ==============================================================  responsive Navbar ====*/
 /*  ==============================================================  responsive Navbar ====*/
 
-@media screen and (max-width: 1250px) {
+@media screen and (max-width: 1380px) {
   .nav_items {
     display: none;
   }

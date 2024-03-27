@@ -14,6 +14,7 @@ export default function Contactus() {
 
     const sendEmail = (e) => {
         e.preventDefault();
+        setIsSubmitting(true);
 
         emailjs.sendForm('service_webgljn', 'template_l05swu9', form.current, {
             publicKey: 'vWf6b2mF5gEYcEBlb',
@@ -26,23 +27,21 @@ export default function Contactus() {
                 form.current.reset();
                 document.querySelector(".emailsuccess").classList.add('opensuc');
                 setMessage('✅️ Email sent successfully');
+                setIsSubmitting(false);
                 setTimeout(() => {
                     setMessage(null);
                     document.querySelector(".emailsuccess").classList.remove('opensuc');
                 }, 5000);
-                setIsSubmitting(false);
-
-
             },
             (error) => {
                 console.log('FAILED...', error.text);
                 document.querySelector(".emailsuccess").classList.add('opensuc');
                 setMessage('❌ Failed to send email, Please Try again...');
+                setIsSubmitting(false);
                 setTimeout(() => {
                     setMessage(null);
                     document.querySelector(".emailsuccess").classList.remove('opensuc');
                 }, 5000);
-                setIsSubmitting(false);
             },
         );
         const sendThankYouEmail = () => {
@@ -98,11 +97,7 @@ export default function Contactus() {
                                 <label htmlFor="message">Message</label>
                                 <textarea type="text" name="message" placeholder="Describe your requirements" cols="30" rows="10" required ></textarea>
                             </div>
-                            {isSubmitting ? (
-                                <button type="button" disabled>Submitting...</button>
-                            ) : (
-                                <button type="submit" value="Send">Send Now</button>
-                            )}
+                            <button type="submit" className="btn_loading" value="Send">{isSubmitting ? <div></div> : 'Send Now'}</button>
                         </form>
                     </div>
                     <img src="https://www.poornima.org/img/contact-img.png" alt="" />

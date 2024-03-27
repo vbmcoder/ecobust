@@ -5,7 +5,7 @@ import emailjs from '@emailjs/browser';
 
 export default function Emailsubmit() {
     const [isFormVisible, setIsFormVisible] = useState(false);
-    
+
 
     const toggleFormVisibility = () => {
         setIsFormVisible(!isFormVisible);
@@ -17,10 +17,11 @@ export default function Emailsubmit() {
 
     const form = useRef();
     const [message, setMessage] = useState('');
-    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [isSending, setIsSending] = useState(false); 
 
     const sendEmail = (e) => {
         e.preventDefault();
+        setIsSending(true); 
 
         emailjs.sendForm('service_webgljn', 'template_l05swu9', form.current, {
             publicKey: 'vWf6b2mF5gEYcEBlb',
@@ -31,25 +32,25 @@ export default function Emailsubmit() {
                 // Send thank you email to the sender
                 sendThankYouEmail();
                 form.current.reset();
-                document.querySelector(".emailsuccess").classList.add('opensuc');
+                document.querySelector(".emailsuccesscomp").classList.add('opensuc');
                 setMessage('✅️ Email sent successfully');
+                setIsSending(false);
                 setTimeout(() => {
                     setMessage(null);
-                    document.querySelector(".emailsuccess").classList.remove('opensuc');
+                    document.querySelector(".emailsuccesscomp").classList.remove('opensuc');
                 }, 5000);
-                setIsSubmitting(false);
-
 
             },
             (error) => {
                 console.log('FAILED...', error.text);
-                document.querySelector(".emailsuccess").classList.add('opensuc');
+                document.querySelector(".emailsuccesscomp").classList.add('opensuc');
                 setMessage('❌ Failed to send email, Please Try again...');
+                setIsSending(false);
                 setTimeout(() => {
                     setMessage(null);
-                    document.querySelector(".emailsuccess").classList.remove('opensuc');
+                    document.querySelector(".emailsuccesscomp").classList.remove('opensuc');
+                  
                 }, 5000);
-                setIsSubmitting(false);
             },
         );
         const sendThankYouEmail = () => {
@@ -66,7 +67,7 @@ export default function Emailsubmit() {
             );
         };
     };
-   
+
 
     return <>
         <div className="emailsuccesscomp">
@@ -86,14 +87,12 @@ export default function Emailsubmit() {
                         <div className="form_info">
                             <input type="text" name="user_name" placeholder="Your Name" required />
                             <input type="email" name="user_email" placeholder="Your Email" required />
-                            <input type="text" name="user_phone" placeholder="Your Number" defaultValue="+91"  required />
-                            <input type="text" name="user_country" placeholder="Your Subject"  required />
+                            <input type="text" name="user_phone" placeholder="Your Number" defaultValue="+91" required />
+                            <input type="text" name="user_country" placeholder="Your Subject" required />
                             <textarea name="message" placeholder="Describe your requirement in details:" cols="30" rows="10" required></textarea>
-                            {isSubmitting ? (
-                            <button type="button" disabled>Submitting...</button>
-                        ) : (
-                            <button type="submit" value="Send">Send Now</button>
-                        )}
+
+                           <button type="submit" className="btn_loading" value="Send">{isSending ? <div></div> : 'Send Now'}</button>
+
                         </div>
                     </form>
                 </div>
