@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+   <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+     <!--We manually set the two URLs we know already-->
+    <url>
+     <loc>https://ecobust.in/</loc>
+     <lastmod>2024-03-28T12:12:26.731Z</lastmod>
+     <priority>1.0</priority>
+     <changefreq>yearly</changefreq>
+   </url>
+    <url>
+     <loc>https://ecobust.in/about/</loc>
+     <lastmod>2024-03-28T12:12:26.731Z</lastmod>
+     <priority>0.8</priority>
+     <changefreq>monthly</changefreq>
+   </url>
+    <url>
+     <loc>https://ecobust.in/contactus/</loc>
+     <lastmod>2024-03-28T12:12:26.731Z</lastmod>
+     <priority>0.8</priority>
+     <changefreq>monthly</changefreq>
+   </url>
+    <url>
+     <loc>https://ecobust.in/flipbook/</loc>
+     <lastmod>2024-03-28T12:12:26.731Z</lastmod>
+     <priority>0.8</priority>
+     <changefreq>monthly</changefreq>
+   </url>
+    <url>
+     <loc>https://ecobust.in/gallery/</loc>
+     <lastmod>2024-03-28T12:12:26.731Z</lastmod>
+     <priority>0.8</priority>
+     <changefreq>monthly</changefreq>
+   </url>
+    <url>
+     <loc>https://ecobust.in/product/</loc>
+     <lastmod>2024-03-28T12:12:26.731Z</lastmod>
+     <priority>0.8</priority>
+     <changefreq>monthly</changefreq>
+   </url>
+    <url>
+     <loc>https://ecobust.in/userguide/</loc>
+     <lastmod>2024-03-28T12:12:26.731Z</lastmod>
+     <priority>0.8</priority>
+     <changefreq>monthly</changefreq>
+   </url>
+    <url>
+     <loc>https://ecobust.in/certificate.html</loc>
+     <lastmod>2024-03-28T12:12:26.731Z</lastmod>
+     <priority>0.8</priority>
+     <changefreq>monthly</changefreq>
+   </url>
+  
+   </urlset>

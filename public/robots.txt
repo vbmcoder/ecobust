@@ -1,0 +1,13 @@
+# Block all crawlers for /accounts
+User-agent: *
+Disallow: /500
+Disallow: /404
+Disallow: /404.html
+
+# Allow all crawlers
+User-agent: *
+Disallow: /_next/
+Disallow: /api/
+Allow: /
+
+Sitemap: https://ecobust.in/sitemap.xml
