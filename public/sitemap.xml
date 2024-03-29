@@ -2,49 +2,49 @@
    <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
      <!--We manually set the two URLs we know already-->
     <url>
-     <loc>https://ecobust.in/</loc>
+     <loc>https://www.ecobust.in/</loc>
      <lastmod>2024-03-28T12:12:26.731Z</lastmod>
      <priority>1.0</priority>
      <changefreq>yearly</changefreq>
    </url>
     <url>
-     <loc>https://ecobust.in/about/</loc>
+     <loc>https://www.ecobust.in/about/</loc>
      <lastmod>2024-03-28T12:12:26.731Z</lastmod>
      <priority>0.8</priority>
      <changefreq>monthly</changefreq>
    </url>
     <url>
-     <loc>https://ecobust.in/contactus/</loc>
+     <loc>https://www.ecobust.in/contactus/</loc>
      <lastmod>2024-03-28T12:12:26.731Z</lastmod>
      <priority>0.8</priority>
      <changefreq>monthly</changefreq>
    </url>
     <url>
-     <loc>https://ecobust.in/flipbook/</loc>
+     <loc>https://www.ecobust.in/flipbook/</loc>
      <lastmod>2024-03-28T12:12:26.731Z</lastmod>
      <priority>0.8</priority>
      <changefreq>monthly</changefreq>
    </url>
     <url>
-     <loc>https://ecobust.in/gallery/</loc>
+     <loc>https://www.ecobust.in/gallery/</loc>
      <lastmod>2024-03-28T12:12:26.731Z</lastmod>
      <priority>0.8</priority>
      <changefreq>monthly</changefreq>
    </url>
     <url>
-     <loc>https://ecobust.in/product/</loc>
+     <loc>https://www.ecobust.in/product/</loc>
      <lastmod>2024-03-28T12:12:26.731Z</lastmod>
      <priority>0.8</priority>
      <changefreq>monthly</changefreq>
    </url>
     <url>
-     <loc>https://ecobust.in/userguide/</loc>
+     <loc>https://www.ecobust.in/userguide/</loc>
      <lastmod>2024-03-28T12:12:26.731Z</lastmod>
      <priority>0.8</priority>
      <changefreq>monthly</changefreq>
    </url>
     <url>
-     <loc>https://ecobust.in/certificate.html</loc>
+     <loc>https://www.ecobust.in/certificate.html</loc>
      <lastmod>2024-03-28T12:12:26.731Z</lastmod>
      <priority>0.8</priority>
      <changefreq>monthly</changefreq>

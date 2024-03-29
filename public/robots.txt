@@ -6,8 +6,6 @@ Disallow: /404.html
 
 # Allow all crawlers
 User-agent: *
-Disallow: /_next/
-Disallow: /api/
 Allow: /
 
-Sitemap: https://ecobust.in/sitemap.xml
+Sitemap: https://www.ecobust.in/sitemap.xml
